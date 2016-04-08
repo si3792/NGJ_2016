@@ -8,6 +8,10 @@ public class PlayerMovement : MonoBehaviour
 	public bool IsPlayerOne;
 	public float Speed;
 
+	// limit movement
+	float minX, maxX;
+	float minY, maxY;
+
 	Rigidbody2D myRB;
 	bool facingRight = true;
 
