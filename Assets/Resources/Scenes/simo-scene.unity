@@ -184,7 +184,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 822060175
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 3d9b0add6926f444b8f90386180f3a0d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -401,6 +401,7 @@ GameObject:
   - 92: {fileID: 1407231509}
   - 124: {fileID: 1407231508}
   - 81: {fileID: 1407231507}
+  - 114: {fileID: 1407231512}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -475,6 +476,21 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
+--- !u!114 &1407231512
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1407231506}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc7f7de8de9874f8b82c33ab6d55ce10, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  duration: 0.5
+  speed: 1
+  magnitude: 0.1
+  test: 0
 --- !u!1001 &1420229546
 Prefab:
   m_ObjectHideFlags: 0
@@ -555,6 +571,10 @@ Prefab:
     - target: {fileID: 451594, guid: 13387d4a0fa87470580a0c1a2371e7fc, type: 2}
       propertyPath: m_RootOrder
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 11430820, guid: 13387d4a0fa87470580a0c1a2371e7fc, type: 2}
+      propertyPath: paused
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 13387d4a0fa87470580a0c1a2371e7fc, type: 2}
