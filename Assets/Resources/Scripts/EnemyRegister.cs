@@ -31,4 +31,11 @@ public class EnemyRegister : MonoBehaviour {
 	void Update () {
 	
 	}
+
+	void OnDestroy()
+	{
+		foreach (GameObject enemy in enemies) {
+			enemy.GetComponent<EnemyRegister>().enemies.Remove(gameObject);
+		}
+	}
 }
