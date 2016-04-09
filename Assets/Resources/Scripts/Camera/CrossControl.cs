@@ -12,6 +12,7 @@ public class CrossControl : MonoBehaviour
 {
 
 	public modes curMode = modes.FollowPl1;
+	public float OffsetFromSinglePlayer = 0f;
 	Transform pl1;
 	Transform pl2;
 
@@ -29,11 +30,21 @@ public class CrossControl : MonoBehaviour
 
 	void FixedUpdate ()
 	{
-
+		float f = -1f;
 		if (curMode == modes.FollowPl1) {
-			transform.position = pl1.position;
+			if (pl1.GetComponent<PlayerMovement>().GetFacingRight()) {
+				f *= -1;
+			}
+			Vector3 pos = pl1.position;
+			pos.x += f * OffsetFromSinglePlayer;
+			transform.position = pos;
 		} else if (curMode == modes.FollowPl2) {
-			transform.position = pl2.position;
+			if (pl2.GetComponent<PlayerMovement>().GetFacingRight()) {
+				f *= -1;
+			}
+			Vector3 pos = pl2.position;
+			pos.x += f * OffsetFromSinglePlayer;
+			transform.position = pos;
 		}
 		else if (curMode == modes.FollowBoth) {
 			//middle of two players

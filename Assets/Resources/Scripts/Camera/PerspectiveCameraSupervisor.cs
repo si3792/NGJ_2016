@@ -8,7 +8,6 @@ public class PerspectiveCameraSupervisor : MonoBehaviour {
 	public float scaleDownRatio = 0.55f;
 	public float splitAtCamScale = 1.5f;
 	public float secondsToZoomBack = 1.5f;
-	public float camBaseZ = -10;
 	public float restSeconds = 0.2f;
 
 	Transform pl1;
@@ -26,6 +25,7 @@ public class PerspectiveCameraSupervisor : MonoBehaviour {
 	float stepDifference;
 	float camOrigHeight;
 	float origWidth;
+	float camBaseZ;
 	int restSteps;
 
 	// Use this for initialization
@@ -62,6 +62,7 @@ public class PerspectiveCameraSupervisor : MonoBehaviour {
 		crossP1.curMode = modes.FollowBoth;
 		crossP2.curMode = modes.FollowBoth;
 		camStartY = camMain.transform.position.y;
+		camBaseZ = camMain.transform.position.z;
 		camOrigHeight = 2.0f * Math.Abs(camMain.transform.position.z) * Mathf.Tan(camMain.GetComponent<Camera>().fieldOfView * 0.5f * Mathf.Deg2Rad);
 		origWidth = camOrigHeight * camMain.GetComponent<Camera>().aspect;
 
