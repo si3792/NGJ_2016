@@ -36,8 +36,10 @@ public class PlayerMovement : MonoBehaviour
 
 	void FixedUpdate ()
 	{
-		if(!IsPlayerOne)
-		myAnim.SetFloat("ms", 0);
+		if (!IsPlayerOne) {
+			myAnim.SetFloat ("ms", 0);
+		
+		}
 
 		//test knockback
 		if(Input.GetKeyDown(KeyCode.K)) {
