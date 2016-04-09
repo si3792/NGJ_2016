@@ -1206,6 +1206,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1656999143}
   - 61: {fileID: 1656999144}
+  - 114: {fileID: 1656999145}
   m_Layer: 0
   m_Name: hurtbox
   m_TagString: pl-hurtbox
@@ -1239,6 +1240,17 @@ BoxCollider2D:
   m_Offset: {x: -0.03, y: 0.02}
   serializedVersion: 2
   m_Size: {x: 0.45, y: 0.68}
+--- !u!114 &1656999145
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1656999142}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e6da2bd95f2246128ceb27229a2097c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1745307048
 GameObject:
   m_ObjectHideFlags: 0
