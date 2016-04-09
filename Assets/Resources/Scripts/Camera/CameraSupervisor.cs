@@ -8,6 +8,8 @@ public class CameraSupervisor : MonoBehaviour {
 	public float scaleDownRatio = 0.55f;
 	public float splitAtCamScale = 1.5f;
 	public float defaultCamSize = 4f;
+	public float secondsToZoomBack = 1.5f;
+	public float restSeconds = 0.2f;
 
 	Transform pl1;
 	Transform pl2;
@@ -21,6 +23,8 @@ public class CameraSupervisor : MonoBehaviour {
 	bool split = false;
 	bool scale = false;
 	float camStartY;
+	float stepDifference;
+	int restSteps;
 
 	// Use this for initialization
 	void Start () {
@@ -64,11 +68,20 @@ public class CameraSupervisor : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		var distance = Vector3.Distance(pl1.position, pl2.position);
+		var cam = camMain.GetComponent<Camera>();
+		float origWidth = 2f * defaultCamSize * cam.aspect;
+		float height = 2f * cam.orthographicSize;
+ 		float width = height * cam.aspect;
+
 		if (split == false) {
-			var cam = camMain.GetComponent<Camera>();
-			float origWidth = 2f * defaultCamSize * cam.aspect;
-			float height = 2f * cam.orthographicSize;
- 			float width = height * cam.aspect;
+
+			if (pl1.position.x < pl2.position.x) {
+				crossP1.curMode = modes.FollowPl1;
+				crossP2.curMode = modes.FollowPl2;
+			} else {
+				crossP1.curMode = modes.FollowPl2;
+				crossP2.curMode = modes.FollowPl1;
+			}
 
 			if (distance / origWidth < scaleDownRatio) {
 				if (scale == true) {
@@ -90,7 +103,52 @@ public class CameraSupervisor : MonoBehaviour {
 				newPosition.y = camStartY + (cam.orthographicSize - defaultCamSize);
 				cam.transform.position = newPosition;
 			} else {
-				Debug.Log("Time to split!!!");
+				split = true;
+				var cl = camP1.GetComponent<Camera>();
+				var cr = camP2.GetComponent<Camera>();
+				cam.enabled = false;
+				cl.GetComponent<Camera>().enabled = true;
+				cr.GetComponent<Camera>().enabled = true;
+				cl.orthographicSize = cam.orthographicSize;
+				cr.orthographicSize = cam.orthographicSize;
+				var pos = cl.transform.position;
+				pos.y = cam.transform.position.y;
+				cl.transform.position = pos;
+				pos = cr.transform.position;
+				pos.y = cam.transform.position.y;
+				cr.transform.position = pos;
+
+				stepDifference = (cl.orthographicSize - defaultCamSize) / secondsToZoomBack;
+				restSteps = (int) (restSeconds / Time.deltaTime);
+			}
+		} else {
+			var cl = camP1.GetComponent<Camera>();
+			var cr = camP2.GetComponent<Camera>();
+			if (distance <= origWidth / 2) {
+				cam.enabled = true;
+				cl.enabled = false;
+				cr.enabled = false;
+				cam.orthographicSize = defaultCamSize;
+				Vector3 newPosition = cam.transform.position;
+				newPosition.y = camStartY + (cam.orthographicSize - defaultCamSize);
+				cam.transform.position = newPosition;
+				split = false;
+			} else if (cl.orthographicSize > defaultCamSize) {
+				if (restSteps > 0) {
+					restSteps--;
+					return;
+				}
+				cl.orthographicSize -= stepDifference * Time.deltaTime;
+				cr.orthographicSize -= stepDifference * Time.deltaTime;
+				cl.orthographicSize = Math.Max(cl.orthographicSize, defaultCamSize);
+				cr.orthographicSize = Math.Max(cr.orthographicSize, defaultCamSize);
+				Vector3 newPosition = cl.transform.position;
+				newPosition.y = camStartY + (cl.orthographicSize - defaultCamSize);
+				cl.transform.position = newPosition;
+				newPosition = cr.transform.position;
+				newPosition.y = camStartY + (cr.orthographicSize - defaultCamSize);
+				cr.transform.position = newPosition;
+
 			}
 		}
 	}
