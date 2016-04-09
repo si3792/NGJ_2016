@@ -30,6 +30,7 @@ public class PlayerMovement : MonoBehaviour
 
 	void FixedUpdate ()
 	{
+		
 		//test knockback
 		if(Input.GetKeyDown(KeyCode.K)) {
 			knockback (40, Vector2.right);
@@ -109,12 +110,11 @@ public class PlayerMovement : MonoBehaviour
 	}
 
 
-	void knockback(float strength, Vector2 direction) {
+	public void knockback(float strength, Vector2 direction) {
 
 		inKnockback = true;
 		myRB.drag = 10; // drag is changed during knockback
 		myRB.AddForce(strength * direction * (1/Time.timeScale), ForceMode2D.Impulse);
 	}
-
-
+		
 }
