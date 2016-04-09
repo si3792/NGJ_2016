@@ -11,7 +11,7 @@ public class EnemyDamageScript : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	void LateFixedUpdate () {
 
 		if (health <= 0)
 			Destroy (gameObject.transform.parent.gameObject);
