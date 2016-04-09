@@ -20,7 +20,12 @@ public class EnemyDamageScript : MonoBehaviour {
 		}
 
 		if (health <= 0 && died == false) {
+
+			//chance to spawn biomass nugget
+			if(Random.value > 0.6)
 			Instantiate (biomassDrop, transform.position, Quaternion.Euler (Vector3.zero));
+
+
 			died = true;
 			Destroy (gameObject.transform.parent.gameObject);
 		}
