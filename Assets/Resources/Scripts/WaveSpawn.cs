@@ -52,7 +52,7 @@ public class WaveSpawn : MonoBehaviour {
 	{
 		int Enemy1Cnt = Mathf.RoundToInt (Enemy1SpawnMeanStart * Random.Range (uniformPercent, 1f + uniformPercent));
 		for (int i = 0; i < Enemy1Cnt; i++) {
-			GameObject.Instantiate (Enemy1, transform.position, transform.rotation);
+			GameObject.Instantiate (Enemy1, transform.position + new Vector3(Random.Range(-1f, 1f), Random.Range(-1f, 1f), 0), transform.rotation);
 
 		}
 
