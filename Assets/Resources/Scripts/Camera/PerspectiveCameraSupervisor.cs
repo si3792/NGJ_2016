@@ -125,7 +125,7 @@ public class PerspectiveCameraSupervisor : MonoBehaviour {
 			var cr = camP2.GetComponent<Camera>();
 			var halfHeight = 2.0f * Math.Abs(cl.transform.position.z) * Mathf.Tan(cam.fieldOfView * 0.5f * Mathf.Deg2Rad);
 			var halfWidth = halfHeight * cl.aspect;
-			if (distance <= halfWidth) {
+			if (distance < halfWidth) {
 				cam.enabled = true;
 				cl.enabled = false;
 				cr.enabled = false;

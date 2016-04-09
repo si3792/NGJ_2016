@@ -24,6 +24,9 @@ public class PlayerMovement : MonoBehaviour
 		startingDrag = myRB.drag;
 	}
 
+	public bool GetFacingRight() {
+		return facingRight;
+	}
 
 	void FixedUpdate ()
 	{
