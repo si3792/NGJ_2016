@@ -23,9 +23,16 @@ public class EnemyMovement : MonoBehaviour {
 	float targetAngle = 1.0f;
 	void FixedUpdate()
 	{
-		targetDist = Vector2.Distance(transform.position, pl1.transform.position);
-		GameObject target = pl1;
-		if( Vector2.Distance(transform.position, pl2.transform.position) < targetDist )
+		GameObject target;
+		if (PlayerMovement.player1Alive) {
+			targetDist = Vector2.Distance (transform.position, pl1.transform.position);
+			target = pl1;
+		} else {
+			target = pl2;
+			if (PlayerMovement.player2Alive)
+				targetDist = Vector2.Distance (transform.position, pl2.transform.position);
+		}
+		if( PlayerMovement.player2Alive && Vector2.Distance(transform.position, pl2.transform.position) < targetDist)
 		{
 			targetDist = Vector2.Distance (transform.position, pl2.transform.position);
 			target = pl2;

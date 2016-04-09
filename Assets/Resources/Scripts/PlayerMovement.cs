@@ -4,6 +4,8 @@ using System.Collections;
 public class PlayerMovement : MonoBehaviour
 {
 
+	public static bool player1Alive = true;
+	public static bool player2Alive = true;
 
 	public bool IsPlayerOne;
 	public float Speed;
@@ -115,6 +117,14 @@ public class PlayerMovement : MonoBehaviour
 		inKnockback = true;
 		myRB.drag = 10; // drag is changed during knockback
 		myRB.AddForce(strength * direction * (1/Time.timeScale), ForceMode2D.Impulse);
+	}
+
+	void OnDestroy()
+	{
+		if (IsPlayerOne)
+			player1Alive = false;
+		else
+			player2Alive = false;
 	}
 		
 }
