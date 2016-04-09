@@ -9,6 +9,7 @@ public class PlayerMovement : MonoBehaviour
 
 	public bool IsPlayerOne;
 	public float Speed;
+	public Animator myAnim;
 
 	bool inKnockback = false;
 	float knockbackReleaseThreshold = 0.4f;
@@ -24,6 +25,9 @@ public class PlayerMovement : MonoBehaviour
 
 		myRB = GetComponent<Rigidbody2D> ();
 		startingDrag = myRB.drag;
+
+		if(!IsPlayerOne)
+		myAnim = transform.Find ("RedObject").gameObject.GetComponent<Animator> ();
 	}
 
 	public bool GetFacingRight() {
@@ -32,7 +36,9 @@ public class PlayerMovement : MonoBehaviour
 
 	void FixedUpdate ()
 	{
-		
+		if(!IsPlayerOne)
+		myAnim.SetFloat("ms", 0);
+
 		//test knockback
 		if(Input.GetKeyDown(KeyCode.K)) {
 			knockback (40, Vector2.right);
@@ -49,7 +55,13 @@ public class PlayerMovement : MonoBehaviour
 		}
 
 		// basic UDLR movement
-		myRB.AddForce (getMovementVector () * Speed, ForceMode2D.Impulse);
+		var mv = getMovementVector ();
+
+		//animator
+		if(mv != Vector2.zero && !IsPlayerOne) myAnim.SetFloat("ms", 1); 
+
+			
+		myRB.AddForce (mv * Speed, ForceMode2D.Impulse);
 
 		// flip character to face direction
 		if (myRB.velocity.x > 0 && !facingRight) {
