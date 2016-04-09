@@ -23,8 +23,16 @@ public class NuggetController : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-		dist1 = Vector3.Distance (transform.position, Pl1.transform.position);
-		dist2 = Vector3.Distance (transform.position, Pl2.transform.position);
+		if (PlayerMovement.player1Alive)
+			dist1 = Vector3.Distance (transform.position, Pl1.transform.position);
+		else
+			dist1 = 10000;
+		
+		if (PlayerMovement.player2Alive)
+			dist2 = Vector3.Distance (transform.position, Pl2.transform.position);
+		else
+			dist2 = 10000;
+
 		if (dist1 > dist2) {
 			target = Pl2.transform;
 			dist = dist2;

@@ -7,6 +7,7 @@ public class EnemyDamageScript : MonoBehaviour {
 	float health = 50;
 	bool died = false;
 	public GameObject biomassDrop;
+	public GameObject psFx;
 
 	void Start () {
 	
@@ -25,6 +26,8 @@ public class EnemyDamageScript : MonoBehaviour {
 			if(Random.value > 0.6)
 			Instantiate (biomassDrop, transform.position, Quaternion.Euler (Vector3.zero));
 
+			//ps
+			Instantiate(psFx, transform.position, Quaternion.Euler(Vector3.zero));
 
 			died = true;
 			Destroy (gameObject.transform.parent.gameObject);

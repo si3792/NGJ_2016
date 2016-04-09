@@ -55,6 +55,9 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: psLayer
+    uniqueID: 2508184621
+    locked: 0
   - name: Foreground
     uniqueID: 3649745595
     locked: 0
