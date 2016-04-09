@@ -2,6 +2,14 @@
 using System.Collections;
 using System;
 using System.Collections.Generic;
+using System.Threading;
+
+public enum CameraId {
+	main = 0,
+	left,
+	right,
+	ui
+}
 
 public class PerspectiveCameraSupervisor : MonoBehaviour {
 
@@ -31,9 +39,50 @@ public class PerspectiveCameraSupervisor : MonoBehaviour {
 	float origWidth;
 	float camBaseZ;
 	int restSteps;
-
+	//private Mutex callbackMutex = new Mutex();
 	public delegate void DelayedExecution();
 	protected LinkedList<KeyValuePair<float, DelayedExecution>> callbacks = new LinkedList<KeyValuePair<float, DelayedExecution>>();
+
+	public void FocusCameraOnPoint(Vector3 center, float time = 1f, CameraId camId = CameraId.main, float height = 0) {
+		if (height == 0) {
+			height = camOrigHeight;
+		}
+		Camera camObj = camMain.GetComponent<Camera>();
+		CrossControl focalPoint = crossMain;
+		switch (camId) {
+			case CameraId.main:
+				camObj = camMain.GetComponent<Camera>();
+				focalPoint = crossMain;
+				break;
+			case CameraId.left:
+				camObj = camP1.GetComponent<Camera>();
+				if (pl1.position.x < pl2.position.x) {
+					focalPoint = crossP1;
+				} else {
+					focalPoint = crossP2;
+				}
+				break;
+			case CameraId.right:
+				camObj = camP2.GetComponent<Camera>();
+				if (pl1.position.x < pl2.position.x) {
+					focalPoint = crossP2;
+				} else {
+					focalPoint = crossP1;
+				}
+				break;
+			default:
+				Debug.Log("Unrecognized CameraId in CameraSupervisor.FocusCameraOnPoint");
+				break;
+		}
+		var oldPos = camObj.transform.position;
+		center.z = -(height * 0.5f / Mathf.Tan(camObj.fieldOfView * 0.5f * Mathf.Deg2Rad));
+		focalPoint.ForceFocus(center);
+		addDelayedExecution(time, new DelayedExecution( 
+			() => { 
+				camObj.transform.position = new Vector3(camObj.transform.position.x, camObj.transform.position.y, oldPos.z);
+				focalPoint.ForceFocus(null);
+			}));
+	}
 
 	// Use this for initialization
 	void Start () {
@@ -73,14 +122,19 @@ public class PerspectiveCameraSupervisor : MonoBehaviour {
 		camStartY = camMain.transform.position.y;
 		camBaseZ = camMain.transform.position.z;
 
+
+		//FocusCameraOnPoint(new Vector3(-22f, -2.5f, 0f), 2);
 	}
 
 	void addDelayedExecution(float t, DelayedExecution callback) {
+		//callbackMutex.WaitOne();
 		callbacks.AddLast(new KeyValuePair<float, DelayedExecution>(t, callback));
+		//callbackMutex.ReleaseMutex();
 	}
 
 	void checkDelayedExecution() {
 		var remaining = new LinkedList<KeyValuePair<float, DelayedExecution>>();
+		//callbackMutex.WaitOne();
 		foreach (var pair in callbacks) {
 			var newP = new KeyValuePair<float, DelayedExecution>(pair.Key - Time.deltaTime, pair.Value);
 			if (newP.Key <= 0) {
@@ -90,6 +144,7 @@ public class PerspectiveCameraSupervisor : MonoBehaviour {
 			}
 		}
 		callbacks = remaining;
+		//callbackMutex.ReleaseMutex();
 	}
 
 	// Update is called once per frame
@@ -97,28 +152,33 @@ public class PerspectiveCameraSupervisor : MonoBehaviour {
 		checkDelayedExecution();
 
 		var cam = camMain.GetComponent<Camera>();
-		if (pl1 == null || pl2 == null && singlePlayer == false && cam.enabled == false) {
+
+		if (pl1 == null || pl2 == null && singlePlayer == false) {
+			// Someone just died
 			singlePlayer = true;
 			if (pl1 == null) {
 				crossMain.curMode = modes.FollowPl2;
 			} else {
 				crossMain.curMode = modes.FollowPl1;
 			}
-			var cl = camP1.GetComponent<Camera>();
-			var cr = camP2.GetComponent<Camera>();
-			addDelayedExecution(zoomOutOfDeadDelay, new DelayedExecution( 
-				() => {
-					cam.enabled = true;
-					cl.enabled = false;
-					cr.enabled = false;
-					Vector3 newPosition = cam.transform.position;
-					newPosition.z = cl.transform.position.z;
-					var height = 2.0f * Math.Abs(newPosition.z) * Mathf.Tan(cam.fieldOfView * 0.5f * Mathf.Deg2Rad);
-					newPosition.y = camStartY + ((height - camOrigHeight) / 2);
-					cam.transform.position = newPosition;
-					split = false;
+			if (cam.enabled == false) {
+				var cl = camP1.GetComponent<Camera>();
+				var cr = camP2.GetComponent<Camera>();
+				addDelayedExecution(zoomOutOfDeadDelay, new DelayedExecution( 
+					() => {
+						cam.enabled = true;
+						cl.enabled = false;
+						cr.enabled = false;
+						Vector3 newPosition = cam.transform.position;
+						newPosition.z = cl.transform.position.z;
+						var height = 2.0f * Math.Abs(newPosition.z) * Mathf.Tan(cam.fieldOfView * 0.5f * Mathf.Deg2Rad);
+						newPosition.y = camStartY + ((height - camOrigHeight) / 2);
+						cam.transform.position = newPosition;
+						split = false;
 				}));
+			}
 		}
+
 		if (!singlePlayer) {
 			var distance = Vector3.Distance(pl1.position, pl2.position);
 			float height = 2.0f * Math.Abs(cam.transform.position.z) * Mathf.Tan(cam.fieldOfView * 0.5f * Mathf.Deg2Rad);

@@ -16,6 +16,12 @@ public class CrossControl : MonoBehaviour
 	Transform pl1;
 	Transform pl2;
 
+	Vector3? forcedFocus;
+
+	public void ForceFocus(Vector3? focus) {
+		forcedFocus = focus;
+	}
+
 	// Use this for initialization
 	void Start ()
 	{
@@ -31,7 +37,9 @@ public class CrossControl : MonoBehaviour
 	void FixedUpdate ()
 	{
 		float f = -1f;
-		if (curMode == modes.FollowPl1) {
+		if (forcedFocus != null) {
+			transform.position = (Vector3) forcedFocus;
+		} else if (curMode == modes.FollowPl1) {
 			if (pl1 != null && pl1.GetComponent<PlayerMovement>().GetFacingRight()) {
 				f *= -1;
 			}

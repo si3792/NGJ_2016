@@ -938,7 +938,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11486082, guid: cffc4e115c8604de2aa732ef3591b395, type: 2}
       propertyPath: scaleDownRatio
-      value: 0.35
+      value: 0.2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cffc4e115c8604de2aa732ef3591b395, type: 2}
