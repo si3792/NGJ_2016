@@ -5,6 +5,7 @@ public class EnemyDamageScript : MonoBehaviour {
 
 
 	float health = 50;
+	public float biomassSpawnChance = 0.6f;
 	bool died = false;
 	public GameObject biomassDrop;
 	public GameObject psFx;
@@ -23,9 +24,9 @@ public class EnemyDamageScript : MonoBehaviour {
 		if (health <= 0 && died == false) {
 
 			//chance to spawn biomass nugget
-			if(Random.value > 0.6)
-			Instantiate (biomassDrop, transform.position, Quaternion.Euler (Vector3.zero));
-
+			if(Random.value > biomassSpawnChance) {
+				Instantiate (biomassDrop, transform.position, Quaternion.Euler (Vector3.zero));
+			}
 			//ps
 			Instantiate(psFx, transform.position, Quaternion.Euler(Vector3.zero));
 
