@@ -80,33 +80,33 @@ public class PlayerMovement : MonoBehaviour
 
 		if (IsPlayerOne) {
 
-			if(Input.GetKey(KeyCode.LeftArrow) ) {
+			if(Input.GetKey(KeyCode.LeftArrow) || Input.GetAxis("HorizontalP1") < 0) {
 				h = -1  * Time.deltaTime;
 			}
-			if(Input.GetKey(KeyCode.RightArrow) ) {
+			if(Input.GetKey(KeyCode.RightArrow) || Input.GetAxis("HorizontalP1") > 0) {
 				h = 1  * Time.deltaTime;
 			}
 
-			if(Input.GetKey(KeyCode.DownArrow) ) {
+			if(Input.GetKey(KeyCode.DownArrow) || Input.GetAxis("VerticalP1") < 0) {
 				v = -1  * Time.deltaTime;
 			}
-			if(Input.GetKey(KeyCode.UpArrow) ) {
+			if(Input.GetKey(KeyCode.UpArrow) || Input.GetAxis("VerticalP1") > 0) {
 				v = 1  * Time.deltaTime;
 			}
 
 		} else {
 
-			if(Input.GetKey(KeyCode.A) ) {
+			if(Input.GetKey(KeyCode.A) || Input.GetAxis("HorizontalP2") < 0) {
 				h = -1  * Time.deltaTime;
 			}
-			if(Input.GetKey(KeyCode.D) ) {
+			if(Input.GetKey(KeyCode.D) || Input.GetAxis("HorizontalP2") > 0) {
 				h = 1  * Time.deltaTime;
 			}
 
-			if(Input.GetKey(KeyCode.S) ) {
+			if(Input.GetKey(KeyCode.S) || Input.GetAxis("VerticalP2") < 0) {
 				v = -1  * Time.deltaTime;
 			}
-			if(Input.GetKey(KeyCode.W) ) {
+			if(Input.GetKey(KeyCode.W) || Input.GetAxis("VerticalP2") > 0) {
 				v = 1  * Time.deltaTime;
 			}
 

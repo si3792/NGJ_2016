@@ -15,10 +15,8 @@ public class SimpleShoot : MonoBehaviour
 
 	// Update is called once per frame
 	void FixedUpdate ()
-	{
-
-
-		if (Input.GetKey (KeyCode.Space) && Time.timeSinceLevelLoad > nextFire) {
+	{	
+		if ((Input.GetKey(KeyCode.Space) || Input.GetAxis("RightTriggerP2") > 0) && Time.timeSinceLevelLoad > nextFire) {
 
 			nextFire = Time.timeSinceLevelLoad + FireRate;
 

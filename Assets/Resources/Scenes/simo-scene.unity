@@ -346,7 +346,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11432088, guid: b3d8f3ecdb1e44973a2214aad85e9755, type: 2}
       propertyPath: OffsetFromSinglePlayer
-      value: 0.5
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b3d8f3ecdb1e44973a2214aad85e9755, type: 2}
@@ -815,6 +815,10 @@ Prefab:
     - target: {fileID: 463294, guid: 1a9315e3b6fbc4078adf77daf1716182, type: 2}
       propertyPath: m_RootOrder
       value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 11454024, guid: 1a9315e3b6fbc4078adf77daf1716182, type: 2}
+      propertyPath: OffsetFromSinglePlayer
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1a9315e3b6fbc4078adf77daf1716182, type: 2}
