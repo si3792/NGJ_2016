@@ -14,13 +14,29 @@ public class EnemyDamageScript : MonoBehaviour {
 	
 	}
 
+	// For use from external sources
+	public void Damage(float dmg) {
+		health -= dmg;
+	}
 
 	void OnTriggerEnter2D(Collider2D other) {
 		if(other.gameObject.tag  == "Bullet") {
 			health -= other.gameObject.GetComponent<BulletMovement> ().damage;
 			Destroy (other.gameObject);
 		}
+		if (other.gameObject.tag == "Explosion") {
+			health = -1;
+		}
+	}
 
+	void OnCollisionStay2D(Collision2D other) {
+		Debug.Log(other.gameObject.tag);
+		if (other.collider.gameObject.tag == "Explosion") {
+			health = -1;
+		}
+	}
+
+	void Update() {
 		if (health <= 0 && died == false) {
 
 			//chance to spawn biomass nugget
@@ -33,7 +49,6 @@ public class EnemyDamageScript : MonoBehaviour {
 			died = true;
 			Destroy (gameObject.transform.parent.gameObject);
 		}
-
 	}
 
 

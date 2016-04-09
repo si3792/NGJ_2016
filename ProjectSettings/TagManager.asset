@@ -15,6 +15,9 @@ TagManager:
   - pl-hurtbox
   - Bullet
   - BeetleHurt
+  - Mine
+  - enemy-hurtbox
+  - explosion
   layers:
   - Default
   - TransparentFX

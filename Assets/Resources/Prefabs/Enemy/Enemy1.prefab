@@ -133,7 +133,7 @@ GameObject:
   - 114: {fileID: 11486362}
   m_Layer: 0
   m_Name: hurtbox
-  m_TagString: Untagged
+  m_TagString: enemy-hurtbox
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -505,6 +505,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b44637c752901485389478d79f53e56c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  biomassSpawnChance: 0.6
   biomassDrop: {fileID: 105574, guid: 1966f99af4b28430db9334e62107c5b1, type: 2}
   psFx: {fileID: 100000, guid: 4c5a17ca1f9fec84e941441ebb8be079, type: 2}
 --- !u!114 &11491304
