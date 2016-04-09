@@ -61,33 +61,33 @@ public class PlayerMovement : MonoBehaviour
 		if (IsPlayerOne) {
 
 			if(Input.GetKey(KeyCode.LeftArrow) ) {
-				h = -1 * Speed * Time.deltaTime;
+				h = -1  * Time.deltaTime;
 			}
 			if(Input.GetKey(KeyCode.RightArrow) ) {
-				h = 1 * Speed * Time.deltaTime;
+				h = 1  * Time.deltaTime;
 			}
 
 			if(Input.GetKey(KeyCode.DownArrow) ) {
-				v = -1 * Speed * Time.deltaTime;
+				v = -1  * Time.deltaTime;
 			}
 			if(Input.GetKey(KeyCode.UpArrow) ) {
-				v = 1 * Speed * Time.deltaTime;
+				v = 1  * Time.deltaTime;
 			}
 
 		} else {
 
 			if(Input.GetKey(KeyCode.A) ) {
-				h = -1 * Speed * Time.deltaTime;
+				h = -1  * Time.deltaTime;
 			}
 			if(Input.GetKey(KeyCode.D) ) {
-				h = 1 * Speed * Time.deltaTime;
+				h = 1  * Time.deltaTime;
 			}
 
 			if(Input.GetKey(KeyCode.S) ) {
-				v = -1 * Speed * Time.deltaTime;
+				v = -1  * Time.deltaTime;
 			}
 			if(Input.GetKey(KeyCode.W) ) {
-				v = 1 * Speed * Time.deltaTime;
+				v = 1  * Time.deltaTime;
 			}
 
 		}
