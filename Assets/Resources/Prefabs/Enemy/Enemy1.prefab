@@ -225,6 +225,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b44637c752901485389478d79f53e56c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  biomassDrop: {fileID: 105574, guid: 1966f99af4b28430db9334e62107c5b1, type: 2}
 --- !u!212 &21271446
 SpriteRenderer:
   m_ObjectHideFlags: 1
