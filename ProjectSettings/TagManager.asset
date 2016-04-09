@@ -11,6 +11,8 @@ TagManager:
   - CrossP2
   - CameraP1
   - CameraP2
+  - Nugget
+  - pl-hurtbox
   layers:
   - Default
   - TransparentFX
