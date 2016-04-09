@@ -43,6 +43,8 @@ public class EnemyRegister : MonoBehaviour {
 	}
 	void OnDestroy()
 	{
-		r.valid = false;
+		if (r != null) {
+			r.valid = false;
+		}
 	}
 }

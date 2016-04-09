@@ -8,6 +8,7 @@ public class EnemyMovement : MonoBehaviour {
 	GameObject pl1,pl2;
 	float col_radius;
 	Rigidbody2D myRB;
+	Animator anim;
 	// Use this for initialization
 	void Start () {
 		enemies = new HashSet<EnemyRegister.EnemyReference> ();
@@ -15,18 +16,25 @@ public class EnemyMovement : MonoBehaviour {
 		pl2 = GameObject.FindGameObjectWithTag ("Pl2");
 		col_radius = GetComponent<CircleCollider2D> ().radius;
 		myRB = GetComponent<Rigidbody2D> ();
+		anim = GetComponentInChildren<Animator> ();
 
 	}
+	float targetDist;
+	float targetAngle = 1.0f;
 	void FixedUpdate()
 	{
-		float targetDist = Vector2.Distance(transform.position, pl1.transform.position);
+		targetDist = Vector2.Distance(transform.position, pl1.transform.position);
 		GameObject target = pl1;
 		if( Vector2.Distance(transform.position, pl2.transform.position) < targetDist )
 		{
 			targetDist = Vector2.Distance (transform.position, pl2.transform.position);
 			target = pl2;
 		}
-
+		if (target.transform.position.x < transform.position.x) {
+			targetAngle = -1.0f;
+		} else {
+			targetAngle = 1.0f;
+		}
 		if (targetDist > 1)
 		{
 			Vector2 totalPush = Vector2.zero;
@@ -73,6 +81,7 @@ public class EnemyMovement : MonoBehaviour {
 	}
 	// Update is called once per frame
 	void Update () {
-		
+		transform.localScale = new Vector3( targetAngle, transform.localScale.y, transform.localScale.z );
+		anim.SetFloat ("playerDist", targetDist);
 	}
 }
