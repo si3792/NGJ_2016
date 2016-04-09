@@ -80,13 +80,15 @@ public class CameraSupervisor : MonoBehaviour {
 					scale = false;
 				}
 			} else if (cam.orthographicSize < defaultCamSize * splitAtCamScale) {
-				if ((distance / origWidth) >= scaleRatio) {
-					scale = true;
-					cam.orthographicSize = Math.Max(defaultCamSize, distance / (1.6f * cam.aspect));
-					Vector3 newPosition = camMain.transform.position;
-					newPosition.y = camStartY + (cam.orthographicSize - defaultCamSize);
-					cam.transform.position = newPosition;
-				} 
+				if ((distance / width) >= scaleRatio) {
+					cam.orthographicSize = Math.Max(defaultCamSize, distance / (2f * scaleRatio * cam.aspect));
+				} else if ((distance / width) <= scaleDownRatio) {
+					cam.orthographicSize = Math.Max(defaultCamSize, distance / (2f * scaleDownRatio * cam.aspect));
+				}
+				scale = true;
+				Vector3 newPosition = camMain.transform.position;
+				newPosition.y = camStartY + (cam.orthographicSize - defaultCamSize);
+				cam.transform.position = newPosition;
 			} else {
 				Debug.Log("Time to split!!!");
 			}

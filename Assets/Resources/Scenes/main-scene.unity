@@ -347,7 +347,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11442050, guid: 0ac1cbc8cef844042a91d7d976875fe3, type: 2}
       propertyPath: Speed
-      value: 14
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 5028930, guid: 0ac1cbc8cef844042a91d7d976875fe3, type: 2}
       propertyPath: m_LinearDrag
@@ -467,6 +467,10 @@ Prefab:
     - target: {fileID: 456016, guid: 3e2512324375849f69f3de87f546636d, type: 2}
       propertyPath: m_RootOrder
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 11454254, guid: 3e2512324375849f69f3de87f546636d, type: 2}
+      propertyPath: Speed
+      value: 100
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3e2512324375849f69f3de87f546636d, type: 2}
@@ -784,7 +788,7 @@ GameObject:
   - 4: {fileID: 1562575932}
   - 114: {fileID: 1562575931}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: CameraSupervisor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -801,8 +805,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ddcc65a7755e460a92bd715794aaa0c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scaleRatio: 0.6
-  scaleDownRatio: 0.55
+  scaleRatio: 0.65
+  scaleDownRatio: 0.5
   splitAtCamScale: 1.5
   defaultCamSize: 4
 --- !u!4 &1562575932
