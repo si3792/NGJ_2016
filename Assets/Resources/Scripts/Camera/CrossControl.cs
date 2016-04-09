@@ -12,7 +12,7 @@ public class CrossControl : MonoBehaviour
 {
 
 	public modes curMode = modes.FollowPl1;
-	public float OffsetFromSinglePlayer = 0f;
+	public float OffsetFromSinglePlayer = 0.5f;
 	Transform pl1;
 	Transform pl2;
 
