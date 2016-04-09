@@ -12,6 +12,8 @@ TagManager:
   - CameraP1
   - CameraP2
   - Shaker
+  - pl-hurtbox
+  - Bullet
   layers:
   - Default
   - TransparentFX
