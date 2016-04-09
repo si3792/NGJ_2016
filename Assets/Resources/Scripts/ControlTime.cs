@@ -1,38 +1,71 @@
-﻿﻿using UnityEngine;
+﻿using UnityEngine;
 using System.Collections;
 
-public class ControlTime : MonoBehaviour {
+public class ControlTime : MonoBehaviour
+{
+	bool paused = false;
+	bool isEditingTime = false;
+    float timePauseStart, timePauseEnd, timeScaleBeforePause;
+	public float editTimeReset;
 
-	public bool paused = false;
-	public float scalar = 1;
-	public bool changeTime = true;
+	// Set time to newTimeScale for duration duration
+	public void editTime (float newTimeScale, float duration)
+	{
 
+		if (isEditingTime == true)
+			return;
 
+		isEditingTime = true;
+		editTimeReset = Time.realtimeSinceStartup + duration;
+		Time.timeScale = newTimeScale;
+		Time.fixedDeltaTime = 0.02F * Time.timeScale;
+	}
 
-	// Update is called once per frame
-	void Update () {
+	public void PauseUnpauseGame ()
+	{
+		if (paused) {
+			Time.timeScale = timeScaleBeforePause;
+			Time.fixedDeltaTime = 0.02F * timeScaleBeforePause;
+			paused = false;
 
-		// Change time scale
-		if(changeTime) {
-			changeTime = false;
+			//correct for pausing affecting editTime()
+			timePauseEnd = Time.realtimeSinceStartup;
+			editTimeReset += timePauseEnd - timePauseStart;
 
-			Time.timeScale = scalar;
+		} else {
+
+			timeScaleBeforePause = Time.timeScale;
+			timePauseStart = Time.realtimeSinceStartup;
+			Time.timeScale = 0;
+			Time.fixedDeltaTime = 0;
+			paused = true;
+
+		}
+	}
+
+	void Update ()
+	{
+		// return to normal time
+		if (!paused && isEditingTime && Time.realtimeSinceStartup > editTimeReset) {
+
+			isEditingTime = false;
+			Time.timeScale = 1f;
 			Time.fixedDeltaTime = 0.02F * Time.timeScale;
 		}
 
 		// Pause/Unpause game
-		if(Input.GetKeyDown(KeyCode.P)) {
-			if(paused) {
-				Time.timeScale = 1;
-				Time.fixedDeltaTime = 0.02F;
-				paused = false;
-			} else {
-				Time.timeScale = 0;
-				Time.fixedDeltaTime = 0;
-				paused = true;
-			}
+		if (Input.GetKeyDown (KeyCode.P)) {
+			PauseUnpauseGame ();
+		}
 
+		//test slow time
+		if (Input.GetKeyDown (KeyCode.L)) {
+			editTime (0.2f, 1f);
 		}
 
 	}
+
+
+
+
 }
