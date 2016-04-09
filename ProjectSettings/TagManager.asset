@@ -3,7 +3,14 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Pl1
+  - Pl2
+  - CrossMain
+  - CrossP1
+  - CrossP2
+  - CameraP1
+  - CameraP2
   layers:
   - Default
   - TransparentFX
@@ -38,6 +45,9 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Background
+    uniqueID: 822060175
+    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0

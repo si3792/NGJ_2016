@@ -8,19 +8,44 @@ public class PlayerMovement : MonoBehaviour
 	public bool IsPlayerOne;
 	public float Speed;
 
+	bool inKnockback = false;
+	float knockbackReleaseThreshold = 0.4f;
+
 	Rigidbody2D myRB;
 	bool facingRight = true;
 
+	// keep track of drag
+	float startingDrag;
+
 	void Start ()
 	{
+
 		myRB = GetComponent<Rigidbody2D> ();
+		startingDrag = myRB.drag;
 	}
 
 
 	void FixedUpdate ()
 	{
-		myRB.velocity = getMovement ();
+		//test knockback
+		if(Input.GetKeyDown(KeyCode.K)) {
+			knockback (40, Vector2.right);
+		}
 
+		//disable movement while knockbacked
+		if(inKnockback) {
+			if (myRB.velocity.x < knockbackReleaseThreshold && myRB.velocity.y < knockbackReleaseThreshold) {
+				inKnockback = false;
+				myRB.drag = startingDrag;
+			}
+
+			return;
+		}
+
+		// basic UDLR movement
+		myRB.AddForce (getMovementVector () * Speed, ForceMode2D.Impulse);
+
+		// flip character to face direction
 		if (myRB.velocity.x > 0 && !facingRight) {
 			flip ();
 		} else if (myRB.velocity.x < 0 && facingRight) {
@@ -29,7 +54,7 @@ public class PlayerMovement : MonoBehaviour
 	}
 
 
-	Vector2 getMovement ()
+	Vector2 getMovementVector ()
 	{
 		float h = 0, v = 0;
 
@@ -79,5 +104,14 @@ public class PlayerMovement : MonoBehaviour
 		transform.localScale = scale;
 
 	}
+
+
+	void knockback(float strength, Vector2 direction) {
+
+		inKnockback = true;
+		myRB.drag = 10; // drag is changed during knockback
+		myRB.AddForce(strength * direction * (1/Time.timeScale), ForceMode2D.Impulse);
+	}
+
 
 }
