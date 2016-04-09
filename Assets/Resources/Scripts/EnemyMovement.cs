@@ -11,8 +11,8 @@ public class EnemyMovement : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		
-		pl1 = GameObject.FindGameObjectWithTag ("PL1");
-		pl2 = GameObject.FindGameObjectWithTag ("PL2");
+		pl1 = GameObject.FindGameObjectWithTag ("Pl1");
+		pl2 = GameObject.FindGameObjectWithTag ("Pl2");
 		enemy_reg = GetComponentInChildren<EnemyRegister> ();
 		col_radius = GetComponent<CircleCollider2D> ().radius;
 		myRB = GetComponent<Rigidbody2D> ();

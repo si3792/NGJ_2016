@@ -11,18 +11,15 @@ public class EnemyRegister : MonoBehaviour {
 		enemies = new List<GameObject> ();
 		swarm_col = GetComponent<CircleCollider2D> ();
 	}
-	void OnCollisionEnter2D(Collision2D coll) 
+	void OnTriggerEnter2D(Collider2D coll) 
 	{
 		EnemyRegister other_enemy = coll.gameObject.GetComponent<EnemyRegister> ();
 		if( other_enemy )
 		{
-			if(swarm_col.IsTouching(coll.collider))
-			{
-				enemies.Add (coll.gameObject);
-			}
+			enemies.Add (coll.gameObject);
 		}
 	}
-	void OnCollisionExit2D(Collision2D coll)
+	void OnTriggerExit2D(Collider2D coll)
 	{
 		EnemyRegister other_enemy = coll.gameObject.GetComponent<EnemyRegister> ();
 		if( other_enemy )
