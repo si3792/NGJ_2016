@@ -11,6 +11,7 @@ TagManager:
   - CrossP2
   - CameraP1
   - CameraP2
+  - Shaker
   layers:
   - Default
   - TransparentFX
