@@ -6,6 +6,11 @@ TagManager:
   tags:
   - Pl1
   - Pl2
+  - CrossMain
+  - CrossP1
+  - CrossP2
+  - CameraP1
+  - CameraP2
   layers:
   - Default
   - TransparentFX

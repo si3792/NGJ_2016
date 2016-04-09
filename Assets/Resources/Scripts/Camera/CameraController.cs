@@ -34,6 +34,9 @@ public class CameraController : MonoBehaviour
 	{
 		if (cameraOff == false) {
 			Vector3 targetCamPos = target.position + offset;
+			targetCamPos.y = this.transform.position.y;
+			targetCamPos.z = this.transform.position.z;
+
 			this.gameObject.transform.position = Vector3.Lerp (transform.position, targetCamPos, smoothing * Time.deltaTime);
 		}
 	}
