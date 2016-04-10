@@ -31,6 +31,7 @@ TagManager:
   - exitInactive
   - hp-bar-mid-r
   - hp-bar-mid-l
+  - SoundFX
   layers:
   - Default
   - TransparentFX

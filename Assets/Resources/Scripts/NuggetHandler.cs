@@ -16,6 +16,12 @@ public class NuggetHandler : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+
+		if(NuggetsToWin == nuggetLeakRate) {
+			gameObject.GetComponent<Spaceship> ().shipFueled ();
+			Destroy (this);
+		}
+
 		if (iter >= nuggetLeakRate) {
 			iter = 0;
 			nuggets--;
