@@ -113,7 +113,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1809823481}
-  m_RootOrder: 9
+  m_RootOrder: 8
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -25.2, y: 70.3}
@@ -361,6 +361,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 419190921}
+  - 114: {fileID: 419190922}
   m_Layer: 0
   m_Name: MenuController
   m_TagString: Untagged
@@ -380,6 +381,17 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 2
+--- !u!114 &419190922
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 419190920}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 980c5c48e0244408e824aa41b9453619, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &765391855
 GameObject:
   m_ObjectHideFlags: 0
@@ -408,7 +420,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1809823481}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 370.9, y: -176.2}
@@ -475,7 +487,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1809823481}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -23.7, y: 72.1}
@@ -542,7 +554,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1809823481}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -23.700012, y: -9.9999695}
@@ -609,7 +621,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1809823481}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -17.1, y: 6.5}
@@ -763,7 +775,7 @@ RectTransform:
   m_LocalScale: {x: 0.65, y: 0.45, z: 1}
   m_Children: []
   m_Father: {fileID: 1809823481}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 368.6, y: -178.6}
@@ -890,12 +902,12 @@ RectTransform:
   - {fileID: 354597188}
   - {fileID: 1821155891}
   - {fileID: 352514240}
-  - {fileID: 765391856}
   - {fileID: 1563287880}
-  - {fileID: 1137281717}
+  - {fileID: 765391856}
   - {fileID: 1114957159}
-  - {fileID: 948171828}
+  - {fileID: 1137281717}
   - {fileID: 175280388}
+  - {fileID: 948171828}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_AnchorMin: {x: 0, y: 0}
