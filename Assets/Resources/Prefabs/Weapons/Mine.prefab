@@ -56,7 +56,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3fd45072f1df2476483822c4dce8747b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  explosion: {fileID: 170912, guid: 27f19609404df4e07a6bac242307bdd0, type: 2}
+  explosion: {fileID: 127096, guid: 4c652b54db2e943abae8321a2762c466, type: 2}
   damage: 100
   explosionRadius: 1.3
 --- !u!114 &11493816
