@@ -159,7 +159,6 @@ GameObject:
   - 58: {fileID: 5831554}
   - 58: {fileID: 5809468}
   - 114: {fileID: 11470318}
-  - 114: {fileID: 11434884}
   m_Layer: 0
   m_Name: PlayerWall
   m_TagString: Untagged
@@ -397,17 +396,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5a2714febe45b4896a107c62820f1e15, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &11434884
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 170350}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 70744d2c2bddd48c2bdd8d515a765b61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &11459942
