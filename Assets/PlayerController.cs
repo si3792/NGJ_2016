@@ -16,7 +16,11 @@ public class PlayerController : MonoBehaviour {
 	void Update () {
 
 		if(health <= 0) {
+			GlobalData.Players--;
 			Destroy (transform.parent.gameObject);
+			if (GlobalData.Players <= 0) {
+				Application.LoadLevel("MenuScene");
+			}
 		}
 	
 	}
