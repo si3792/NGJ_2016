@@ -13,8 +13,10 @@ public class PlayerMovement : MonoBehaviour
 	public float P1WalkSpeed;
 	public Animator myAnim;
 	public bool canDash = false;
-
+	public float specialCooldown = 5.0f;
+	float curCooldownSpecial = 0.0f;
 	bool inKnockback = false;
+	public GameObject specialObject;
 	//public bool pl2WalkToggle = true;
 	float knockbackReleaseThreshold = 0.4f;
 
@@ -75,6 +77,13 @@ public class PlayerMovement : MonoBehaviour
 			} else {
 				myAnim.SetBool ("Shoot", false);
 			}
+			if (Input.GetKey (KeyCode.LeftShift))
+			{
+				if (curCooldownSpecial <= 0.0f) {
+					useSpecial ();
+					curCooldownSpecial = specialCooldown;
+				}
+			}
 		} else  {
 
 			//shoot pl1
@@ -85,7 +94,13 @@ public class PlayerMovement : MonoBehaviour
 				myAnim.SetBool ("Shoot", false);
 				Speed = P1WalkSpeed;
 			}
-
+			if (Input.GetKey (KeyCode.RightShift))
+			{
+				if (curCooldownSpecial <= 0.0f) {
+					useSpecial ();
+					curCooldownSpecial = specialCooldown;
+				}
+			}
 		
 		}
 
@@ -130,6 +145,10 @@ public class PlayerMovement : MonoBehaviour
 			flip ();
 		} else if (mv.x < 0 && facingRight) {
 			flip ();
+		}
+
+		if (curCooldownSpecial > 0.0f) {
+			curCooldownSpecial -= Time.fixedDeltaTime;
 		}
 	}
 
@@ -203,7 +222,17 @@ public class PlayerMovement : MonoBehaviour
 			player2Alive = false;
 	}
 		
-
+	void useSpecial()
+	{
+		Vector3 pos = transform.position;
+		if (!IsPlayerOne) {
+			if (facingRight)
+				pos.x += 0.7f;
+			else
+				pos.x -= 0.7f;
+		}
+		GameObject.Instantiate (specialObject, pos, transform.rotation);
+	}
 
 
 }
