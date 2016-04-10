@@ -14,7 +14,7 @@ public class PlayerMovement : MonoBehaviour
 	public Animator myAnim;
 	public bool canDash = false;
 	public float specialCooldown = 5.0f;
-	float curCooldownSpecial = 0.0f;
+	public float curCooldownSpecial = 0.0f;
 	bool inKnockback = false;
 	public GameObject specialObject;
 	//public bool pl2WalkToggle = true;
@@ -53,6 +53,10 @@ public class PlayerMovement : MonoBehaviour
 	void FixedUpdate ()
 	{
 
+
+		Debug.Log(Input.GetAxis("LeftTriggerP2"));
+		//Debug.Log(Input.GetAxis("LeftTriggerP1"));
+
 		// basic UDLR movement
 		var mv = getMovementVector ();
 
@@ -71,13 +75,13 @@ public class PlayerMovement : MonoBehaviour
 			}
 
 			//shoot pl2
-			if(Input.GetKey(KeyCode.LeftControl) || Input.GetAxis("RightTriggerP2") > 0) {
+			if(Input.GetKey(KeyCode.LeftControl) || Input.GetAxis("RightTriggerP2") != 0) {
 				myAnim.SetBool("Shoot", true);
 
 			} else {
 				myAnim.SetBool ("Shoot", false);
 			}
-			if (Input.GetKey (KeyCode.LeftShift) || Input.GetAxis("LeftTriggerP2") > 0)
+			if (Input.GetKey (KeyCode.LeftShift) || Input.GetAxis("LeftTriggerP2") != 0)
 			{
 				if (curCooldownSpecial <= 0.0f) {
 					useSpecial ();
