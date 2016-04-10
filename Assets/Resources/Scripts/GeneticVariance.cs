@@ -4,8 +4,8 @@ using System.Collections;
 public class GeneticVariance : MonoBehaviour {
 
 	public GameObject animObj;
-	int monster = 0;
-	public int monsterLVL = 0;
+	int monster = 1;
+	public int monsterLVL = 1;
 
 	void Start () {
 
