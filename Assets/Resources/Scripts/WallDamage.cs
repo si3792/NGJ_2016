@@ -14,7 +14,7 @@ public class WallDamage : MonoBehaviour {
 	void Update () {
 		if(health <= 0.0f) {
 			Instantiate (boom, transform.position, Quaternion.Euler (Vector3.zero));
-
+			Instantiate (boom, transform.position, Quaternion.Euler (Vector3.zero));
 			Destroy (transform.parent.gameObject);
 		}
 	}
