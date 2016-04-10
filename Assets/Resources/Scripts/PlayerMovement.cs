@@ -61,7 +61,7 @@ public class PlayerMovement : MonoBehaviour
 		if (!IsPlayerOne) {
 
 			// dash
-			if(Input.GetKeyDown(KeyCode.F) && canDash) {
+			if((Input.GetKeyDown(KeyCode.F) || Input.GetAxis("LeftBumperP2") > 0) && canDash) {
 
 				dash ();
 				myAnim.SetBool ("Dash", true);
@@ -71,13 +71,13 @@ public class PlayerMovement : MonoBehaviour
 			}
 
 			//shoot pl2
-			if(Input.GetKey(KeyCode.LeftControl)) {
+			if(Input.GetKey(KeyCode.LeftControl) || Input.GetAxis("RightTriggerP2") > 0) {
 				myAnim.SetBool("Shoot", true);
 
 			} else {
 				myAnim.SetBool ("Shoot", false);
 			}
-			if (Input.GetKey (KeyCode.LeftShift))
+			if (Input.GetKey (KeyCode.LeftShift) || Input.GetAxis("LeftTriggerP2") > 0)
 			{
 				if (curCooldownSpecial <= 0.0f) {
 					useSpecial ();
@@ -87,7 +87,7 @@ public class PlayerMovement : MonoBehaviour
 		} else  {
 
 			//shoot pl1
-			if(Input.GetKey(KeyCode.RightControl)) {
+			if(Input.GetKey(KeyCode.RightControl) || Input.GetAxis("RightTriggerP1") > 0) {
 				myAnim.SetBool("Shoot", true);
 				Speed = P1ShootWalkSpeed;
 
@@ -100,7 +100,7 @@ public class PlayerMovement : MonoBehaviour
 
 				muzzleFlashP1.GetComponent<SpriteRenderer> ().enabled = false;
 			}
-			if (Input.GetKey (KeyCode.RightShift))
+			if (Input.GetKey (KeyCode.RightShift) || Input.GetAxis("LeftTriggerP1") > 0)
 			{
 				if (curCooldownSpecial <= 0.0f) {
 					useSpecial ();

@@ -167,6 +167,21 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &179916
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 467096}
+  m_Layer: 0
+  m_Name: flashPos
+  m_TagString: pl2-gun
+  m_Icon: {fileID: 2270504221434485236, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &189066
 GameObject:
   m_ObjectHideFlags: 1
@@ -312,7 +327,8 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.085, y: 0.042, z: -0.013671875}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 467096}
   m_Father: {fileID: 488428}
   m_RootOrder: 3
 --- !u!4 &440950
@@ -378,6 +394,18 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 488428}
+  m_RootOrder: 0
+--- !u!4 &467096
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 179916}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.779, y: -0.041, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 433598}
   m_RootOrder: 0
 --- !u!4 &469306
 Transform:
@@ -534,6 +562,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nuggets: 0
+  NuggetsToWin: 0
+  nuggetLeakRate: 1000
 --- !u!114 &11427966
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -610,6 +640,8 @@ MonoBehaviour:
   P1WalkSpeed: 0
   myAnim: {fileID: 0}
   canDash: 0
+  specialCooldown: 5
+  specialObject: {fileID: 0}
 --- !u!114 &11462816
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -623,6 +655,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   muzzleTip: {fileID: 459680}
   bullet: {fileID: 197334, guid: 581a542e3d66945cd9ff505493c7df21, type: 2}
+  muzzleFlash: {fileID: 193380, guid: e21955507601447f1b83f0f8a65ea60d, type: 2}
   deviation: 1
 --- !u!114 &11469506
 MonoBehaviour:
@@ -647,6 +680,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 100
+  MaxHP: 0
 --- !u!114 &11476612
 MonoBehaviour:
   m_ObjectHideFlags: 1
