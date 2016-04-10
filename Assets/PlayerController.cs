@@ -30,7 +30,7 @@ public class PlayerController : MonoBehaviour {
 	void OnTriggerStay2D(Collider2D other) {
 		if(other.gameObject.tag == "BeetleHurt") {
 			//transform.parent.GetComponent<PlayerMovement> ().knockback (60, new Vector2 (transform.position.x - other.gameObject.transform.position.x, 0f));
-			health -= 10 * Time.fixedDeltaTime;
+			health -= 10 * Time.fixedDeltaTime * other.transform.parent.GetComponent<GeneticVariance>().monsterLVL;
 		}
 	}
 
