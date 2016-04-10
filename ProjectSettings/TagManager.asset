@@ -20,6 +20,12 @@ TagManager:
   - explosion
   - psaiSplit
   - psaiTogether
+  - exitActive
+  - exitInactive
+  - switchActive
+  - switchInactive
+  - goActive
+  - goInactive
   layers:
   - Default
   - TransparentFX
