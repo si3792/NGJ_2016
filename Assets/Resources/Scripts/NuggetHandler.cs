@@ -5,9 +5,9 @@ public class NuggetHandler : MonoBehaviour {
 
 	public int nuggets = 200;
 	public int NuggetsToWin;
-	public int nuggetLeakRate = 1000;
+	public float nuggetLeakRate = 7.0f;
 
-	int iter = 0;
+	float timeToLeak = 0.0f;
 
 	// Use this for initialization
 	void Start () {
@@ -17,15 +17,17 @@ public class NuggetHandler : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-		if(NuggetsToWin == nuggetLeakRate) {
-			gameObject.GetComponent<Spaceship> ().shipFueled ();
-			Destroy (this);
+		if( this.tag == "the-ship" )
+		{
+			if (NuggetsToWin == nuggets) {
+				gameObject.GetComponentInChildren<Spaceship> ().shipFueled ();
+				Destroy (this);
+			}
+			if (timeToLeak < 0 ) {
+				timeToLeak = nuggetLeakRate;
+				nuggets--;
+			}
+			timeToLeak -= Time.deltaTime;
 		}
-
-		if (iter >= nuggetLeakRate) {
-			iter = 0;
-			nuggets--;
-		}
-		iter++;
 	}
 }
