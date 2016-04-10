@@ -52,10 +52,7 @@ public class PlayerMovement : MonoBehaviour
 
 	void FixedUpdate ()
 	{
-
-
-		Debug.Log(Input.GetAxis("LeftTriggerP2"));
-		//Debug.Log(Input.GetAxis("LeftTriggerP1"));
+		//Debug.Log(Input.GetAxis("RightTriggerP2"));
 
 		// basic UDLR movement
 		var mv = getMovementVector ();
@@ -104,7 +101,7 @@ public class PlayerMovement : MonoBehaviour
 
 				muzzleFlashP1.GetComponent<SpriteRenderer> ().enabled = false;
 			}
-			if (Input.GetKey (KeyCode.RightShift) || Input.GetAxis("LeftTriggerP1") > 0)
+			if (Input.GetKey (KeyCode.RightShift) || Input.GetAxis("LeftTriggerP1") != 0)
 			{
 				if (curCooldownSpecial <= 0.0f) {
 					useSpecial ();
