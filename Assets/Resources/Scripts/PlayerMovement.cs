@@ -38,7 +38,16 @@ public class PlayerMovement : MonoBehaviour
 	{
 		if (!IsPlayerOne) {
 			myAnim.SetFloat ("ms", 0);
-		
+
+			//shoot
+
+			if(Input.GetKey(KeyCode.LeftControl)) {
+				myAnim.SetBool("Shoot", true);
+			} else {
+				myAnim.SetBool ("Shoot", false);
+			}
+
+
 		}
 
 		//test knockback
