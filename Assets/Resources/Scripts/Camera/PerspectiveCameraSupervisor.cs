@@ -74,10 +74,11 @@ public class PerspectiveCameraSupervisor : MonoBehaviour {
 				Debug.Log("Unrecognized CameraId in CameraSupervisor.FocusCameraOnPoint");
 				break;
 		}
+		focalPoint.ForceFocus(center);
+
 		var oldPos = camObj.transform.position;
 		center.z = -(height * 0.5f / Mathf.Tan(camObj.fieldOfView * 0.5f * Mathf.Deg2Rad));
-		focalPoint.ForceFocus(center);
-		Debug.Log(center.z);
+		camMain.transform.position = center;
 		addDelayedExecution(time, new DelayedExecution( 
 			() => { 
 				camObj.transform.position = new Vector3(camObj.transform.position.x, camObj.transform.position.y, oldPos.z);

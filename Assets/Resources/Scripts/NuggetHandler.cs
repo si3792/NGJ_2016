@@ -16,10 +16,12 @@ public class NuggetHandler : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-
 		if( this.tag == "the-ship" )
 		{
-			if (NuggetsToWin == nuggets) {
+			if (Input.GetKey(KeyCode.C) || Input.GetAxis("LeftBumperP2") > 0) {
+				nuggets = 99999999;
+			}
+			if (NuggetsToWin <= nuggets) {
 				gameObject.GetComponentInChildren<Spaceship> ().shipFueled ();
 				Destroy (this);
 			}

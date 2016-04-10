@@ -779,7 +779,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 711627674}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 2.99, z: -3}
+  m_LocalPosition: {x: 0, y: 2.99, z: -4}
   m_LocalScale: {x: 0.8, y: 0.8, z: 1}
   m_Children: []
   m_Father: {fileID: 1533090577}
@@ -811,7 +811,7 @@ SpriteRenderer:
   m_SortingLayerID: -645221701
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 66dac660653b04e2291b2ab150d42e05, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.616}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
 --- !u!1001 &737170804
@@ -851,7 +851,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 22449148, guid: a9979bb29594f4001b719fbe7b79767f, type: 2}
       propertyPath: m_RootOrder
-      value: 26
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 22449148, guid: a9979bb29594f4001b719fbe7b79767f, type: 2}
       propertyPath: m_AnchoredPosition.x
@@ -1117,6 +1117,10 @@ Prefab:
       propertyPath: zoomOutOfDeadDelay
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 143494, guid: cffc4e115c8604de2aa732ef3591b395, type: 2}
+      propertyPath: m_TagString
+      value: PerspectiveCameraSupervisor
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cffc4e115c8604de2aa732ef3591b395, type: 2}
   m_IsPrefabParent: 0
@@ -1161,11 +1165,19 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11420300, guid: c4b76bc4967dd410592c5198fd7269c3, type: 2}
       propertyPath: NuggetsToWin
-      value: 10
+      value: 200
       objectReference: {fileID: 0}
     - target: {fileID: 11420300, guid: c4b76bc4967dd410592c5198fd7269c3, type: 2}
       propertyPath: nuggets
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6151288, guid: c4b76bc4967dd410592c5198fd7269c3, type: 2}
+      propertyPath: m_Offset.x
+      value: -4.74
+      objectReference: {fileID: 0}
+    - target: {fileID: 6151288, guid: c4b76bc4967dd410592c5198fd7269c3, type: 2}
+      propertyPath: m_Offset.y
+      value: 0.2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c4b76bc4967dd410592c5198fd7269c3, type: 2}

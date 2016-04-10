@@ -422,7 +422,7 @@ InputManager:
     axis: 0
     joyNum: 2
   - serializedVersion: 3
-    m_Name: RightTriggerP2
+    m_Name: LeftTriggerP2
     descriptiveName: 
     descriptiveNegativeName: 
     negativeButton: 
@@ -438,7 +438,7 @@ InputManager:
     axis: 4
     joyNum: 2
   - serializedVersion: 3
-    m_Name: LeftTriggerP2
+    m_Name: RightTriggerP2
     descriptiveName: 
     descriptiveNegativeName: 
     negativeButton: 
