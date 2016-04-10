@@ -23,6 +23,12 @@ TagManager:
   - pl2-gun
   - the-ship
   - p1-muzzle-flash
+  - switchActive
+  - switchInactive
+  - goActive
+  - goInactive
+  - exitActive
+  - exitInactive
   layers:
   - Default
   - TransparentFX

@@ -4,7 +4,7 @@ using UnityEngine.UI;
 public class MenuController : MonoBehaviour {
 
 	int active = 2;
-	float secondsBreak = 7f;
+	float secondsBreak = 9f;
 	float cooldown;
 	bool playersSwitched = false;
 	Image switchOn, switchOff, goOn, goOff, exitOn, exitOff;
