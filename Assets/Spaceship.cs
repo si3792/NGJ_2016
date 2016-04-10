@@ -20,6 +20,8 @@ public class Spaceship : MonoBehaviour {
 	}
 
 	public void liftoff() {
+		var cam = GameObject.FindGameObjectWithTag("PerspectiveCameraSupervisor").GetComponent<PerspectiveCameraSupervisor>();
+		cam.FocusCameraOnPoint(new Vector2(transform.position.x - 40, transform.position.y), 10, CameraId.main, 30);
 		anim.SetBool ("PlayerIn", true);
 	}
 

@@ -75,6 +75,7 @@ public class PerspectiveCameraSupervisor : MonoBehaviour {
 				break;
 		}
 		var oldPos = camObj.transform.position;
+		Debug.Log(z);
 		center.z = -(height * 0.5f / Mathf.Tan(camObj.fieldOfView * 0.5f * Mathf.Deg2Rad));
 		focalPoint.ForceFocus(center);
 		addDelayedExecution(time, new DelayedExecution( 

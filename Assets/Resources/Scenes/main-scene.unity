@@ -1161,7 +1161,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11420300, guid: c4b76bc4967dd410592c5198fd7269c3, type: 2}
       propertyPath: NuggetsToWin
-      value: 100
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 11420300, guid: c4b76bc4967dd410592c5198fd7269c3, type: 2}
       propertyPath: nuggets
@@ -1697,7 +1697,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 120476, guid: 66f558eadb097744e892fea6020e5257, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 66f558eadb097744e892fea6020e5257, type: 2}
@@ -1712,7 +1712,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1733957352}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ad8b19284f7bc49b1b0611f1b61901ab, type: 3}
   m_Name: 
