@@ -126,9 +126,9 @@ public class PlayerMovement : MonoBehaviour
 			
 
 		// flip character to face direction
-		if (myRB.velocity.x > 0 && !facingRight) {
+		if (mv.x > 0 && !facingRight) {
 			flip ();
-		} else if (myRB.velocity.x < 0 && facingRight) {
+		} else if (mv.x < 0 && facingRight) {
 			flip ();
 		}
 	}

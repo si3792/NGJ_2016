@@ -20,6 +20,7 @@ TagManager:
   - explosion
   - psaiSplit
   - psaiTogether
+  - pl2-gun
   layers:
   - Default
   - TransparentFX
