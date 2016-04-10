@@ -12,6 +12,7 @@ public class PlayerMovement : MonoBehaviour
 	public float P1ShootWalkSpeed;
 	public float P1WalkSpeed;
 	public Animator myAnim;
+	public bool canDash = false;
 
 	bool inKnockback = false;
 	//public bool pl2WalkToggle = true;
@@ -22,6 +23,12 @@ public class PlayerMovement : MonoBehaviour
 
 	// keep track of drag
 	float startingDrag;
+
+	void dash() {
+
+		var dir = new Vector2 ( (facingRight)? 1:-1  , 0);
+		myRB.AddForce ( dir * 2500 * Time.deltaTime, ForceMode2D.Impulse);
+	}
 
 
 	void Start ()
@@ -49,7 +56,17 @@ public class PlayerMovement : MonoBehaviour
 		myAnim.SetFloat ("ms", 0);
 
 		if (!IsPlayerOne) {
-			
+
+			// dash
+			if(Input.GetKeyDown(KeyCode.F) && canDash) {
+
+				dash ();
+				myAnim.SetBool ("Dash", true);
+
+			} else {
+				myAnim.SetBool ("Dash", false);
+			}
+
 			//shoot pl2
 			if(Input.GetKey(KeyCode.LeftControl)) {
 				myAnim.SetBool("Shoot", true);
@@ -175,6 +192,8 @@ public class PlayerMovement : MonoBehaviour
 		myRB.drag = 10; // drag is changed during knockback
 		myRB.AddForce(strength * direction * (1/Time.timeScale), ForceMode2D.Impulse);
 	}
+
+
 
 	void OnDestroy()
 	{
