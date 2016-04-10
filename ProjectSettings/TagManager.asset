@@ -21,6 +21,8 @@ TagManager:
   - psaiSplit
   - psaiTogether
   - pl2-gun
+  - the-ship
+  - p1-muzzle-flash
   layers:
   - Default
   - TransparentFX
