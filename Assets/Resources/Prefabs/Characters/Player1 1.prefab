@@ -9,6 +9,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 492022}
   - 212: {fileID: 21224730}
+  - 114: {fileID: 11405360}
   m_Layer: 0
   m_Name: _0007_Leg2
   m_TagString: Untagged
@@ -25,6 +26,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 407050}
   - 212: {fileID: 21217164}
+  - 114: {fileID: 11455672}
   m_Layer: 0
   m_Name: _0002_Gun
   m_TagString: Untagged
@@ -41,7 +43,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 422242}
   - 95: {fileID: 9564016}
-  - 114: {fileID: 11492978}
+  - 114: {fileID: 11453054}
   m_Layer: 0
   m_Name: Blue
   m_TagString: Untagged
@@ -58,6 +60,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 435852}
   - 212: {fileID: 21214882}
+  - 114: {fileID: 11454302}
   m_Layer: 0
   m_Name: _0005_Head
   m_TagString: Untagged
@@ -89,6 +92,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 460070}
   - 212: {fileID: 21210888}
+  - 114: {fileID: 11422596}
   m_Layer: 0
   m_Name: _0004_Arm2Lower
   m_TagString: Untagged
@@ -126,6 +130,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 458090}
   - 212: {fileID: 21224392}
+  - 114: {fileID: 11458324}
   m_Layer: 0
   m_Name: _0003_Arm2Upper
   m_TagString: Untagged
@@ -172,6 +177,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 402278}
   - 212: {fileID: 21285382}
+  - 114: {fileID: 11467640}
   m_Layer: 0
   m_Name: _0006_Leg1
   m_TagString: Untagged
@@ -188,6 +194,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 426052}
   - 212: {fileID: 21245848}
+  - 114: {fileID: 11459474}
   m_Layer: 0
   m_Name: _0008_Body
   m_TagString: Untagged
@@ -204,6 +211,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 468246}
   - 212: {fileID: 21206368}
+  - 114: {fileID: 11412816}
   m_Layer: 0
   m_Name: _0001_Arm1Lower
   m_TagString: Untagged
@@ -220,6 +228,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 454388}
   - 212: {fileID: 21227158}
+  - 114: {fileID: 11415386}
   m_Layer: 0
   m_Name: _0000_Arm1Upper
   m_TagString: Untagged
@@ -237,6 +246,7 @@ GameObject:
   - 4: {fileID: 463254}
   - 61: {fileID: 6155546}
   - 114: {fileID: 11477328}
+  - 114: {fileID: 11448026}
   m_Layer: 0
   m_Name: hurtbox
   m_TagString: pl-hurtbox
@@ -511,6 +521,120 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70744d2c2bddd48c2bdd8d515a765b61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &11405360
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 101480}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a2714febe45b4896a107c62820f1e15, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &11412816
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 146740}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a2714febe45b4896a107c62820f1e15, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &11415386
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 156548}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a2714febe45b4896a107c62820f1e15, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &11422596
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 115856}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a2714febe45b4896a107c62820f1e15, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &11448026
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 160906}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53ccd1639b98048a28f96eee82d5143c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nuggets: 0
+--- !u!114 &11453054
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 105214}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65b69f6ca5ee8421a9e11182841a3c1e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  muzzleTip: {fileID: 433420}
+  bullet: {fileID: 154468, guid: e3fce964b44a149b1b037526129148b5, type: 2}
+  deviation: 1
+--- !u!114 &11454302
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 110178}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a2714febe45b4896a107c62820f1e15, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &11455672
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 104634}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a2714febe45b4896a107c62820f1e15, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &11458324
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 124930}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a2714febe45b4896a107c62820f1e15, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &11459474
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 141572}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a2714febe45b4896a107c62820f1e15, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &11464120
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -524,6 +648,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   IsPlayerOne: 1
   Speed: 100
+  P1ShootWalkSpeed: 100
+  P1WalkSpeed: 150
   myAnim: {fileID: 0}
 --- !u!114 &11465628
 MonoBehaviour:
@@ -531,7 +657,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 117182}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cea566cee0c8e44de9d9bb278df6ea47, type: 3}
   m_Name: 
@@ -540,6 +666,17 @@ MonoBehaviour:
   deviation: 1
   bullet: {fileID: 154468, guid: e3fce964b44a149b1b037526129148b5, type: 2}
   muzzleTip: {fileID: 433420}
+--- !u!114 &11467640
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 140476}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a2714febe45b4896a107c62820f1e15, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &11477328
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -552,20 +689,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 100
---- !u!114 &11492978
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 105214}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9ed119e0b45b64d57a30629ae98e75ac, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  muzzleTip: {fileID: 433420}
-  bullet: {fileID: 154468, guid: e3fce964b44a149b1b037526129148b5, type: 2}
-  deviation: 1
 --- !u!212 &21206368
 SpriteRenderer:
   m_ObjectHideFlags: 1

@@ -8,7 +8,6 @@ public class NuggetController : MonoBehaviour {
 	float dist1, dist2, dist;
 	Transform target;
 	float threshold= 2;
-	float smoothing = 0.5f	;
 
 	float getSmoothing(float dist) {
 		return threshold / dist;
@@ -53,7 +52,7 @@ public class NuggetController : MonoBehaviour {
 
 		if(other.tag == "pl-hurtbox") {
 			Destroy (this.gameObject);
-			//TODo - effect and add score
+			other.gameObject.GetComponent<NuggetHandler> ().nuggets++;
 		}
 
 	}
