@@ -233,7 +233,6 @@ GameObject:
   - 58: {fileID: 5893156}
   - 114: {fileID: 11476612}
   - 114: {fileID: 11444994}
-  - 114: {fileID: 11496296}
   m_Layer: 0
   m_Name: Player2
   m_TagString: Pl2
@@ -610,6 +609,7 @@ MonoBehaviour:
   P1ShootWalkSpeed: 0
   P1WalkSpeed: 0
   myAnim: {fileID: 0}
+  canDash: 0
 --- !u!114 &11462816
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -691,18 +691,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a2714febe45b4896a107c62820f1e15, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &11496296
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 196824}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 53ccd1639b98048a28f96eee82d5143c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  nuggets: 0
 --- !u!114 &11497860
 MonoBehaviour:
   m_ObjectHideFlags: 1
