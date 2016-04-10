@@ -21,9 +21,9 @@ public class SimpleShoot : MonoBehaviour
 			nextFire = Time.timeSinceLevelLoad + FireRate;
 
 			if (gameObject.GetComponent<PlayerMovement> ().GetFacingRight ()) {
-				reff = (GameObject)Instantiate (bullet, muzzleTip.position, Quaternion.Euler (new Vector3(0, 0, -90 + Random.Range(-deviation, deviation))));
+				reff = (GameObject)Instantiate (bullet, muzzleTip.position, Quaternion.Euler (new Vector3(0, 0, 180 + Random.Range(-deviation, deviation))));
 			} else {
-				reff = (GameObject)Instantiate (bullet, muzzleTip.position, Quaternion.Euler (new Vector3(0, 0, 90 + Random.Range(-deviation, deviation))));
+				reff = (GameObject)Instantiate (bullet, muzzleTip.position, Quaternion.Euler (new Vector3(0, 0, 0 + Random.Range(-deviation, deviation))));
 			}
 
 			reff.GetComponent<RandomizeSpriteOnCommand> ().randomize ();
