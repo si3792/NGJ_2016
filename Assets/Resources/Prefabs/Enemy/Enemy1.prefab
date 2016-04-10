@@ -63,6 +63,7 @@ GameObject:
   - 50: {fileID: 5017252}
   - 114: {fileID: 11462022}
   - 114: {fileID: 11451226}
+  - 114: {fileID: 11493592}
   m_Layer: 0
   m_Name: Enemy1
   m_TagString: BeetleHurt
@@ -519,6 +520,44 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a2714febe45b4896a107c62820f1e15, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &11493592
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 129136}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c57bb3dd235686546bd958b66c29d4e6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TriggerType: 0
+  themeId: 7
+  _immediately: 0
+  _keepSilentUntilNextTrigger: 1
+  _overrideDefaultFadeoutTime: 0
+  _fadeOutSeconds: 3
+  _dontExecuteIfOtherTriggersAreFiring: 0
+  _restrictBlockToThisThemeType: 0
+  _overrideDefaultRestTime: 0
+  _overrideRestSecondsMin: 30
+  _overrideRestSecondsMax: 60
+  overrideMusicDurationInSeconds: 1
+  musicDurationInSeconds: 3
+  fireContinuously: 1
+  deactivateAfterFiringOnce: 0
+  hasFired: 0
+  resetHasFiredStateOnDisable: 0
+  addUpIntensities: 1
+  limitIntensitySum: 1
+  interruptAnyTheme: 0
+  playerCollider: {fileID: 0}
+  player2Collider: {fileID: 0}
+  localCollider: {fileID: 0}
+  triggerRadius: 10
+  minimumIntensity: 0.39636365
+  maximumIntensity: 0.50363636
+  scaleIntensityByDistance: 1
 --- !u!212 &21209188
 SpriteRenderer:
   m_ObjectHideFlags: 1
