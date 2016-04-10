@@ -542,6 +542,14 @@ Prefab:
       propertyPath: m_Name
       value: Canvas
       objectReference: {fileID: 0}
+    - target: {fileID: 22421178, guid: 8da404d3e38494bc59d10427028dbc62, type: 2}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 22421178, guid: 8da404d3e38494bc59d10427028dbc62, type: 2}
+      propertyPath: m_SizeDelta.x
+      value: 2.8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8da404d3e38494bc59d10427028dbc62, type: 2}
   m_IsPrefabParent: 0
