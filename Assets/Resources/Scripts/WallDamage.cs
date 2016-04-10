@@ -4,6 +4,7 @@ using System.Collections;
 public class WallDamage : MonoBehaviour {
 
 	public float health = 100.0f;
+	public GameObject boom;
 	// Use this for initialization
 	void Start () {
 	
@@ -12,6 +13,8 @@ public class WallDamage : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if(health <= 0.0f) {
+			Instantiate (boom, transform.position, Quaternion.Euler (Vector3.zero));
+
 			Destroy (transform.parent.gameObject);
 		}
 	}
