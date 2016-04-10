@@ -23,7 +23,12 @@ public class Spaceship : MonoBehaviour {
 		anim.SetBool ("PlayerIn", true);
 	}
 
+	public void startEngines() {
 
+		foreach(GameObject go in GameObject.FindGameObjectsWithTag("Engine")) {
+			go.GetComponent<ParticleSystem> ().Play ();
+		}
+	}
 
 
 	public void OnTriggerEnter2D(Collider2D other) {
