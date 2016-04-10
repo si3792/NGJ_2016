@@ -4,11 +4,13 @@ using System.Collections;
 public class EnemyDamageScript : MonoBehaviour {
 
 
-	float health = 50;
+	public float health = 50;
 	public float biomassSpawnChance = 0.6f;
 	bool died = false;
 	public GameObject biomassDrop;
 	public GameObject psFx;
+	public float pl2BulletDamage;
+	public GameObject explosion;
 
 	void Start () {
 	
@@ -22,6 +24,10 @@ public class EnemyDamageScript : MonoBehaviour {
 	void OnTriggerEnter2D(Collider2D other) {
 		if(other.gameObject.tag  == "Bullet") {
 			health -= other.gameObject.GetComponent<BulletMovement> ().damage;
+
+			if( other.gameObject.GetComponent<BulletMovement> ().damage == pl2BulletDamage) {
+				Instantiate (explosion, other.transform.position, Quaternion.Euler (Vector3.zero));
+			}
 			Destroy (other.gameObject);
 		}
 		if (other.gameObject.tag == "Explosion") {

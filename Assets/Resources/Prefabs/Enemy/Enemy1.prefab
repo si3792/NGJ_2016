@@ -509,6 +509,8 @@ MonoBehaviour:
   biomassSpawnChance: 0.6
   biomassDrop: {fileID: 105574, guid: 1966f99af4b28430db9334e62107c5b1, type: 2}
   psFx: {fileID: 174830, guid: 7c8a0fcac31834d399640159a1770f8a, type: 2}
+  pl2BulletDamage: 100
+  explosion: {fileID: 127096, guid: 4c652b54db2e943abae8321a2762c466, type: 2}
 --- !u!114 &11491304
 MonoBehaviour:
   m_ObjectHideFlags: 1
