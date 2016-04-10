@@ -20,12 +20,9 @@ TagManager:
   - explosion
   - psaiSplit
   - psaiTogether
-  - exitActive
-  - exitInactive
-  - switchActive
-  - switchInactive
-  - goActive
-  - goInactive
+  - pl2-gun
+  - the-ship
+  - p1-muzzle-flash
   layers:
   - Default
   - TransparentFX
