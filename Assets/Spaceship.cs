@@ -38,6 +38,9 @@ public class Spaceship : MonoBehaviour {
 				if (playersIn == 2)
 					liftoff ();
 
+				if(playersIn == 1 && (PlayerMovement.player1Alive == false || PlayerMovement.player2Alive == false )  )
+					liftoff ();
+
 			}
 
 		}
