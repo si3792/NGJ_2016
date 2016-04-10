@@ -56,6 +56,10 @@ public class EnemyDamageScript : MonoBehaviour {
 			Destroy (gameObject.transform.parent.gameObject);
 		}
 	}
+	void OnDestroy()
+	{
+		WaveSpawn.bugCount--;
+	}
 
 
 }

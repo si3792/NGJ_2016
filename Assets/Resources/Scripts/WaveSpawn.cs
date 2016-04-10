@@ -10,6 +10,9 @@ public class WaveSpawn : MonoBehaviour {
 	public float Enemy1SpawnMeanLinearGrowth = 1f;
 	public float uniformPercent = 0.5f;
 	public float spawnTimeMean = 0.75f;
+	public int maxBugs = 50;
+	public static int globalWave = 0;
+	public static int bugCount = 0;
 	public GameObject Enemy1;
 	float timeToWave;
 	float timeToEmit;
@@ -35,6 +38,8 @@ public class WaveSpawn : MonoBehaviour {
 				waveMeanStart *= waveGrowth;
 				Enemy1SpawnMeanStart *= Enemy1SpawnMeanExpGrowth;
 				Enemy1SpawnMeanStart += Enemy1SpawnMeanLinearGrowth;
+				if (Random.Range (0.0f, 1.0f) < 0.3)
+					globalWave++;
 				timeToWave = restMean * Random.Range (uniformPercent, 1f + uniformPercent);
 			}
 			timeToWait -= Time.deltaTime;
@@ -52,8 +57,10 @@ public class WaveSpawn : MonoBehaviour {
 	{
 		int Enemy1Cnt = Mathf.RoundToInt (Enemy1SpawnMeanStart * Random.Range (uniformPercent, 1f + uniformPercent));
 		for (int i = 0; i < Enemy1Cnt; i++) {
-			GameObject.Instantiate (Enemy1, transform.position + new Vector3(Random.Range(-1f, 1f), Random.Range(-1f, 1f), 0), transform.rotation);
-
+			if (bugCount < maxBugs) {
+				GameObject.Instantiate (Enemy1, transform.position + new Vector3 (Random.Range (-1f, 1f), Random.Range (-1f, 1f), 0), transform.rotation);
+				bugCount++;
+			}
 		}
 
 	}
