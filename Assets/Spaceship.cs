@@ -23,10 +23,7 @@ public class Spaceship : MonoBehaviour {
 		anim.SetBool ("PlayerIn", true);
 	}
 
-	void Update() {
-		if()
 
-	}
 
 
 	public void OnTriggerEnter2D(Collider2D other) {
