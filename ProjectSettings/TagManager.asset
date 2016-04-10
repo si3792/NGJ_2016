@@ -29,6 +29,8 @@ TagManager:
   - goInactive
   - exitActive
   - exitInactive
+  - hp-bar-mid-r
+  - hp-bar-mid-l
   layers:
   - Default
   - TransparentFX

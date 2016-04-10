@@ -3,10 +3,13 @@ using System.Collections;
 
 public class PlayerController : MonoBehaviour {
 
-	public float health = 100;
+	public float health = 100f;
+	public float MaxHP = 0f;
 
 	void Start () {
-		
+		if (MaxHP == 0) {
+			MaxHP = health;
+		}	
 	}
 	
 

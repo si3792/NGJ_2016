@@ -56,7 +56,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53ccd1639b98048a28f96eee82d5143c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nuggets: 0
+  nuggets: 200
+  NuggetsToWin: 2000
+  nuggetLeakRate: 1000
 --- !u!114 &11463250
 MonoBehaviour:
   m_ObjectHideFlags: 1
