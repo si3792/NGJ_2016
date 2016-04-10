@@ -18,6 +18,8 @@ TagManager:
   - Mine
   - enemy-hurtbox
   - explosion
+  - psaiSplit
+  - psaiTogether
   layers:
   - Default
   - TransparentFX
