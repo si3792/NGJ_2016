@@ -17,26 +17,34 @@ public class EnemyMovement : MonoBehaviour {
 		col_radius = GetComponent<CircleCollider2D> ().radius;
 		myRB = GetComponent<Rigidbody2D> ();
 		anim = GetComponentInChildren<Animator> ();
-
+		target = pl1;
+		targetDist = float.MaxValue; 
 	}
 	float targetDist;
 	float targetAngle = 1.0f;
+	GameObject target;
+
 	void FixedUpdate()
 	{
-		GameObject target;
-		if (PlayerMovement.player1Alive) {
-			targetDist = Vector2.Distance (transform.position, pl1.transform.position);
-			target = pl1;
-		} else {
-			target = pl2;
-			if (PlayerMovement.player2Alive)
-				targetDist = Vector2.Distance (transform.position, pl2.transform.position);
+		if (target == null)
+			targetDist = float.MaxValue;
+		else
+			targetDist = Vector2.Distance (transform.position, target.transform.position);
+		
+		if (pl1 != null) {
+			if (targetDist > Vector2.Distance (transform.position, pl1.transform.position)) {	
+				target = pl1;
+				targetDist = Vector2.Distance (transform.position, pl1.transform.position);
+			}
 		}
-		if( PlayerMovement.player2Alive && Vector2.Distance(transform.position, pl2.transform.position) < targetDist)
+		if( pl2 != null )
 		{
-			targetDist = Vector2.Distance (transform.position, pl2.transform.position);
-			target = pl2;
+			if (Vector2.Distance (transform.position, pl2.transform.position) < targetDist) {
+				target = pl2;
+				targetDist = Vector2.Distance (transform.position, pl2.transform.position);
+			}
 		}
+
 		if (target.transform.position.x < transform.position.x) {
 			targetAngle = -1.0f;
 		} else {
@@ -81,10 +89,15 @@ public class EnemyMovement : MonoBehaviour {
 			//Normalize the vector so that we get a vector that points in a certain direction, which we van multiply by our desired speed
 			pull.Normalize();
 			//Set the ships new position;
-			myRB.AddForce( pull * speed * Time.deltaTime, ForceMode2D.Impulse );
+			myRB.AddForce( pull * speed * Time.fixedDeltaTime, ForceMode2D.Impulse );
 		}
 
 
+	}
+	public void SwitchTarget(GameObject target)
+	{
+		this.target = target;
+		targetDist = Vector2.Distance (transform.position, target.transform.position);
 	}
 	// Update is called once per frame
 	void Update () {
