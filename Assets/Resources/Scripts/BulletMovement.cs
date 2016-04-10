@@ -6,10 +6,13 @@ public class BulletMovement : MonoBehaviour {
 	public float Speed;
 	public float damage = 50;
 
+
 	void Update()
 	{
-		this.gameObject.transform.position += transform.up * Time.deltaTime * Speed;
+		this.gameObject.transform.position += transform.right * Time.deltaTime * -Speed;
 
+		if(Random.value > 0.2f)
+		this.gameObject.GetComponent<RandomizeSpriteOnCommand> ().randomize ();
 	}
 
 }

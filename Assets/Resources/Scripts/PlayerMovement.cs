@@ -9,9 +9,12 @@ public class PlayerMovement : MonoBehaviour
 
 	public bool IsPlayerOne;
 	public float Speed;
+	public float P1ShootWalkSpeed;
+	public float P1WalkSpeed;
 	public Animator myAnim;
 
 	bool inKnockback = false;
+	//public bool pl2WalkToggle = true;
 	float knockbackReleaseThreshold = 0.4f;
 
 	Rigidbody2D myRB;
@@ -20,15 +23,18 @@ public class PlayerMovement : MonoBehaviour
 	// keep track of drag
 	float startingDrag;
 
+
 	void Start ()
 	{
 
 		myRB = GetComponent<Rigidbody2D> ();
 		startingDrag = myRB.drag;
 
-		if(!IsPlayerOne)
-		myAnim = transform.Find ("RedObject").gameObject.GetComponent<Animator> ();
-	}
+		if (!IsPlayerOne)
+			myAnim = transform.Find ("RedObject").gameObject.GetComponent<Animator> ();
+		else
+			myAnim = transform.Find ("BlueObject").transform.GetChild(0).gameObject.GetComponent<Animator> ();
+	}	
 
 	public bool GetFacingRight() {
 		return facingRight;
@@ -36,8 +42,33 @@ public class PlayerMovement : MonoBehaviour
 
 	void FixedUpdate ()
 	{
+
+		// basic UDLR movement
+		var mv = getMovementVector ();
+
+		myAnim.SetFloat ("ms", 0);
+
 		if (!IsPlayerOne) {
-			myAnim.SetFloat ("ms", 0);
+			
+			//shoot pl2
+			if(Input.GetKey(KeyCode.LeftControl)) {
+				myAnim.SetBool("Shoot", true);
+
+
+			} else {
+				myAnim.SetBool ("Shoot", false);
+			}
+		} else  {
+
+			//shoot pl1
+			if(Input.GetKey(KeyCode.RightControl)) {
+				myAnim.SetBool("Shoot", true);
+				Speed = P1ShootWalkSpeed;
+			} else {
+				myAnim.SetBool ("Shoot", false);
+				Speed = P1WalkSpeed;
+			}
+
 		
 		}
 
@@ -56,14 +87,26 @@ public class PlayerMovement : MonoBehaviour
 			return;
 		}
 
-		// basic UDLR movement
-		var mv = getMovementVector ();
 
-		//animator
-		if(mv != Vector2.zero && !IsPlayerOne) myAnim.SetFloat("ms", 1); 
+
+		if(IsPlayerOne) {
+			myRB.AddForce (mv * Speed, ForceMode2D.Impulse);
+
+			if(mv != Vector2.zero) myAnim.SetFloat("ms", 1);
+
+		} else {
+
+			//if(pl2WalkToggle) {
+				myRB.AddForce (mv * Speed, ForceMode2D.Impulse);
+			//}
+
+			//animator
+			if(mv != Vector2.zero) myAnim.SetFloat("ms", 1);
+		}
+
+	 
 
 			
-		myRB.AddForce (mv * Speed, ForceMode2D.Impulse);
 
 		// flip character to face direction
 		if (myRB.velocity.x > 0 && !facingRight) {
@@ -141,4 +184,7 @@ public class PlayerMovement : MonoBehaviour
 			player2Alive = false;
 	}
 		
+
+
+
 }

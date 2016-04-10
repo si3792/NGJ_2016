@@ -27,8 +27,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 154468}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -13.1873455, y: -8.604927, z: 0}
-  m_LocalScale: {x: 1.5, y: 1.5, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -43,9 +43,9 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_UsedByEffector: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.14, y: 0}
   serializedVersion: 2
-  m_Size: {x: 0.05, y: 0.33}
+  m_Size: {x: 0.73, y: 0.32}
 --- !u!114 &11420560
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -70,23 +70,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mSprites:
-  - {fileID: 21300000, guid: 7fdcea810e38f419f98e756b9f306afe, type: 3}
-  - {fileID: 21300002, guid: 7fdcea810e38f419f98e756b9f306afe, type: 3}
-  - {fileID: 21300004, guid: 7fdcea810e38f419f98e756b9f306afe, type: 3}
-  - {fileID: 21300006, guid: 7fdcea810e38f419f98e756b9f306afe, type: 3}
-  - {fileID: 21300008, guid: 7fdcea810e38f419f98e756b9f306afe, type: 3}
-  - {fileID: 21300010, guid: 7fdcea810e38f419f98e756b9f306afe, type: 3}
-  - {fileID: 21300012, guid: 7fdcea810e38f419f98e756b9f306afe, type: 3}
-  - {fileID: 21300014, guid: 7fdcea810e38f419f98e756b9f306afe, type: 3}
-  - {fileID: 21300016, guid: 7fdcea810e38f419f98e756b9f306afe, type: 3}
-  - {fileID: 21300018, guid: 7fdcea810e38f419f98e756b9f306afe, type: 3}
-  - {fileID: 21300020, guid: 7fdcea810e38f419f98e756b9f306afe, type: 3}
-  - {fileID: 21300022, guid: 7fdcea810e38f419f98e756b9f306afe, type: 3}
-  - {fileID: 21300024, guid: 7fdcea810e38f419f98e756b9f306afe, type: 3}
-  - {fileID: 21300026, guid: 7fdcea810e38f419f98e756b9f306afe, type: 3}
-  - {fileID: 21300028, guid: 7fdcea810e38f419f98e756b9f306afe, type: 3}
-  - {fileID: 21300030, guid: 7fdcea810e38f419f98e756b9f306afe, type: 3}
-  mustEqSize: 16
+  - {fileID: 21300000, guid: 72e84b5cf1b6e48b5b63b5c289d27cec, type: 3}
+  - {fileID: 21300000, guid: 31acdfddad9664ed68101ca8d277a093, type: 3}
+  - {fileID: 21300000, guid: 4f9b49d53fc8d471eaee7ed17fdbdffe, type: 3}
+  - {fileID: 21300000, guid: e564aa7e51fcc449bb7bd219bd547845, type: 3}
+  - {fileID: 21300000, guid: bbb13725e1cf1483591746c5068f369e, type: 3}
+  - {fileID: 21300000, guid: 5ada1f29855c44e73abb65edafee9904, type: 3}
+  mustEqSize: 6
 --- !u!114 &11480144
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -124,9 +114,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
+  m_SortingLayerID: -1786782675
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 7fdcea810e38f419f98e756b9f306afe, type: 3}
+  m_Sprite: {fileID: 21300000, guid: bbb13725e1cf1483591746c5068f369e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
