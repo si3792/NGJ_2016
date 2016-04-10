@@ -8,7 +8,8 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 443172}
-  - 114: {fileID: 11433682}
+  - 114: {fileID: 11496820}
+  - 114: {fileID: 11461954}
   m_Layer: 0
   m_Name: PsaiInit
   m_TagString: Untagged
@@ -28,7 +29,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
---- !u!114 &11433682
+--- !u!114 &11461954
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -60,6 +61,18 @@ MonoBehaviour:
   limitIntensitySum: 1
   interruptAnyTheme: 0
   intensity: 0.7
+--- !u!114 &11496820
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 198034}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 087dfba1d4a01469a9ccd64e2958d5ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  go: {fileID: 124816, guid: 2ee93248f74a76044802e2a3904e5076, type: 2}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

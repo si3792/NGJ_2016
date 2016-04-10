@@ -25,6 +25,7 @@ public class PlayerMovement : MonoBehaviour
 
 	// keep track of drag
 	float startingDrag;
+	GameObject muzzleFlashP1;
 
 	void dash() {
 
@@ -35,7 +36,7 @@ public class PlayerMovement : MonoBehaviour
 
 	void Start ()
 	{
-
+		muzzleFlashP1 = GameObject.FindGameObjectWithTag ("p1-muzzle-flash");
 		myRB = GetComponent<Rigidbody2D> ();
 		startingDrag = myRB.drag;
 
@@ -73,7 +74,6 @@ public class PlayerMovement : MonoBehaviour
 			if(Input.GetKey(KeyCode.LeftControl)) {
 				myAnim.SetBool("Shoot", true);
 
-
 			} else {
 				myAnim.SetBool ("Shoot", false);
 			}
@@ -90,9 +90,15 @@ public class PlayerMovement : MonoBehaviour
 			if(Input.GetKey(KeyCode.RightControl)) {
 				myAnim.SetBool("Shoot", true);
 				Speed = P1ShootWalkSpeed;
+
+				// show muzzle
+				muzzleFlashP1.GetComponent<SpriteRenderer> ().enabled = true;
+
 			} else {
 				myAnim.SetBool ("Shoot", false);
 				Speed = P1WalkSpeed;
+
+				muzzleFlashP1.GetComponent<SpriteRenderer> ().enabled = false;
 			}
 			if (Input.GetKey (KeyCode.RightShift))
 			{

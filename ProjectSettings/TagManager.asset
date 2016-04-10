@@ -21,6 +21,16 @@ TagManager:
   - psaiSplit
   - psaiTogether
   - pl2-gun
+  - the-ship
+  - p1-muzzle-flash
+  - switchActive
+  - switchInactive
+  - goActive
+  - goInactive
+  - exitActive
+  - exitInactive
+  - hp-bar-mid-r
+  - hp-bar-mid-l
   layers:
   - Default
   - TransparentFX
