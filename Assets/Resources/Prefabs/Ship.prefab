@@ -1,106 +1,81 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &105574
+--- !u!1 &177346
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 4
   m_Component:
-  - 4: {fileID: 434592}
-  - 212: {fileID: 21255462}
-  - 58: {fileID: 5827264}
-  - 114: {fileID: 11440038}
-  - 114: {fileID: 11466962}
+  - 4: {fileID: 448010}
+  - 212: {fileID: 21253706}
+  - 114: {fileID: 11420300}
+  - 114: {fileID: 11463250}
+  - 61: {fileID: 6115324}
   m_Layer: 0
-  m_Name: Nugget
-  m_TagString: Untagged
+  m_Name: Ship
+  m_TagString: the-ship
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!1 &199138
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 405678}
-  m_Layer: 0
-  m_Name: depth-checker
-  m_TagString: Untagged
-  m_Icon: {fileID: 2974397684917235467, guid: 0000000000000000d000000000000000, type: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &405678
+--- !u!4 &448010
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 199138}
+  m_GameObject: {fileID: 177346}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0, y: -0.8, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -0.05, y: 0.91, z: 0}
+  m_LocalScale: {x: 1.3255688, y: 1.8071389, z: 1}
   m_Children: []
-  m_Father: {fileID: 434592}
-  m_RootOrder: 0
---- !u!4 &434592
-Transform:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 105574}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.16, y: -2.75, z: 0}
-  m_LocalScale: {x: 0.3, y: 0.3, z: 1}
-  m_Children:
-  - {fileID: 405678}
   m_Father: {fileID: 0}
   m_RootOrder: 0
---- !u!58 &5827264
-CircleCollider2D:
+--- !u!61 &6115324
+BoxCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 105574}
+  m_GameObject: {fileID: 177346}
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_UsedByEffector: 0
-  m_Offset: {x: 0, y: -0.07}
+  m_Offset: {x: 0, y: -2.22}
   serializedVersion: 2
-  m_Radius: 0.32
---- !u!114 &11440038
+  m_Size: {x: 3, y: 3}
+--- !u!114 &11420300
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 105574}
+  m_GameObject: {fileID: 177346}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ba11ba880656a42f68566689389bef9a, type: 3}
+  m_Script: {fileID: 11500000, guid: 53ccd1639b98048a28f96eee82d5143c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &11466962
+  nuggets: 0
+--- !u!114 &11463250
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 105574}
+  m_GameObject: {fileID: 177346}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 70744d2c2bddd48c2bdd8d515a765b61, type: 3}
+  m_Script: {fileID: 11500000, guid: 614f2238ee28d424293551d74cf4ad71, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!212 &21255462
+  extractedNugget: {fileID: 120042, guid: aed238d36b11a4ad0885650c242fc1f0, type: 2}
+  extractTime: 0.25
+--- !u!212 &21253706
 SpriteRenderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 105574}
+  m_GameObject: {fileID: 177346}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -121,7 +96,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 2ecc7e54d14cf43ff813fe501da01358, type: 3}
+  m_Sprite: {fileID: 21300000, guid: ce1e59d0d6b3749db9bc0808a91dff96, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -134,5 +109,5 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 105574}
+  m_RootGameObject: {fileID: 177346}
   m_IsPrefabParent: 1
