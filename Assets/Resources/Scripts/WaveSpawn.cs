@@ -38,7 +38,7 @@ public class WaveSpawn : MonoBehaviour {
 				waveMeanStart *= waveGrowth;
 				Enemy1SpawnMeanStart *= Enemy1SpawnMeanExpGrowth;
 				Enemy1SpawnMeanStart += Enemy1SpawnMeanLinearGrowth;
-				if (Random.Range (0.0f, 1.0f) < 0.05)
+				if (Random.Range (0.0f, 1.0f) < 0.3)
 					globalWave++;
 				timeToWave = restMean * Random.Range (uniformPercent, 1f + uniformPercent);
 			}
