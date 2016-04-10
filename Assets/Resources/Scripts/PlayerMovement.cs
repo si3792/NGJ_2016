@@ -76,13 +76,13 @@ public class PlayerMovement : MonoBehaviour
 			}
 
 			//shoot pl2
-			if(Input.GetKey(KeyCode.LeftControl) || Input.GetAxis("RightTriggerP2") != 0) {
+			if(Input.GetKey(KeyCode.LeftControl) || Input.GetAxis("RightTriggerP2") > 0) {
 				myAnim.SetBool("Shoot", true);
 
 			} else {
 				myAnim.SetBool ("Shoot", false);
 			}
-			if (Input.GetKey (KeyCode.LeftShift) || Input.GetAxis("LeftTriggerP2") != 0)
+			if (Input.GetKey (KeyCode.LeftShift) || Input.GetAxis("LeftTriggerP2") > 0)
 			{
 				if (curCooldownSpecial <= 0.0f) {
 					useSpecial ();
@@ -105,7 +105,7 @@ public class PlayerMovement : MonoBehaviour
 
 				muzzleFlashP1.GetComponent<SpriteRenderer> ().enabled = false;
 			}
-			if (Input.GetKey (KeyCode.RightShift) || Input.GetAxis("LeftTriggerP1") != 0)
+			if (Input.GetKey (KeyCode.RightShift) || Input.GetAxis("LeftTriggerP1") > 0)
 			{
 				if (curCooldownSpecial <= 0.0f) {
 					useSpecial ();
