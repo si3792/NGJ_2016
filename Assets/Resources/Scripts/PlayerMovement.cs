@@ -12,6 +12,7 @@ public class PlayerMovement : MonoBehaviour
 	public Animator myAnim;
 
 	bool inKnockback = false;
+	//public bool pl2WalkToggle = true;
 	float knockbackReleaseThreshold = 0.4f;
 
 	Rigidbody2D myRB;
@@ -19,6 +20,7 @@ public class PlayerMovement : MonoBehaviour
 
 	// keep track of drag
 	float startingDrag;
+
 
 	void Start ()
 	{
@@ -68,11 +70,22 @@ public class PlayerMovement : MonoBehaviour
 		// basic UDLR movement
 		var mv = getMovementVector ();
 
-		//animator
-		if(mv != Vector2.zero && !IsPlayerOne) myAnim.SetFloat("ms", 1); 
+		if(IsPlayerOne) {
+			myRB.AddForce (mv * Speed, ForceMode2D.Impulse);
+
+		} else {
+
+			//if(pl2WalkToggle) {
+				myRB.AddForce (mv * Speed, ForceMode2D.Impulse);
+			//}
+
+			//animator
+			if(mv != Vector2.zero) myAnim.SetFloat("ms", 1);
+		}
+
+	 
 
 			
-		myRB.AddForce (mv * Speed, ForceMode2D.Impulse);
 
 		// flip character to face direction
 		if (myRB.velocity.x > 0 && !facingRight) {
@@ -150,4 +163,7 @@ public class PlayerMovement : MonoBehaviour
 			player2Alive = false;
 	}
 		
+
+
+
 }

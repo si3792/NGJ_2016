@@ -756,7 +756,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 456016, guid: 3e2512324375849f69f3de87f546636d, type: 2}
       propertyPath: m_RootOrder
-      value: 7
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 21246002, guid: 3e2512324375849f69f3de87f546636d, type: 2}
       propertyPath: m_Enabled
@@ -1551,6 +1551,21 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1533090577}
   m_RootOrder: 2
+--- !u!1 &1823937072 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 109440, guid: e91e473062e124381a8aa79b5c847ef6, type: 2}
+  m_PrefabInternal: {fileID: 9112476}
+--- !u!114 &1823937073
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1823937072}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1aeffc9947f4d41d798e329b403114e4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1918155309
 Prefab:
   m_ObjectHideFlags: 0
