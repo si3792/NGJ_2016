@@ -9,7 +9,7 @@ public class MenuController : MonoBehaviour {
 	bool playersSwitched = false;
 	Image switchOn, switchOff, goOn, goOff, exitOn, exitOff;
 	Image red, blue;
-	string firstScene = "kiro-scene";
+	string firstScene = "main-scene";
 
 	// Use this for initialization
 	void Start () {
