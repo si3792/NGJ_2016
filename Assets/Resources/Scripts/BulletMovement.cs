@@ -4,7 +4,7 @@ using System.Collections;
 public class BulletMovement : MonoBehaviour {
 
 	public float Speed;
-	public float damage = 50;
+	public float damage = 25;
 
 
 	void Update()

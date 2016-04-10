@@ -12,6 +12,10 @@ public class EnemyDamageScript : MonoBehaviour {
 	public float pl2BulletDamage;
 	public GameObject explosion;
 
+	public AudioClip death1;
+	public AudioClip death2;
+	public AudioClip death3;
+
 	void Start () {
 	
 	}
@@ -44,7 +48,9 @@ public class EnemyDamageScript : MonoBehaviour {
 
 	void Update() {
 		if (health <= 0 && died == false) {
-
+			if (Random.value < 0.5) {
+				PlayDeathSound();
+			}
 			//chance to spawn biomass nugget
 			if(Random.value > biomassSpawnChance) {
 				Instantiate (biomassDrop, transform.position, Quaternion.Euler (Vector3.zero));
@@ -54,6 +60,7 @@ public class EnemyDamageScript : MonoBehaviour {
 
 			died = true;
 			Destroy (gameObject.transform.parent.gameObject);
+
 		}
 	}
 	void OnDestroy()
@@ -61,5 +68,16 @@ public class EnemyDamageScript : MonoBehaviour {
 		WaveSpawn.bugCount--;
 	}
 
+	void PlayDeathSound() {
+		var source = this.gameObject.GetComponent<AudioSource>();
+		var val = Random.value;
+		if (val < 0.33) {
+			source.PlayOneShot(death1);
+		} else if (val < 0.67) {
+			source.PlayOneShot(death2);
+		} else {
+			source.PlayOneShot(death2);
+		}
+	}
 
 }

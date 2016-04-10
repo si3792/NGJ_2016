@@ -36,6 +36,10 @@ public class PlayerMovement : MonoBehaviour
 
 	void Start ()
 	{
+		if (GlobalData.PlayersSwitched) {
+			IsPlayerOne = !IsPlayerOne;
+		}
+		GlobalData.Players++;
 		muzzleFlashP1 = GameObject.FindGameObjectWithTag ("p1-muzzle-flash");
 		myRB = GetComponent<Rigidbody2D> ();
 		startingDrag = myRB.drag;
