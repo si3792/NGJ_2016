@@ -436,7 +436,7 @@ InputManager:
     invert: 0
     type: 2
     axis: 4
-    joyNum: 5
+    joyNum: 2
   - serializedVersion: 3
     m_Name: RightTriggerP2
     descriptiveName: 
@@ -446,7 +446,7 @@ InputManager:
     altNegativeButton: 
     altPositiveButton: 
     gravity: 0
-    dead: 0.16
+    dead: 0.19
     sensitivity: 1
     snap: 0
     invert: 0
