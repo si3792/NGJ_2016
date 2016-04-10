@@ -9,6 +9,8 @@ public class PlayerMovement : MonoBehaviour
 
 	public bool IsPlayerOne;
 	public float Speed;
+	public float P1ShootWalkSpeed;
+	public float P1WalkSpeed;
 	public Animator myAnim;
 
 	bool inKnockback = false;
@@ -28,9 +30,11 @@ public class PlayerMovement : MonoBehaviour
 		myRB = GetComponent<Rigidbody2D> ();
 		startingDrag = myRB.drag;
 
-		if(!IsPlayerOne)
-		myAnim = transform.Find ("RedObject").gameObject.GetComponent<Animator> ();
-	}
+		if (!IsPlayerOne)
+			myAnim = transform.Find ("RedObject").gameObject.GetComponent<Animator> ();
+		else
+			myAnim = transform.Find ("BlueObject").transform.GetChild(0).gameObject.GetComponent<Animator> ();
+	}	
 
 	public bool GetFacingRight() {
 		return facingRight;
@@ -38,18 +42,34 @@ public class PlayerMovement : MonoBehaviour
 
 	void FixedUpdate ()
 	{
+
+		// basic UDLR movement
+		var mv = getMovementVector ();
+
+		myAnim.SetFloat ("ms", 0);
+
 		if (!IsPlayerOne) {
-			myAnim.SetFloat ("ms", 0);
-
-			//shoot
-
+			
+			//shoot pl2
 			if(Input.GetKey(KeyCode.LeftControl)) {
 				myAnim.SetBool("Shoot", true);
+
+
 			} else {
 				myAnim.SetBool ("Shoot", false);
 			}
+		} else  {
 
+			//shoot pl1
+			if(Input.GetKey(KeyCode.RightControl)) {
+				myAnim.SetBool("Shoot", true);
+				Speed = P1ShootWalkSpeed;
+			} else {
+				myAnim.SetBool ("Shoot", false);
+				Speed = P1WalkSpeed;
+			}
 
+		
 		}
 
 		//test knockback
@@ -67,11 +87,12 @@ public class PlayerMovement : MonoBehaviour
 			return;
 		}
 
-		// basic UDLR movement
-		var mv = getMovementVector ();
+
 
 		if(IsPlayerOne) {
 			myRB.AddForce (mv * Speed, ForceMode2D.Impulse);
+
+			if(mv != Vector2.zero) myAnim.SetFloat("ms", 1);
 
 		} else {
 
