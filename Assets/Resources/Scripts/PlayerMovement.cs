@@ -52,7 +52,7 @@ public class PlayerMovement : MonoBehaviour
 
 	void FixedUpdate ()
 	{
-		Debug.Log(Input.GetAxis("RightTriggerP2"));
+		//Debug.Log(Input.GetAxis("RightTriggerP2"));
 
 		// basic UDLR movement
 		var mv = getMovementVector ();
