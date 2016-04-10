@@ -13,6 +13,7 @@ GameObject:
   - 114: {fileID: 11430430}
   - 114: {fileID: 11451362}
   - 58: {fileID: 5859596}
+  - 114: {fileID: 11444538}
   m_Layer: 0
   m_Name: BulletBIG
   m_TagString: Bullet
@@ -76,6 +77,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Speed: 10
   damage: 100
+--- !u!114 &11444538
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 197334}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b4596c7191614eb9b1289382546a547, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  distance: 1.5
+  strength: 40
 --- !u!114 &11451362
 MonoBehaviour:
   m_ObjectHideFlags: 1
