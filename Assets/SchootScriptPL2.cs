@@ -8,6 +8,8 @@ public class SchootScriptPL2 : MonoBehaviour {
 	public GameObject muzzleFlash;
 	GameObject gun;
 	public float deviation = 1;
+	public AudioClip shootSound;
+
 	void Start () {
 		gun = GameObject.FindGameObjectWithTag("pl2-gun");
 	}
@@ -18,6 +20,7 @@ public class SchootScriptPL2 : MonoBehaviour {
 	}
 
 	void Shoot() {
+		this.gameObject.GetComponent<AudioSource>().PlayOneShot(shootSound);
 		GameObject reff;
 
 		if (transform.parent.gameObject.GetComponent<PlayerMovement> ().GetFacingRight ()) {
