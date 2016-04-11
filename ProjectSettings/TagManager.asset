@@ -33,6 +33,7 @@ TagManager:
   - hp-bar-mid-l
   - SoundFX
   - PerspectiveCameraSupervisor
+  - Engine
   layers:
   - Default
   - TransparentFX

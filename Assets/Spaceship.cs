@@ -22,10 +22,16 @@ public class Spaceship : MonoBehaviour {
 	public void liftoff() {
 		var cam = GameObject.FindGameObjectWithTag("PerspectiveCameraSupervisor").GetComponent<PerspectiveCameraSupervisor>();
 		cam.FocusCameraOnPoint(new Vector2(transform.position.x - 5, transform.position.y + 3), 20, CameraId.main, 12f);
+		GameObject.FindGameObjectWithTag("psaiTogether").SetActive(false);
 		anim.SetBool ("PlayerIn", true);
 	}
 
+	public void startEngines() {
 
+		foreach(GameObject go in GameObject.FindGameObjectsWithTag("Engine")) {
+			go.GetComponent<ParticleSystem> ().Play ();
+		}
+	}
 
 
 	public void OnTriggerEnter2D(Collider2D other) {
