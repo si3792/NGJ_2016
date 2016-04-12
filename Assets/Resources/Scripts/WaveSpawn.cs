@@ -26,6 +26,11 @@ public class WaveSpawn : MonoBehaviour {
 		inWave = false;
 	}
 
+	void Awake() {
+		globalWave = 0;
+		bugCount = 0;
+	}
+
 	void FixedUpdate()
 	{
 		if (inWave) {
@@ -48,7 +53,7 @@ public class WaveSpawn : MonoBehaviour {
 			if (timeToWave < 0f) {
 				inWave = true;
 				timeToEmit = spawnTimeMean * Random.Range (uniformPercent, 1f + uniformPercent);
-				timeToWait = waveMeanStart * Random.Range (uniformPercent, 1f + uniformPercent); 
+				timeToWait = waveMeanStart * Random.Range (uniformPercent, 1f + uniformPercent);
 			}
 			timeToWave -= Time.deltaTime;
 		}
@@ -66,6 +71,6 @@ public class WaveSpawn : MonoBehaviour {
 	}
 	// Update is called once per frame
 	void Update () {
-	
+
 	}
 }

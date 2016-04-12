@@ -21,6 +21,11 @@ public class PlayerMovement : MonoBehaviour
 	float knockbackReleaseThreshold = 0.4f;
 	bool player2ShootIntent = false;
 
+	void Awake() {
+		player1Alive = true;
+		player2Alive = true;
+	}
+
 
 	Rigidbody2D myRB;
 	bool facingRight = true;
@@ -50,7 +55,7 @@ public class PlayerMovement : MonoBehaviour
 			myAnim = transform.Find ("RedObject").gameObject.GetComponent<Animator> ();
 		else
 			myAnim = transform.Find ("BlueObject").transform.GetChild(0).gameObject.GetComponent<Animator> ();
-	}	
+	}
 
 	public bool GetFacingRight() {
 		return facingRight;
@@ -116,7 +121,7 @@ public class PlayerMovement : MonoBehaviour
 					curCooldownSpecial = specialCooldown;
 				}
 			}
-		
+
 		}
 
 		//test knockback
@@ -150,9 +155,9 @@ public class PlayerMovement : MonoBehaviour
 
 		}
 
-	 
 
-			
+
+
 
 		// flip character to face direction
 		if (mv.x > 0 && !facingRight) {
@@ -235,7 +240,7 @@ public class PlayerMovement : MonoBehaviour
 		else
 			player2Alive = false;
 	}
-		
+
 	void useSpecial()
 	{
 		Vector3 pos = transform.position;
