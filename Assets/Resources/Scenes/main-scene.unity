@@ -1209,6 +1209,21 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cffc4e115c8604de2aa732ef3591b395, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &1201827549 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 105010, guid: c4b76bc4967dd410592c5198fd7269c3, type: 2}
+  m_PrefabInternal: {fileID: 1243728984}
+--- !u!114 &1201827550
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1201827549}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f80d50d363a7749fa86f3a411f9f4bff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1243728984
 Prefab:
   m_ObjectHideFlags: 0
@@ -1254,7 +1269,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11420300, guid: c4b76bc4967dd410592c5198fd7269c3, type: 2}
       propertyPath: nuggets
-      value: 10
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6151288, guid: c4b76bc4967dd410592c5198fd7269c3, type: 2}
       propertyPath: m_Offset.x
@@ -1922,6 +1937,17 @@ MonoBehaviour:
   m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ad8b19284f7bc49b1b0611f1b61901ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1733957354
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1733957352}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2153ba6e383cc4570a12b4c249b2ddd2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1745307048
