@@ -67,21 +67,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!1 &126188
-GameObject:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 475974}
-  m_Layer: 0
-  m_Name: flashPos
-  m_TagString: pl2-gun
-  m_Icon: {fileID: 2270504221434485236, guid: 0000000000000000d000000000000000, type: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
 --- !u!1 &146166
 GameObject:
   m_ObjectHideFlags: 1
@@ -344,7 +329,6 @@ Transform:
   m_LocalPosition: {x: -0.085, y: 0.042, z: -0.013671875}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 475974}
   - {fileID: 467096}
   m_Father: {fileID: 488428}
   m_RootOrder: 3
@@ -379,7 +363,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 196824}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.37, y: -3.56, z: 0}
+  m_LocalPosition: {x: -1.38, y: -2.95, z: 0}
   m_LocalScale: {x: 0.85, y: 0.85, z: 1}
   m_Children:
   - {fileID: 494910}
@@ -423,7 +407,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 433598}
-  m_RootOrder: 1
+  m_RootOrder: 0
 --- !u!4 &469306
 Transform:
   m_ObjectHideFlags: 1
@@ -436,18 +420,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 488428}
   m_RootOrder: 8
---- !u!4 &475974
-Transform:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 126188}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.779, y: -0.041, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 433598}
-  m_RootOrder: 0
 --- !u!4 &480762
 Transform:
   m_ObjectHideFlags: 1
@@ -744,6 +716,7 @@ MonoBehaviour:
   myAnim: {fileID: 0}
   canDash: 0
   specialCooldown: 5
+  curCooldownSpecial: 0
   specialObject: {fileID: 170350, guid: 87163cbc2507948a79b7b7a25a66e52f, type: 2}
 --- !u!114 &11462816
 MonoBehaviour:

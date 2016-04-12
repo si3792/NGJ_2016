@@ -34,7 +34,7 @@ public class SchootScriptPL2 : MonoBehaviour {
 		}
 
 
-		reff.transform.parent = gun.transform;
+		reff.transform.SetParent (gun.transform);
 	}
 
 }

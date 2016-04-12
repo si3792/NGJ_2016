@@ -19,6 +19,8 @@ public class PlayerMovement : MonoBehaviour
 	public GameObject specialObject;
 	//public bool pl2WalkToggle = true;
 	float knockbackReleaseThreshold = 0.4f;
+	bool player2ShootIntent = false;
+
 
 	Rigidbody2D myRB;
 	bool facingRight = true;
@@ -76,11 +78,13 @@ public class PlayerMovement : MonoBehaviour
 			}
 
 			//shoot pl2
-			if(Input.GetKey(KeyCode.LeftControl) || Input.GetAxis("RightTriggerP2") > 0) {
+			if(Input.GetKey(KeyCode.Space) || Input.GetAxis("RightTriggerP2") > 0) {
 				myAnim.SetBool("Shoot", true);
+				player2ShootIntent = true;
 
 			} else {
 				myAnim.SetBool ("Shoot", false);
+				player2ShootIntent = false;
 			}
 			if (Input.GetKey (KeyCode.LeftShift) || Input.GetAxis("LeftTriggerP2") > 0)
 			{
@@ -92,7 +96,7 @@ public class PlayerMovement : MonoBehaviour
 		} else  {
 
 			//shoot pl1
-			if(Input.GetKey(KeyCode.RightControl) || Input.GetAxis("RightTriggerP1") > 0) {
+			if(Input.GetKey(KeyCode.Return) || Input.GetAxis("RightTriggerP1") > 0) {
 				myAnim.SetBool("Shoot", true);
 				Speed = P1ShootWalkSpeed;
 
@@ -139,12 +143,11 @@ public class PlayerMovement : MonoBehaviour
 
 		} else {
 
-			//if(pl2WalkToggle) {
+			if(!player2ShootIntent) {
 				myRB.AddForce (mv * Speed, ForceMode2D.Impulse);
-			//}
+				if(mv != Vector2.zero) myAnim.SetFloat("ms", 1);
+			}
 
-			//animator
-			if(mv != Vector2.zero) myAnim.SetFloat("ms", 1);
 		}
 
 	 

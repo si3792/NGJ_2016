@@ -15,6 +15,7 @@ public class hideDrops : MonoBehaviour {
 	void Update () {
 		if(ship == null) {
 			Destroy (this.gameObject);
+			return;
 		}
 
 		NuggetHandler nh = ship.GetComponent<NuggetHandler> ();
