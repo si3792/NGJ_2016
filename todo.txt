@@ -1,0 +1,9 @@
+- victory and defeat screens
+- logo screen, title screen, credits screen, how to play screen, icon, difficulty? 
+/easy, med, hard, heroic /
+
+- online highscore
+- player death animation
+- bugs spread after liftoff
+-  sound on/off toggle
+-  cleanup cheat / slow time on official build
