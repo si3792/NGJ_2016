@@ -5,6 +5,7 @@ public class DepthByParentY : MonoBehaviour {
 
 	SpriteRenderer mySR;
 	int initial;
+	public int offset = 0;
 	// Use this for initialization
 	void Start () {
 		mySR = this.GetComponent<SpriteRenderer> ();
@@ -14,6 +15,6 @@ public class DepthByParentY : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		
-		mySR.sortingOrder = initial + (int) (transform.parent.transform.position.y * -100f);
+		mySR.sortingOrder = initial + (int) (transform.parent.transform.position.y * -100f) + offset;
 	}
 }
