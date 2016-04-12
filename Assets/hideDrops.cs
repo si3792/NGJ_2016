@@ -3,12 +3,13 @@ using System.Collections;
 
 public class hideDrops : MonoBehaviour {
 
-	GameObject ship;
+	GameObject ship, droplet;
 
 
 	// Use this for initialization
 	void Start () {
 		ship = GameObject.FindGameObjectWithTag ("the-ship");
+		droplet = transform.Find ("Droplet").gameObject;
 	}
 	
 	// Update is called once per frame
@@ -19,11 +20,17 @@ public class hideDrops : MonoBehaviour {
 		}
 
 		NuggetHandler nh = ship.GetComponent<NuggetHandler> ();
+		if(nh == null)  {
+			droplet.SetActive (false);
+			return;
+		}
+
 		if(nh.nuggets <= 0 || nh.nuggets >= nh.NuggetsToWin ) {
-			gameObject.GetComponent<Animator> ().enabled = false;
+			droplet.SetActive (false);
 		} else {
-			gameObject.GetComponent<Animator> ().enabled = true;
+			droplet.SetActive (true);
 		}
 
 	}
 }
+
