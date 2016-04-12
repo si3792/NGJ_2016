@@ -6,6 +6,7 @@ public class Spaceship : MonoBehaviour {
 	Animator anim;
 	int playersIn = 0;
 	bool readyToFly = false;
+	bool liftoff_flag = false;
 
 	public void ready() {
 		readyToFly = true;
@@ -24,6 +25,7 @@ public class Spaceship : MonoBehaviour {
 		cam.FocusCameraOnPoint(new Vector2(transform.position.x - 5, transform.position.y + 3), 20, CameraId.main, 12f);
 		GameObject.FindGameObjectWithTag("psaiTogether").SetActive(false);
 		anim.SetBool ("PlayerIn", true);
+		liftoff_flag = true;
 	}
 
 	public void startEngines() {
@@ -34,6 +36,18 @@ public class Spaceship : MonoBehaviour {
 	}
 
 
+	public void FixedUpdate() {
+
+		//Win condition
+		if(liftoff_flag)return;
+
+		if (playersIn == 2)
+			liftoff ();
+
+		if(playersIn == 1 && (PlayerMovement.player1Alive == false && PlayerMovement.player2Alive == false )  )
+			liftoff ();
+	}
+
 	public void OnTriggerEnter2D(Collider2D other) {
 
 
@@ -42,12 +56,6 @@ public class Spaceship : MonoBehaviour {
 
 				Destroy (other.gameObject);
 				playersIn++;
-
-				if (playersIn == 2)
-					liftoff ();
-
-				if(playersIn == 1 && (PlayerMovement.player1Alive == false || PlayerMovement.player2Alive == false )  )
-					liftoff ();
 
 			}
 
