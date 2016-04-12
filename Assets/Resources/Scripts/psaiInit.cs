@@ -4,13 +4,19 @@ using System.Collections;
 public class psaiInit : MonoBehaviour {
 
 	public GameObject go;
+	public float Volume;
+
+	private PsaiCoreManager psai;
 
 	void Awake () {
-		Instantiate (go, new Vector3 (10000f, 10000f, 10000f), transform.rotation);
+		psai = Instantiate(go).GetComponent<PsaiCoreManager>();
 	}
-	
+
+	void Start() {
+	}
+
 	// Update is called once per frame
 	void Update () {
-	
+		psai.Volume = Volume;
 	}
 }

@@ -252,6 +252,10 @@ Prefab:
       propertyPath: m_RootOrder
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 8276214, guid: e05bf2a6870164a82a0a4caeeb9652e3, type: 2}
+      propertyPath: m_Volume
+      value: 0.05
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e05bf2a6870164a82a0a4caeeb9652e3, type: 2}
   m_IsPrefabParent: 0
@@ -783,6 +787,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   go: {fileID: 109434, guid: 2d8ba0cf419724840af31c6f8da7701e, type: 2}
+  Volume: 0.33
 --- !u!1001 &606925415
 Prefab:
   m_ObjectHideFlags: 0
@@ -821,6 +826,10 @@ Prefab:
     - target: {fileID: 456016, guid: 3e2512324375849f69f3de87f546636d, type: 2}
       propertyPath: m_RootOrder
       value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8283688, guid: 3e2512324375849f69f3de87f546636d, type: 2}
+      propertyPath: m_Volume
+      value: 0.25
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3e2512324375849f69f3de87f546636d, type: 2}

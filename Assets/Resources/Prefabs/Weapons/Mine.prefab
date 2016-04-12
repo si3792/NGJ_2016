@@ -59,6 +59,8 @@ MonoBehaviour:
   explosion: {fileID: 127096, guid: 4c652b54db2e943abae8321a2762c466, type: 2}
   damage: 100
   explosionRadius: 1.3
+  explosionSound: {fileID: 8300000, guid: 24689678b470b4e328870eb68ceafbc0, type: 3}
+  soundPlayer: {fileID: 102138, guid: 5784d13666bb24ab5bfa25775c8e55a0, type: 2}
 --- !u!114 &11493816
 MonoBehaviour:
   m_ObjectHideFlags: 1
