@@ -4,9 +4,8 @@ using UnityEngine.UI;
 public class MenuController : MonoBehaviour {
 
 	int active = 2;
-	float secondsBreak = 9f;
+	float secondsBreak = 3f;
 	float cooldown;
-	bool playersSwitched = false;
 	Image switchOn, switchOff, goOn, goOff, exitOn, exitOff;
 	Image red, blue;
 	string firstScene = "main-scene";
@@ -42,9 +41,9 @@ public class MenuController : MonoBehaviour {
 		}
 
 		if (cooldown <= 0) {
-			if (Input.GetAxis("Vertical") > 0 || Input.GetAxis("VerticalP1") > 0 || Input.GetAxis("VerticalP2") > 0) {
+			if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow) || Input.GetAxis("VerticalP1") > 0 || Input.GetAxis("VerticalP2") > 0) {
 				active = (active + 1) % 3;
-			} else if (Input.GetAxis("Vertical") < 0 || Input.GetAxis("VerticalP1") < 0 || Input.GetAxis("VerticalP2") < 0) {
+			} else if (Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.DownArrow) || Input.GetAxis("Vertical") < 0 || Input.GetAxis("VerticalP1") < 0 || Input.GetAxis("VerticalP2") < 0) {
 				active -= 1;
 				if (active < 0) active = 2;
 			} else if (Input.GetAxis("ButtonAP1") > 0 || Input.GetAxis("ButtonAP2") > 0) {
