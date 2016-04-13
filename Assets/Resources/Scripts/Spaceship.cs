@@ -8,6 +8,9 @@ public class Spaceship : MonoBehaviour {
 	bool readyToFly = false;
 	bool liftoff_flag = false;
 
+
+
+
 	public void ready() {
 		readyToFly = true;
 	}
@@ -33,7 +36,10 @@ public class Spaceship : MonoBehaviour {
 		foreach(GameObject go in GameObject.FindGameObjectsWithTag("Engine")) {
 			go.GetComponent<ParticleSystem> ().Play ();
 		}
+
+		gameObject.GetComponent<AudioSource> ().Play ();
 	}
+
 
 
 	public void FixedUpdate() {
@@ -48,7 +54,7 @@ public class Spaceship : MonoBehaviour {
 			liftoff ();
 	}
 
-	public void OnTriggerEnter2D(Collider2D other) {
+	public void OnTriggerStay2D(Collider2D other) {
 
 
 		if( readyToFly ) {
