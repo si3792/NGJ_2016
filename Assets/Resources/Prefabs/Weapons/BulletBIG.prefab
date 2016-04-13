@@ -64,6 +64,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 428c05236782146148710e796964883c, type: 3}
   - {fileID: 21300000, guid: cefd25bdf183f47c38f230fb1e415d2c, type: 3}
   mustEqSize: 4
+  randomizeOnUpdate: 0
+  chanceToRand: 1
 --- !u!114 &11430430
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -89,7 +91,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   distance: 1.5
-  strength: 40
+  strength: 60
 --- !u!114 &11451362
 MonoBehaviour:
   m_ObjectHideFlags: 1
