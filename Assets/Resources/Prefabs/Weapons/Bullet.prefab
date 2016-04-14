@@ -28,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 154468}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 0}
+  m_LocalScale: {x: 0.75, y: 0.75, z: 0}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -77,6 +77,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: bbb13725e1cf1483591746c5068f369e, type: 3}
   - {fileID: 21300000, guid: 5ada1f29855c44e73abb65edafee9904, type: 3}
   mustEqSize: 6
+  randomizeOnUpdate: 0
+  chanceToRand: 1
 --- !u!114 &11480144
 MonoBehaviour:
   m_ObjectHideFlags: 1
