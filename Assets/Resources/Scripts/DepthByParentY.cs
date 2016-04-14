@@ -14,7 +14,9 @@ public class DepthByParentY : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
+
+		if (transform.parent == null)
+			return;
 		mySR.sortingOrder = initial + (int) (transform.parent.transform.position.y * -100f) + offset;
 	}
 }

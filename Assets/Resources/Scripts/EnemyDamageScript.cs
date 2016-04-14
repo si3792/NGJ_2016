@@ -48,6 +48,9 @@ public class EnemyDamageScript : MonoBehaviour {
 
 	void Update() {
 		if (health <= 0 && died == false) {
+
+
+
 			//PlayDeathSound();
 			//chance to spawn biomass nugget
 			if(Random.value > biomassSpawnChance) {
