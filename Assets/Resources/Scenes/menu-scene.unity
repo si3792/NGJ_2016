@@ -220,6 +220,7 @@ GameObject:
   - 224: {fileID: 275485819}
   - 222: {fileID: 275485821}
   - 114: {fileID: 275485820}
+  - 95: {fileID: 275485822}
   m_Layer: 5
   m_Name: duke-body
   m_TagString: Untagged
@@ -278,6 +279,23 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 275485818}
+--- !u!95 &275485822
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 275485818}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 11dcaa0c988b64750b8f6280bc50e09d, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!1 &552204004
 GameObject:
   m_ObjectHideFlags: 1
@@ -425,7 +443,7 @@ RectTransform:
   m_RootOrder: 0
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 2.5, y: 22.9}
+  m_AnchoredPosition: {x: 2.2, y: 22.9}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &910479371
