@@ -575,9 +575,9 @@ MonoBehaviour:
   health: 50
   biomassSpawnChance: 0.6
   biomassDrop: {fileID: 105574, guid: 1966f99af4b28430db9334e62107c5b1, type: 2}
-  psFx: {fileID: 106016, guid: 48981308271ca420ba3456cd503fa965, type: 2}
+  psFx: {fileID: 174830, guid: 7c8a0fcac31834d399640159a1770f8a, type: 2}
   pl2BulletDamage: 100
-  explosion: {fileID: 106016, guid: 48981308271ca420ba3456cd503fa965, type: 2}
+  explosion: {fileID: 189352, guid: 5c16deb429f224f60b86a06058006649, type: 2}
   death1: {fileID: 8300000, guid: ea1428403710c4d5cb272407ed2067cf, type: 3}
   death2: {fileID: 8300000, guid: c17338c047d9247f8a6548a244764a36, type: 3}
   soundPlayer: {fileID: 102138, guid: 5784d13666bb24ab5bfa25775c8e55a0, type: 2}
