@@ -893,7 +893,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 193820, guid: 1e4b150e8502243fcb4f2485b71462f8, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11442624, guid: 1e4b150e8502243fcb4f2485b71462f8, type: 2}
+      propertyPath: fadeSpeedIn
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1e4b150e8502243fcb4f2485b71462f8, type: 2}

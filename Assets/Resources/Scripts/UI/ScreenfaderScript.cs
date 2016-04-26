@@ -15,7 +15,7 @@ public class ScreenfaderScript : MonoBehaviour {
 
 	void Update() {
 		if (sceneStarting)
-			Invoke ("StartingScene", 0.1f);
+			Invoke ("StartingScene", 0.2f);
 
 		if (sceneEnding)
 			Invoke ("FadeToBlack", 0f);
