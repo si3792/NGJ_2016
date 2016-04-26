@@ -34,6 +34,7 @@ TagManager:
   - SoundFX
   - PerspectiveCameraSupervisor
   - Engine
+  - Screenfader
   layers:
   - Default
   - TransparentFX
