@@ -29,6 +29,11 @@ public class PlayerMovement : MonoBehaviour
 
 	Rigidbody2D myRB;
 	bool facingRight = true;
+	public bool mobileControls = true;
+
+	//for mobile controls
+	public bool moveL, moveR, moveU, moveD;
+	public bool shootGun, dropMine;
 
 	// keep track of drag
 	float startingDrag;
@@ -101,7 +106,7 @@ public class PlayerMovement : MonoBehaviour
 		} else  {
 
 			//shoot pl1
-			if(Input.GetKey(KeyCode.Return) || Input.GetAxis("RightTriggerP1") > 0) {
+			if(Input.GetKey(KeyCode.Return) || Input.GetAxis("RightTriggerP1") > 0 || shootGun) {
 				myAnim.SetBool("Shoot", true);
 				Speed = P1ShootWalkSpeed;
 
@@ -114,7 +119,7 @@ public class PlayerMovement : MonoBehaviour
 
 				muzzleFlashP1.GetComponent<SpriteRenderer> ().enabled = false;
 			}
-			if (Input.GetKey (KeyCode.RightShift) || Input.GetAxis("LeftTriggerP1") > 0)
+			if (Input.GetKey (KeyCode.RightShift) || Input.GetAxis("LeftTriggerP1") > 0 || dropMine)
 			{
 				if (curCooldownSpecial <= 0.0f) {
 					useSpecial ();
@@ -178,20 +183,23 @@ public class PlayerMovement : MonoBehaviour
 
 		if (IsPlayerOne) {
 
-			if(Input.GetKey(KeyCode.LeftArrow) || Input.GetAxis("HorizontalP1") < 0) {
+
+
+			if(Input.GetKey(KeyCode.LeftArrow) || Input.GetAxis("HorizontalP1") < 0 || moveL) {
 				h = -1  * Time.deltaTime;
 			}
-			if(Input.GetKey(KeyCode.RightArrow) || Input.GetAxis("HorizontalP1") > 0) {
+			if(Input.GetKey(KeyCode.RightArrow) || Input.GetAxis("HorizontalP1") > 0 || moveR) {
 				h = 1  * Time.deltaTime;
 			}
 
-			if(Input.GetKey(KeyCode.DownArrow) || Input.GetAxis("VerticalP1") < 0) {
+			if(Input.GetKey(KeyCode.DownArrow) || Input.GetAxis("VerticalP1") < 0 || moveD) {
 				v = -1  * Time.deltaTime;
 			}
-			if(Input.GetKey(KeyCode.UpArrow) || Input.GetAxis("VerticalP1") > 0) {
+			if(Input.GetKey(KeyCode.UpArrow) || Input.GetAxis("VerticalP1") > 0 || moveU) {
 				v = 1  * Time.deltaTime;
 			}
 
+				 
 		} else {
 
 			if(Input.GetKey(KeyCode.A) || Input.GetAxis("HorizontalP2") < 0) {
