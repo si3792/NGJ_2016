@@ -58,7 +58,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   minspeed: 50
-  maxspeed: 250
+  maxspeed: 150
   mode: 1
 --- !u!114 &11472058
 MonoBehaviour:
