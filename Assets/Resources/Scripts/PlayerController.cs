@@ -28,8 +28,11 @@ public class PlayerController : MonoBehaviour {
 		if(health <= 0) {
 			GlobalData.Players--;
 			Destroy (transform.parent.gameObject);
+
+			Debug.Log ("Global data " + GlobalData.Players);
 			if (GlobalData.Players <= 0) {
-				Application.LoadLevel("MenuScene");
+				Application.LoadLevel("menu-scene");
+				Debug.Log ("KUR");
 			}
 		}
 	
