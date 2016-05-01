@@ -22,6 +22,10 @@ public class SchootScriptPL2 : MonoBehaviour {
 	}
 
 	void Shoot() {
+
+		// Randomize sound
+		this.gameObject.GetComponent<AudioSource>().pitch = Random.Range(0.6f, 1.4f); 
+
 		this.gameObject.GetComponent<AudioSource>().PlayOneShot(shootSound);
 		GameObject reff;
 
