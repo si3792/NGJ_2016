@@ -15,6 +15,7 @@ public class EnemyDamageScript : MonoBehaviour {
 	public AudioClip death1;
 	public AudioClip death2;
 	public GameObject soundPlayer;
+	public bool lastDMGPl1 = true;
 
 	void Start () {
 	
@@ -29,27 +30,38 @@ public class EnemyDamageScript : MonoBehaviour {
 		if(other.gameObject.tag  == "Bullet") {
 			health -= other.gameObject.GetComponent<BulletMovement> ().damage;
 
-			if( other.gameObject.GetComponent<BulletMovement> ().damage == pl2BulletDamage) {
+			if (other.gameObject.GetComponent<BulletMovement> ().damage == pl2BulletDamage) {
 				Instantiate (explosion, other.transform.position, Quaternion.Euler (Vector3.zero));
-			}
+
+				lastDMGPl1 = false;
+			} else
+				lastDMGPl1 = true;
 			Destroy (other.gameObject);
-		}
+		} else
 		if (other.gameObject.tag == "Explosion") {
-			health = -1;
+			
+				lastDMGPl1 = true;
+				//health = -1;
+			
 		}
 	}
-
+	/*
 	void OnCollisionStay2D(Collision2D other) {
 		Debug.Log(other.gameObject.tag);
 		if (other.collider.gameObject.tag == "Explosion") {
 			health = -1;
 		}
-	}
+	}*/
 
 	void Update() {
 		if (health <= 0 && died == false) {
 
-
+			// Register kill
+			if(lastDMGPl1) {
+				GlobalData.P1kills++;
+			} else {
+				GlobalData.P2kills++;
+			}
 
 			//PlayDeathSound();
 			//chance to spawn biomass nugget

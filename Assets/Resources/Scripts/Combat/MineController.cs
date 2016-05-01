@@ -30,6 +30,7 @@ public class MineController : MonoBehaviour {
 			foreach (var collider in hits) {
 				if (collider.gameObject.tag == "enemy-hurtbox") {
 					collider.gameObject.GetComponent<EnemyDamageScript>().Damage(damage);
+					collider.gameObject.GetComponent<EnemyDamageScript> ().lastDMGPl1 = true;
 				}
 			}
 			Destroy (this.gameObject);
