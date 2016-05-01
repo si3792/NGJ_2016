@@ -36,6 +36,7 @@ TagManager:
   - Engine
   - Screenfader
   - CameraTeller
+  - Rim
   layers:
   - Default
   - TransparentFX

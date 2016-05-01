@@ -15,3 +15,5 @@ EditorBuildSettings:
     path: Assets/Resources/Scenes/main-scene.unity
   - enabled: 1
     path: Assets/Resources/Scenes/simo-2-scene.unity
+  - enabled: 1
+    path: Assets/Resources/Scenes/new-main-scene.unity
