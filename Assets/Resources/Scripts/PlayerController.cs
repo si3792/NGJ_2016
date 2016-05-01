@@ -21,7 +21,9 @@ public class PlayerController : MonoBehaviour {
 
 		cts = GameObject.FindGameObjectWithTag ("CameraTeller").GetComponent<CameraTellerScript>();
 	}
-	
+
+
+
 
 	void Update () {
 

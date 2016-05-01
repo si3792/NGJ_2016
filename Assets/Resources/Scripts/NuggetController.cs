@@ -52,7 +52,7 @@ public class NuggetController : MonoBehaviour {
 
 		if(other.tag == "pl-hurtbox") {
 			Destroy (this.gameObject);
-			other.gameObject.GetComponent<NuggetHandler> ().nuggets++;
+			other.gameObject.GetComponent<NuggetHandler> ().AddNuggets (1);
 		}
 
 	}

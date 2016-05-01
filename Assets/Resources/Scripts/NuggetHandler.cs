@@ -13,7 +13,15 @@ public class NuggetHandler : MonoBehaviour {
 	void Start () {
 	
 	}
-	
+
+	public void AddNuggets(int count) {
+		if(transform.parent.tag == "Pl1") {
+			GlobalData.P1nuggets += count;
+		} else GlobalData.P2nuggets += count;
+
+		nuggets += count;
+	}
+
 	// Update is called once per frame
 	void Update () {
 		if( this.tag == "the-ship" )
