@@ -64,6 +64,12 @@ public class CrossControl : MonoBehaviour
 			);
 		}
 
+
+		// Clamp cross left and right
+		if(transform.position.x < -22)transform.position = new Vector3(-22, transform.position.y, transform.position.z);
+
+	
+		if(transform.position.x > 22)transform.position = new Vector3(22, transform.position.y, transform.position.z);
 	}
 
 }
