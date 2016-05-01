@@ -240,7 +240,7 @@ GameObject:
   - 114: {fileID: 11474708}
   - 114: {fileID: 11438230}
   m_Layer: 5
-  m_Name: MiddleLine (1)
+  m_Name: MiddleLine
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1259,8 +1259,8 @@ RectTransform:
   m_RootOrder: 4
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -1.2499677, y: -297.49994}
-  m_SizeDelta: {x: 2, y: 1741}
+  m_AnchoredPosition: {x: 1.1, y: -297.4999}
+  m_SizeDelta: {x: 3, y: 1741}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &22477960
 RectTransform:
