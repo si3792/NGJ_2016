@@ -4,7 +4,7 @@ using System.Collections;
 public class CameraTellerScript : MonoBehaviour {
 
 	GameObject pl1, pl2;
-	GameObject cam1, cam2;
+	GameObject cam1, cam2, camMain;
 
 	void Start () {
 		pl1 = GameObject.FindGameObjectWithTag ("Pl1");
@@ -12,12 +12,16 @@ public class CameraTellerScript : MonoBehaviour {
 
 		cam1 = GameObject.FindGameObjectWithTag ("CameraP1");
 		cam2 = GameObject.FindGameObjectWithTag ("CameraP2");
+		camMain = GameObject.FindGameObjectWithTag ("MainCamera");
 	}
 	
 	// Update is called once per frame
 	void Update () {
+
+
 	
 	}
+		
 
 	public GameObject getCameraForPlayer(bool playerOne) {
 

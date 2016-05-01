@@ -244,18 +244,6 @@ Prefab:
       propertyPath: m_Name
       value: Player1
       objectReference: {fileID: 0}
-    - target: {fileID: 188398, guid: e05bf2a6870164a82a0a4caeeb9652e3, type: 2}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 463580, guid: e05bf2a6870164a82a0a4caeeb9652e3, type: 2}
-      propertyPath: m_RootOrder
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 8276214, guid: e05bf2a6870164a82a0a4caeeb9652e3, type: 2}
-      propertyPath: m_Volume
-      value: 0.05
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e05bf2a6870164a82a0a4caeeb9652e3, type: 2}
   m_IsPrefabParent: 0
@@ -985,14 +973,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 10
       objectReference: {fileID: 0}
-    - target: {fileID: 8283688, guid: 3e2512324375849f69f3de87f546636d, type: 2}
-      propertyPath: m_Volume
-      value: 0.25
-      objectReference: {fileID: 0}
-    - target: {fileID: 196824, guid: 3e2512324375849f69f3de87f546636d, type: 2}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3e2512324375849f69f3de87f546636d, type: 2}
   m_IsPrefabParent: 0
@@ -1509,40 +1489,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b9e31fdf962e3e4ca3b62ec3ecc2f4e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Exposure: 1
-  UseToneMapping: 0
-  UseDithering: 0
-  QualityLevel: 1
-  BlendAmount: 0
-  LutTexture: {fileID: 2800000, guid: 53b44ce5c0b25492cb40684244ac8e62, type: 3}
-  LutBlendTexture: {fileID: 2800000, guid: 794fb6f5f358349b8824a860950fa4be, type: 3}
-  MaskTexture: {fileID: 0}
-  UseDepthMask: 0
-  DepthMaskCurve:
-    serializedVersion: 2
-    m_Curve:
-    - time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    - time: 1
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 0
-  UseVolumes: 0
-  ExitVolumeBlendTime: 1
-  TriggerVolumeProxy: {fileID: 0}
-  VolumeCollisionMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  EffectFlags:
-    components: []
-  sharedInstanceID: abf2e9ce-207a-4466-a09f-494c60715337
 --- !u!1 &1140967728
 GameObject:
   m_ObjectHideFlags: 1
@@ -2009,9 +1955,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83b738953f18b4d99b892cd10fc0ea95, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  blend: 0
-  speed: 1
-  thresholdBugCount: 40
 --- !u!4 &1334374483
 Transform:
   m_ObjectHideFlags: 0
@@ -2525,40 +2468,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b9e31fdf962e3e4ca3b62ec3ecc2f4e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Exposure: 1
-  UseToneMapping: 0
-  UseDithering: 0
-  QualityLevel: 1
-  BlendAmount: 0
-  LutTexture: {fileID: 2800000, guid: 53b44ce5c0b25492cb40684244ac8e62, type: 3}
-  LutBlendTexture: {fileID: 2800000, guid: 794fb6f5f358349b8824a860950fa4be, type: 3}
-  MaskTexture: {fileID: 0}
-  UseDepthMask: 0
-  DepthMaskCurve:
-    serializedVersion: 2
-    m_Curve:
-    - time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    - time: 1
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 0
-  UseVolumes: 0
-  ExitVolumeBlendTime: 1
-  TriggerVolumeProxy: {fileID: 0}
-  VolumeCollisionMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  EffectFlags:
-    components: []
-  sharedInstanceID: 7e6e724e-5c3d-4d8b-840d-71819534aaf4
 --- !u!114 &1600056196
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3023,6 +2932,22 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 22479140, guid: be72b95b4383c4fb2b78f38ecde4de26, type: 2}
+      propertyPath: m_AnchoredPosition.x
+      value: 4.4953
+      objectReference: {fileID: 0}
+    - target: {fileID: 22479140, guid: be72b95b4383c4fb2b78f38ecde4de26, type: 2}
+      propertyPath: m_SizeDelta.x
+      value: 1353
+      objectReference: {fileID: 0}
+    - target: {fileID: 22479140, guid: be72b95b4383c4fb2b78f38ecde4de26, type: 2}
+      propertyPath: m_AnchoredPosition.y
+      value: 472.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 22479140, guid: be72b95b4383c4fb2b78f38ecde4de26, type: 2}
+      propertyPath: m_SizeDelta.y
+      value: 58
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: be72b95b4383c4fb2b78f38ecde4de26, type: 2}
   m_IsPrefabParent: 0
@@ -3041,40 +2966,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b9e31fdf962e3e4ca3b62ec3ecc2f4e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Exposure: 1
-  UseToneMapping: 0
-  UseDithering: 0
-  QualityLevel: 1
-  BlendAmount: 0
-  LutTexture: {fileID: 2800000, guid: 53b44ce5c0b25492cb40684244ac8e62, type: 3}
-  LutBlendTexture: {fileID: 2800000, guid: 794fb6f5f358349b8824a860950fa4be, type: 3}
-  MaskTexture: {fileID: 0}
-  UseDepthMask: 0
-  DepthMaskCurve:
-    serializedVersion: 2
-    m_Curve:
-    - time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    - time: 1
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 0
-  UseVolumes: 0
-  ExitVolumeBlendTime: 1
-  TriggerVolumeProxy: {fileID: 0}
-  VolumeCollisionMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  EffectFlags:
-    components: []
-  sharedInstanceID: da5f444a-2727-4b3e-8405-6a28abbe63ec
 --- !u!114 &2042036011
 MonoBehaviour:
   m_ObjectHideFlags: 0
