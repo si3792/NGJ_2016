@@ -17,6 +17,10 @@ public class psaiInit : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
+		if(GlobalData.musicOn) {
 		psai.Volume = Volume;
+		} else {
+			psai.Volume = 0f;
+		}
 	}
 }
