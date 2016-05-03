@@ -20,9 +20,13 @@ public class SchootScriptPL1 : MonoBehaviour {
 	void Shoot2() {
 
 		// Randomize sound
+
+		if(GlobalData.soundFXOn) {
 		this.gameObject.GetComponent<AudioSource>().pitch = Random.Range(0.9f, 1.1f); 
 
 		this.gameObject.GetComponent<AudioSource>().PlayOneShot(shootSound);
+		}
+
 		if (transform.parent.parent.gameObject.GetComponent<PlayerMovement>().GetFacingRight ()) {
 			Instantiate (bullet, muzzleTip.position, Quaternion.Euler (new Vector3(0, 0, 180 + Random.Range(-deviation, deviation))));
 		} else {

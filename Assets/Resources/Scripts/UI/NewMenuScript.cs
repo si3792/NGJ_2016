@@ -18,4 +18,13 @@ public class NewMenuScript : MonoBehaviour {
 		SceneManager.LoadScene (sceneName);
 	}
 
+	public void toggleSound(bool turnOn) {
+		GlobalData.soundFXOn = turnOn;
+		GlobalData.musicOn = turnOn;
+	}
+
+	public void quitGame() {
+		Application.Quit ();
+	}
+
 }

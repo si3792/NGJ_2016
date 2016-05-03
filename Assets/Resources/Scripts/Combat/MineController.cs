@@ -22,8 +22,11 @@ public class MineController : MonoBehaviour {
 
 	void OnTriggerEnter2D(Collider2D other) {
 		if(other.gameObject.tag  == "enemy-hurtbox") {
+
+			if(GlobalData.soundFXOn ) {
 			var player = Instantiate(soundPlayer);
 			player.GetComponent<SingleSound>().clip = explosionSound;
+			}
 
 			GameObject.Instantiate(explosion, transform.position, transform.rotation);
 			var hits = Physics2D.OverlapCircleAll(new Vector2(transform.position.x, transform.position.y), explosionRadius);
