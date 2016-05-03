@@ -15,6 +15,7 @@ public class EnemyDamageScript : MonoBehaviour {
 	public AudioClip death1;
 	public AudioClip death2;
 	public GameObject soundPlayer;
+	public GameObject deathSoundObj;
 	public bool lastDMGPl1 = true;
 
 	void Start () {
@@ -70,6 +71,9 @@ public class EnemyDamageScript : MonoBehaviour {
 			}
 			//ps
 			Instantiate(psFx, transform.position, Quaternion.Euler(Vector3.zero));
+
+			if(GlobalData.soundFXOn)
+			Instantiate (deathSoundObj);
 
 			died = true;
 			Destroy (gameObject.transform.parent.gameObject);
