@@ -640,6 +640,12 @@ MonoBehaviour:
   nuggets: 0
   NuggetsToWin: 0
   nuggetLeakRate: 1000
+  nuggetPop:
+  - {fileID: 8300000, guid: 77430610513344a77a70c777f6bda573, type: 3}
+  - {fileID: 8300000, guid: d7ce6a48426ac4ed6b59d2eabb1b94fc, type: 3}
+  - {fileID: 8300000, guid: b897a04be828c48b8af717b856857deb, type: 3}
+  - {fileID: 8300000, guid: 3db63541aaccf414aa704b5580c02721, type: 3}
+  - {fileID: 8300000, guid: c5793ea064a91499fb68531081c0dcd5, type: 3}
 --- !u!114 &11427966
 MonoBehaviour:
   m_ObjectHideFlags: 1

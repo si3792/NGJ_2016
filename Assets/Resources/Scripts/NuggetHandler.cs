@@ -6,12 +6,13 @@ public class NuggetHandler : MonoBehaviour {
 	public int nuggets = 200;
 	public int NuggetsToWin;
 	public float nuggetLeakRate = 7.0f;
+	public AudioClip[] nuggetPop;
 
 	float timeToLeak = 0.0f;
 
 	// Use this for initialization
 	void Start () {
-	
+
 	}
 
 	public void AddNuggets(int count) {
@@ -20,6 +21,11 @@ public class NuggetHandler : MonoBehaviour {
 		} else GlobalData.P2nuggets += count;
 
 		nuggets += count;
+
+		if(GlobalData.soundFXOn) {
+			AudioSource audio = gameObject.AddComponent<AudioSource>();
+			audio.PlayOneShot(nuggetPop[Random.Range(0,nuggetPop.Length)], 0.6f);
+		}
 	}
 
 	// Update is called once per frame

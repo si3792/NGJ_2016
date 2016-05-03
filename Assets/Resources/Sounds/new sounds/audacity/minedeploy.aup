@@ -1,0 +1,57 @@
+<?xml version="1.0" standalone="no" ?>
+<!DOCTYPE project PUBLIC "-//audacityproject-1.3.0//DTD//EN" "http://audacity.sourceforge.net/xml/audacityproject-1.3.0.dtd" >
+<project xmlns="http://audacity.sourceforge.net/xml/" projname="minedeploy_data" version="1.3.0" audacityversion="2.1.2" sel0="0.9457914353" sel1="0.9457914353" vpos="0" h="0.0000000000" zoom="161.7692805007" rate="44100.0" snapto="off" selectionformat="hh:mm:ss + milliseconds" frequencyformat="Hz" bandwidthformat="octaves">
+	<tags/>
+	<wavetrack name="321215__hybrid-v__sci-fi-weapons-deploy" channel="0" linked="1" mute="0" solo="0" height="150" minimized="0" isSelected="1" rate="44100" gain="1.0" pan="0.0">
+		<waveclip offset="0.00000000">
+			<sequence maxsamples="262144" sampleformat="262159" numsamples="302135">
+				<waveblock start="0">
+					<simpleblockfile filename="e0000c3e.au" len="151067" min="-0.929516" max="0.974929" rms="0.109548"/>
+				</waveblock>
+				<waveblock start="151067">
+					<simpleblockfile filename="e0000295.au" len="151068" min="-0.515669" max="0.485348" rms="0.03921"/>
+				</waveblock>
+			</sequence>
+			<envelope numpoints="0"/>
+		</waveclip>
+	</wavetrack>
+	<wavetrack name="321215__hybrid-v__sci-fi-weapons-deploy" channel="1" linked="0" mute="0" solo="0" height="150" minimized="0" isSelected="1" rate="44100" gain="1.0" pan="0.0">
+		<waveclip offset="0.00000000">
+			<sequence maxsamples="262144" sampleformat="262159" numsamples="302135">
+				<waveblock start="0">
+					<simpleblockfile filename="e0000e7a.au" len="151067" min="-1.0" max="0.97657" rms="0.121408"/>
+				</waveblock>
+				<waveblock start="151067">
+					<simpleblockfile filename="e0000065.au" len="151068" min="-0.708012" max="0.768276" rms="0.052401"/>
+				</waveblock>
+			</sequence>
+			<envelope numpoints="0"/>
+		</waveclip>
+	</wavetrack>
+	<wavetrack name="213384__peridactyloptrix__hover-engine" channel="0" linked="1" mute="0" solo="0" height="150" minimized="0" isSelected="0" rate="48000" gain="1.0" pan="0.0">
+		<waveclip offset="0.00000000">
+			<sequence maxsamples="262144" sampleformat="262159" numsamples="272339">
+				<waveblock start="0">
+					<simpleblockfile filename="e0000963.au" len="133820" min="-0.269694" max="0.263722" rms="0.04838"/>
+				</waveblock>
+				<waveblock start="133820">
+					<simpleblockfile filename="e0000566.au" len="138519" min="-0.246619" max="0.243054" rms="0.025008"/>
+				</waveblock>
+			</sequence>
+			<envelope numpoints="0"/>
+		</waveclip>
+	</wavetrack>
+	<wavetrack name="213384__peridactyloptrix__hover-engine" channel="1" linked="0" mute="0" solo="0" height="150" minimized="0" isSelected="0" rate="48000" gain="1.0" pan="0.0">
+		<waveclip offset="0.00000000">
+			<sequence maxsamples="262144" sampleformat="262159" numsamples="272339">
+				<waveblock start="0">
+					<simpleblockfile filename="e0000626.au" len="133820" min="-0.31898" max="0.289446" rms="0.048358"/>
+				</waveblock>
+				<waveblock start="133820">
+					<simpleblockfile filename="e0000daa.au" len="138519" min="-0.247078" max="0.241965" rms="0.025007"/>
+				</waveblock>
+			</sequence>
+			<envelope numpoints="0"/>
+		</waveclip>
+	</wavetrack>
+</project>
