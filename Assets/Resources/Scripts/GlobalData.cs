@@ -7,7 +7,7 @@ public class GlobalData : MonoBehaviour {
 
 
 	public static bool musicOn = true;
-	public static bool soundFXOn = false;
+	public static bool soundFXOn = true;
 
 	public static int P1kills = 0;
 	public static int P2kills = 0;
