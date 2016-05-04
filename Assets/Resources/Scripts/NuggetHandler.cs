@@ -24,12 +24,26 @@ public class NuggetHandler : MonoBehaviour {
 
 		if(GlobalData.soundFXOn) {
 			AudioSource audio = gameObject.AddComponent<AudioSource>();
-			audio.PlayOneShot(nuggetPop[Random.Range(0,nuggetPop.Length)], 0.6f);
+
+			if (transform.parent.tag == "Pl1") {
+
+				audio.pitch = Mathf.Min (10f, 0.8f + GlobalData.P1nuggetCombo * 0.2f);
+				GlobalData.P1nuggetCombo++;
+			} else {
+				audio.pitch = Mathf.Min (10f, 0.8f + GlobalData.P2nuggetCombo * 0.2f);
+				GlobalData.P2nuggetCombo++;
+			}
+				
+			audio.PlayOneShot(nuggetPop[Random.Range(0,nuggetPop.Length)], 0.4f);
 		}
 	}
 
 	// Update is called once per frame
 	void Update () {
+
+		if(GlobalData.P1nuggetCombo > 0) GlobalData.P1nuggetCombo -=  Time.deltaTime * 2f;
+		if(GlobalData.P2nuggetCombo > 0) GlobalData.P2nuggetCombo -=  Time.deltaTime * 2f;
+
 		if( this.tag == "the-ship" )
 		{
 			if (Input.GetKey(KeyCode.C) || Input.GetAxis("LeftBumperP2") > 0) {
