@@ -41,8 +41,9 @@ public class NuggetHandler : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-		if(GlobalData.P1nuggetCombo > 0) GlobalData.P1nuggetCombo -=  Time.deltaTime * 2f;
-		if(GlobalData.P2nuggetCombo > 0) GlobalData.P2nuggetCombo -=  Time.deltaTime * 2f;
+		if (GlobalData.P1nuggetCombo > 0)
+			GlobalData.P1nuggetCombo -= Time.deltaTime * GlobalData.P1nuggetCombo;
+				if(GlobalData.P2nuggetCombo > 0) GlobalData.P2nuggetCombo -=  Time.deltaTime * GlobalData.P2nuggetCombo;
 
 		if( this.tag == "the-ship" )
 		{
