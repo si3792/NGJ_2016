@@ -27,10 +27,10 @@ public class NuggetHandler : MonoBehaviour {
 
 			if (transform.parent.tag == "Pl1") {
 
-				audio.pitch = Mathf.Min (10f, 0.8f + GlobalData.P1nuggetCombo * 0.2f);
+				audio.pitch = Mathf.Min (6f, 0.8f + GlobalData.P1nuggetCombo * 0.1f);
 				GlobalData.P1nuggetCombo++;
 			} else {
-				audio.pitch = Mathf.Min (10f, 0.8f + GlobalData.P2nuggetCombo * 0.2f);
+				audio.pitch = Mathf.Min (6f, 0.8f + GlobalData.P2nuggetCombo * 0.1f);
 				GlobalData.P2nuggetCombo++;
 			}
 				
