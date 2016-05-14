@@ -6,7 +6,7 @@ public class NewMenuScript : MonoBehaviour {
 
 
 	public void ChangeScene (string sceneName){
-		StartCoroutine(DelayedSceneChange(sceneName, 0.7f));
+		StartCoroutine(DelayedSceneChange(sceneName, 0.20f));
 		GameObject.FindGameObjectWithTag ("Screenfader").GetComponent<ScreenfaderScript> ().DropCurtains ();
 	}
 
