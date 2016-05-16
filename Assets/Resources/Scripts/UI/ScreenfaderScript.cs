@@ -11,6 +11,7 @@ public class ScreenfaderScript : MonoBehaviour {
 
 	void Start () {
 		img = GetComponent<Image> ();
+		img.enabled = true;
 	}
 
 	void Update() {

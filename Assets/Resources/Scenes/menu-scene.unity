@@ -1586,6 +1586,10 @@ Prefab:
       propertyPath: fadeSpeedOut
       value: 18
       objectReference: {fileID: 0}
+    - target: {fileID: 11438870, guid: 1e4b150e8502243fcb4f2485b71462f8, type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1e4b150e8502243fcb4f2485b71462f8, type: 2}
   m_IsPrefabParent: 0
