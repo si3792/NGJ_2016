@@ -63,8 +63,8 @@ public class PlayerController : MonoBehaviour {
 			health -= 3 * Time.fixedDeltaTime;
 
 			bool flag = (transform.parent.tag == "Pl1") ? true : false;
-			SecondCam = cts.getCameraForPlayer( flag);
 			MainCam.GetComponent<pulseCamera> ().MakeMePulse (0.2f);
+			SecondCam = cts.getCameraForPlayer( flag);
 			SecondCam.GetComponent<pulseCamera> ().MakeMePulse (0.2f);
 		}
 	}
