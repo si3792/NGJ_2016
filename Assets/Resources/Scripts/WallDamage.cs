@@ -7,7 +7,9 @@ public class WallDamage : MonoBehaviour {
 	public GameObject boom;
 	// Use this for initialization
 	void Start () {
-	
+		if(GlobalData.p2wallBonus) {
+			health += GlobalData.p2wallBonusAmount;
+		}
 	}
 	
 	// Update is called once per frame

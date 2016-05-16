@@ -33,6 +33,10 @@ public class GlobalData : MonoBehaviour {
 	public static float p2KnockbackAmount = 20f;
 	public static float p2OtherKnockbackAmount = 40f;
 
+	//p2 stronger walls ability
+	public static bool p2wallBonus = false;
+	public static float p2wallBonusAmount = 100f;
+
 	//static variables are not reinitialized on scene reload
 	void Awake() {
 		PlayersSwitched = false;
