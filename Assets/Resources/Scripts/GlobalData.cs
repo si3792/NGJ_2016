@@ -22,12 +22,16 @@ public class GlobalData : MonoBehaviour {
 
 
 	//abilities
+
+	// p1 amd p2 armor ability
 	public static bool p1armor = false;
 	public static bool p2armor = false;
 	public static float armorAmount = 50f;
 
+	//p2 knockback bonus ability
 	public static bool p2Knockback = true;
 	public static float p2KnockbackAmount = 20f;
+	public static float p2OtherKnockbackAmount = 40f;
 
 	//static variables are not reinitialized on scene reload
 	void Awake() {

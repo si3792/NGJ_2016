@@ -108,7 +108,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   distance: 1.5
-  strength: 60
+  strength: 40
 --- !u!114 &11451362
 MonoBehaviour:
   m_ObjectHideFlags: 1
