@@ -6,6 +6,9 @@ public class ScreenfaderScript : MonoBehaviour {
 
 	public float fadeSpeedIn = 5f; 
 	public float fadeSpeedOut = 5f;
+	public bool transitionIntself = false;
+	public string scene;
+
 	public bool sceneStarting = true, sceneEnding = false;
 	Image img;
 
@@ -22,9 +25,17 @@ public class ScreenfaderScript : MonoBehaviour {
 			Invoke ("FadeToBlack", 0f);
 	}
 
+	void changeScene() {
+		Application.LoadLevel(scene);
+	}
+
 	void FadeToBlack() {
 		Color tmp = Color.Lerp (img.color, Color.black, fadeSpeedOut * Time.deltaTime);
 		img.color = tmp;
+
+		if(transitionIntself && tmp == Color.black) {
+			changeScene ();
+		}
 	}
 
 	void FadeToClear() {

@@ -5,7 +5,7 @@ public class GlobalData : MonoBehaviour {
 	public static bool PlayersSwitched = false;
 	public static int Players = 0;
 
-	public static bool developerBuild = false;
+	public static bool developerBuild = true;
 
 	public static bool musicOn = false;
 	public static bool soundFXOn = true;

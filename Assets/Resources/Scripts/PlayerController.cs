@@ -21,9 +21,7 @@ public class PlayerController : MonoBehaviour {
 
 		cts = GameObject.FindGameObjectWithTag ("CameraTeller").GetComponent<CameraTellerScript>();
 	}
-
-
-
+		
 
 	void Update () {
 
@@ -33,7 +31,9 @@ public class PlayerController : MonoBehaviour {
 
 			Debug.Log ("Global data " + GlobalData.Players);
 			if (GlobalData.Players <= 0) {
-				Application.LoadLevel("menu-scene");
+				// End Game
+
+				GameObject.FindGameObjectWithTag ("Screenfader").GetComponent<ScreenfaderScript> ().sceneEnding = true;
 				Debug.Log ("KUR");
 			}
 		}
