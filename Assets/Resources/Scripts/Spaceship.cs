@@ -58,12 +58,20 @@ public class Spaceship : MonoBehaviour {
 
 
 		if( readyToFly ) {
-			if(other.gameObject.tag == "Pl1" || other.gameObject.tag == "Pl2") {
 
+			if(other.gameObject.tag == "Pl1" ){ 
+				GlobalData.p1survived = true;
+				Destroy (other.gameObject);
+				playersIn++;
+
+			} else 
+			if(other.gameObject.tag == "Pl2" ){ 
+				GlobalData.p2survived = true;
 				Destroy (other.gameObject);
 				playersIn++;
 
 			}
+
 
 		}
 

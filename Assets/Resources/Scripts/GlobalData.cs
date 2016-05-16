@@ -17,6 +17,9 @@ public class GlobalData : MonoBehaviour {
 	public static float P1nuggetCombo = 0;
 	public static float P2nuggetCombo = 0;
 
+	public static bool p1survived = false;
+	public static bool p2survived = false;
+
 	//static variables are not reinitialized on scene reload
 	void Awake() {
 		PlayersSwitched = false;

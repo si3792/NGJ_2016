@@ -3,7 +3,7 @@ using System.Collections;
 
 public class ScatterOnDestroy : MonoBehaviour {
 
-	// Use this for initialization
+	public int mode = 0; // 1 - pl1 2 - pl2
 	void Start () {
 	
 	}
@@ -15,6 +15,14 @@ public class ScatterOnDestroy : MonoBehaviour {
 
 
 	public void OnDestroy() {
+
+		if (mode == 1 && GlobalData.p1survived)
+			return;
+
+		if (mode == 2 && GlobalData.p2survived)
+			return;
+
+
 	
 		Transform[] allChildren = GetComponentsInChildren<Transform>();
 		this.transform.DetachChildren ();
