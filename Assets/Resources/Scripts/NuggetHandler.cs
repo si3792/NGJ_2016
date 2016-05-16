@@ -47,9 +47,11 @@ public class NuggetHandler : MonoBehaviour {
 
 		if( this.tag == "the-ship" )
 		{
+			if(GlobalData.developerBuild)
 			if (Input.GetKey(KeyCode.C) || Input.GetAxis("LeftBumperP2") > 0) {
 				nuggets = 99999999;
 			}
+
 			if (NuggetsToWin <= nuggets) {
 				gameObject.GetComponentInChildren<Spaceship> ().shipFueled ();
 				Destroy (this);

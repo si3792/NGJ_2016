@@ -59,8 +59,11 @@ public class ControlTime : MonoBehaviour
 		}
 
 		//test slow time
-		if (Input.GetKeyDown (KeyCode.L)) {
-			editTime (0.2f, 1f);
+		if (Input.GetKeyDown (KeyCode.L) && GlobalData.developerBuild) {
+			editTime (0.2f, 5f);
+		}
+		else if (Input.GetKeyDown (KeyCode.J) && GlobalData.developerBuild) {
+			editTime (0.4f, 5f);
 		}
 
 	}

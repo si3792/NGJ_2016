@@ -125,7 +125,7 @@ public class PlayerMovement : MonoBehaviour
 		}
 
 		//test knockback
-		if(Input.GetKeyDown(KeyCode.K)) {
+		if(Input.GetKeyDown(KeyCode.K) && GlobalData.developerBuild) {
 			knockback (40, Vector2.right);
 		}
 
