@@ -26,6 +26,8 @@ public class GlobalData : MonoBehaviour {
 	public static bool p2armor = false;
 	public static float armorAmount = 50f;
 
+	public static bool p2Knockback = true;
+	public static float p2KnockbackAmount = 20f;
 
 	//static variables are not reinitialized on scene reload
 	void Awake() {
