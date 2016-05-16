@@ -9,17 +9,28 @@ public class PlayerController : MonoBehaviour {
 	CameraTellerScript cts;
 
 	void Start () {
-		if (MaxHP == 0) {
-			MaxHP = health;
-		}	
+		
 		MainCam = GameObject.FindGameObjectWithTag ("MainCamera");
 
 		if(transform.parent.tag == "Pl2"  ) {
 			SecondCam = GameObject.FindGameObjectWithTag("CameraP1");
+
+			if (GlobalData.p2armor == true)
+				health += GlobalData.armorAmount;
+
 		} else 
+
+			if (GlobalData.p1armor == true)
+				health += GlobalData.armorAmount;
+
 			SecondCam = GameObject.FindGameObjectWithTag("CameraP2");
 
 		cts = GameObject.FindGameObjectWithTag ("CameraTeller").GetComponent<CameraTellerScript>();
+
+
+		if (MaxHP == 0) {
+			MaxHP = health;
+		}
 	}
 		
 

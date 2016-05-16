@@ -20,6 +20,13 @@ public class GlobalData : MonoBehaviour {
 	public static bool p1survived = false;
 	public static bool p2survived = false;
 
+
+	//abilities
+	public static bool p1armor = false;
+	public static bool p2armor = false;
+	public static float armorAmount = 50f;
+
+
 	//static variables are not reinitialized on scene reload
 	void Awake() {
 		PlayersSwitched = false;
