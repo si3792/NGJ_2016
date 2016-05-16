@@ -29,6 +29,8 @@ public class Spaceship : MonoBehaviour {
 		GameObject.FindGameObjectWithTag("psaiTogether").SetActive(false);
 		anim.SetBool ("PlayerIn", true);
 		liftoff_flag = true;
+
+		GameObject.FindGameObjectWithTag ("LiftoffCanvas").transform.FindChild ("holder").gameObject.GetComponent<Animator> ().SetTrigger ("startLiftoff");
 	}
 
 	public void startEngines() {
