@@ -37,6 +37,8 @@ TagManager:
   - Screenfader
   - CameraTeller
   - Rim
+  - redHPShow
+  - blueHPShow
   layers:
   - Default
   - TransparentFX
