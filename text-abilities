@@ -1,14 +1,14 @@
 Core abilities:
------- bonus hp 
+------ bonus hp // and regen?
 small hp regen
-ability cd reduce
+----- ability cd reduce
 
 PL 1:
----- HEALING MINES (encourages diving gameplay)
-Shield? absorbs dmg auto
+---- HEALING MINES (encourages diving gameplay) FX: greeen +es?
+Shield? absorbs dmg auto FX: shield
 MINE LANES / mines that live long enough multiply (encourages entrenching)
 
 PL 2:
-------  Stronger knockback bullets (mainly moving tech)
-------  Stronger Walls (more hp, slightly different sprites)
-Heavy Steel: more mass, pushes bugs around
+------  Stronger knockback bullets (mainly moving tech) FX: dust
+------  Stronger Walls (more hp, slightly different sprites) FX: diff sprite
+Heavy Steel: more mass, pushes bugs around FX: heavier suit
