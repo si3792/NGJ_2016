@@ -33,6 +33,13 @@ public class MineController : MonoBehaviour {
 			foreach (var collider in hits) {
 				if (collider.gameObject.tag == "enemy-hurtbox") {
 					collider.gameObject.GetComponent<EnemyDamageScript>().Damage(damage);
+
+					//healing mines ability
+					if (GlobalData.p1healMines) {
+						GameObject hbox =  GameObject.FindGameObjectWithTag ("Pl1").transform.FindChild ("hurtbox").gameObject;
+						hbox.GetComponent<PlayerController> ().health = Mathf.Min(hbox.GetComponent<PlayerController> ().health + damage * GlobalData.p1healMultiplier, hbox.GetComponent<PlayerController> ().MaxHP);
+					}
+
 					collider.gameObject.GetComponent<EnemyDamageScript> ().lastDMGPl1 = true;
 				}
 			}

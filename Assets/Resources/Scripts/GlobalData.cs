@@ -37,6 +37,10 @@ public class GlobalData : MonoBehaviour {
 	public static bool p2wallBonus = false;
 	public static float p2wallBonusAmount = 100f;
 
+	// p1 healing mines ability
+	public static bool p1healMines = true;
+	public static float p1healMultiplier = 0.01f;
+
 	//static variables are not reinitialized on scene reload
 	void Awake() {
 		PlayersSwitched = false;
