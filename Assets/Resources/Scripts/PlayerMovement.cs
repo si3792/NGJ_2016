@@ -24,6 +24,14 @@ public class PlayerMovement : MonoBehaviour
 	void Awake() {
 		player1Alive = true;
 		player2Alive = true;
+
+		if(!IsPlayerOne) {
+
+			if(GlobalData.p2massAbility) {
+				GetComponent<Rigidbody2D> ().mass = GlobalData.p2massAmount;
+			}
+		}
+
 	}
 
 
@@ -43,6 +51,8 @@ public class PlayerMovement : MonoBehaviour
 
 	void Start ()
 	{
+		
+
 		if (GlobalData.PlayersSwitched) {
 			IsPlayerOne = !IsPlayerOne;
 		}
@@ -64,6 +74,7 @@ public class PlayerMovement : MonoBehaviour
 			specialCooldown -= GlobalData.cdAbilityAmount;
 		} 
 
+		Speed *= myRB.mass;
 			
 	}
 

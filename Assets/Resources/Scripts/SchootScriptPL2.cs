@@ -15,11 +15,16 @@ public class SchootScriptPL2 : MonoBehaviour {
 
 
 	void Start () {
+
+
+
 		gun = GameObject.FindGameObjectWithTag("pl2-gun");
 		pl = GameObject.FindGameObjectWithTag("Pl2");
 
 		if (GlobalData.p2Knockback)
 			selfKnockback += GlobalData.p2KnockbackAmount;
+
+		selfKnockback *= pl.GetComponent<Rigidbody2D> ().mass;
 	}
 	
 	// Update is called once per frame
