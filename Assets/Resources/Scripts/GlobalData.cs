@@ -47,7 +47,7 @@ public class GlobalData : MonoBehaviour {
 	public static float p1healMultiplier = 0.01f;
 
 	// p1 shield ability
-	public static bool p1shield = false;
+	public static bool p1shield = true;
 
 	// pl2 mass increase ability
 	public static bool p2massAbility = false;
