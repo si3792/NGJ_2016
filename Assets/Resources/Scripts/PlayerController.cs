@@ -5,6 +5,7 @@ public class PlayerController : MonoBehaviour {
 
 	public float health = 100f;
 	public float MaxHP = 0f;
+	public bool invulnerable = false;
 	GameObject MainCam, SecondCam;
 	CameraTellerScript cts;
 
@@ -54,18 +55,27 @@ public class PlayerController : MonoBehaviour {
 	void OnTriggerEnter2D(Collider2D other) {
 		if(other.gameObject.tag == "BeetleHurt") {
 			//transform.parent.GetComponent<PlayerMovement> ().knockback (60, new Vector2 (transform.position.x - other.gameObject.transform.position.x, 0f));
+		
+			if(transform.parent.FindChild("pl1-shield") != null) {
+				transform.parent.FindChild ("pl1-shield").GetComponent<ShieldScript> ().attemptShields ();
+			}
 		}
 	}
 
 	void OnTriggerStay2D(Collider2D other) {
 		if(other.gameObject.tag == "BeetleHurt") {
 			//transform.parent.GetComponent<PlayerMovement> ().knockback (60, new Vector2 (transform.position.x - other.gameObject.transform.position.x, 0f));
+
+
+
+			if(!invulnerable) {
 			health -= 3 * Time.fixedDeltaTime;
 
 			bool flag = (transform.parent.tag == "Pl1") ? true : false;
 			MainCam.GetComponent<pulseCamera> ().MakeMePulse (0.2f);
 			SecondCam = cts.getCameraForPlayer( flag);
 			SecondCam.GetComponent<pulseCamera> ().MakeMePulse (0.2f);
+			}
 		}
 	}
 

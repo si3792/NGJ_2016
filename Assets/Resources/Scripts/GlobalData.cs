@@ -46,6 +46,8 @@ public class GlobalData : MonoBehaviour {
 	public static bool p1healMines = true;
 	public static float p1healMultiplier = 0.01f;
 
+	public static bool p1shield = false;
+
 	//static variables are not reinitialized on scene reload
 	void Awake() {
 		PlayersSwitched = false;
