@@ -55,6 +55,16 @@ public class PlayerMovement : MonoBehaviour
 			myAnim = transform.Find ("RedObject").gameObject.GetComponent<Animator> ();
 		else
 			myAnim = transform.Find ("BlueObject").transform.GetChild(0).gameObject.GetComponent<Animator> ();
+
+		// ability cd 
+		if(IsPlayerOne && GlobalData.p1cdAbility) {
+			specialCooldown -= GlobalData.cdAbilityAmount;
+		} else  
+			if( (!IsPlayerOne) && GlobalData.p2cdAbility) {
+			specialCooldown -= GlobalData.cdAbilityAmount;
+		} 
+
+			
 	}
 
 	public bool GetFacingRight() {

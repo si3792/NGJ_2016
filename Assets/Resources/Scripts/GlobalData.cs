@@ -28,6 +28,11 @@ public class GlobalData : MonoBehaviour {
 	public static bool p2armor = false;
 	public static float armorAmount = 50f;
 
+	// p1 amd p2 ability cd ability
+	public static bool p1cdAbility = true;
+	public static bool p2cdAbility = true;
+	public static float cdAbilityAmount = 2f;
+
 	//p2 knockback bonus ability
 	public static bool p2Knockback = true;
 	public static float p2KnockbackAmount = 20f;
