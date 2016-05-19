@@ -557,6 +557,10 @@ Prefab:
       propertyPath: Enemy1SpawnMeanExpGrowth
       value: 1.025
       objectReference: {fileID: 0}
+    - target: {fileID: 102810, guid: 032c0c01f6b90483ba2c3d750a7f0ee5, type: 2}
+      propertyPath: m_TagString
+      value: Spawner
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 032c0c01f6b90483ba2c3d750a7f0ee5, type: 2}
   m_IsPrefabParent: 0
@@ -1176,6 +1180,7 @@ GameObject:
   m_Component:
   - 224: {fileID: 732916150}
   - 95: {fileID: 732916151}
+  - 114: {fileID: 732916152}
   m_Layer: 8
   m_Name: holder
   m_TagString: Untagged
@@ -1219,6 +1224,18 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &732916152
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 732916149}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f212fbf9bffd445baa75f6479c0dd2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  delay: 1000
 --- !u!1001 &789638700
 Prefab:
   m_ObjectHideFlags: 0
@@ -2343,6 +2360,10 @@ Prefab:
       propertyPath: m_LocalScale.y
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 102810, guid: 032c0c01f6b90483ba2c3d750a7f0ee5, type: 2}
+      propertyPath: m_TagString
+      value: Spawner
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 032c0c01f6b90483ba2c3d750a7f0ee5, type: 2}
   m_IsPrefabParent: 0
@@ -3267,7 +3288,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1963231058
 MonoBehaviour:
   m_ObjectHideFlags: 0
