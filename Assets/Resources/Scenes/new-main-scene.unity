@@ -122,7 +122,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 445564, guid: f4b20a5e65f21414e92182f37e4bf64e, type: 2}
       propertyPath: m_RootOrder
-      value: 18
+      value: 17
       objectReference: {fileID: 0}
     - target: {fileID: 11445938, guid: f4b20a5e65f21414e92182f37e4bf64e, type: 2}
       propertyPath: target
@@ -439,7 +439,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 455632, guid: b3d8f3ecdb1e44973a2214aad85e9755, type: 2}
       propertyPath: m_RootOrder
-      value: 19
+      value: 18
       objectReference: {fileID: 0}
     - target: {fileID: 11432088, guid: b3d8f3ecdb1e44973a2214aad85e9755, type: 2}
       propertyPath: OffsetFromSinglePlayer
@@ -655,7 +655,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 401270, guid: 5be337c1989864e868bc75149b039b66, type: 2}
       propertyPath: m_RootOrder
-      value: 22
+      value: 21
       objectReference: {fileID: 0}
     - target: {fileID: 163964, guid: 5be337c1989864e868bc75149b039b66, type: 2}
       propertyPath: m_Name
@@ -1023,7 +1023,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 456016, guid: 3e2512324375849f69f3de87f546636d, type: 2}
       propertyPath: m_RootOrder
-      value: 9
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 11406664, guid: 3e2512324375849f69f3de87f546636d, type: 2}
       propertyPath: mode
@@ -1302,7 +1302,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 417112, guid: b1dd4ed94008e4330904dca9f8e6cfab, type: 2}
       propertyPath: m_RootOrder
-      value: 13
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 11445716, guid: b1dd4ed94008e4330904dca9f8e6cfab, type: 2}
       propertyPath: target
@@ -1483,7 +1483,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 463294, guid: 1a9315e3b6fbc4078adf77daf1716182, type: 2}
       propertyPath: m_RootOrder
-      value: 16
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 11454024, guid: 1a9315e3b6fbc4078adf77daf1716182, type: 2}
       propertyPath: OffsetFromSinglePlayer
@@ -1644,7 +1644,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 403096, guid: cffc4e115c8604de2aa732ef3591b395, type: 2}
       propertyPath: m_RootOrder
-      value: 20
+      value: 19
       objectReference: {fileID: 0}
     - target: {fileID: 11486082, guid: cffc4e115c8604de2aa732ef3591b395, type: 2}
       propertyPath: camBaseZ
@@ -1886,7 +1886,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 6151288, guid: c4b76bc4967dd410592c5198fd7269c3, type: 2}
       propertyPath: m_Offset.y
-      value: 0.2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 486088, guid: c4b76bc4967dd410592c5198fd7269c3, type: 2}
       propertyPath: m_RootOrder
@@ -1936,6 +1936,22 @@ Prefab:
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 6115324, guid: c4b76bc4967dd410592c5198fd7269c3, type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6151288, guid: c4b76bc4967dd410592c5198fd7269c3, type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6151288, guid: c4b76bc4967dd410592c5198fd7269c3, type: 2}
+      propertyPath: m_Size.x
+      value: 0.97
+      objectReference: {fileID: 0}
+    - target: {fileID: 6151288, guid: c4b76bc4967dd410592c5198fd7269c3, type: 2}
+      propertyPath: m_Size.y
+      value: 1.43
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c4b76bc4967dd410592c5198fd7269c3, type: 2}
   m_IsPrefabParent: 0
@@ -1976,7 +1992,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 408990, guid: 5a3ed8bca341c4fd088e7a796d78e321, type: 2}
       propertyPath: m_RootOrder
-      value: 17
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 11496254, guid: 5a3ed8bca341c4fd088e7a796d78e321, type: 2}
       propertyPath: target
@@ -2143,7 +2159,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 401270, guid: 5be337c1989864e868bc75149b039b66, type: 2}
       propertyPath: m_RootOrder
-      value: 21
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 163964, guid: 5be337c1989864e868bc75149b039b66, type: 2}
       propertyPath: m_Name
@@ -2205,7 +2221,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 498296, guid: 057f41612847349b28cb050cc7117219, type: 2}
       propertyPath: m_RootOrder
-      value: 12
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 11404182, guid: 057f41612847349b28cb050cc7117219, type: 2}
       propertyPath: OffsetFromSinglePlayer
@@ -2255,7 +2271,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 401270, guid: 5be337c1989864e868bc75149b039b66, type: 2}
       propertyPath: m_RootOrder
-      value: 8
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 5007798, guid: 5be337c1989864e868bc75149b039b66, type: 2}
       propertyPath: m_CollisionDetection
@@ -3123,7 +3139,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 451594, guid: 13387d4a0fa87470580a0c1a2371e7fc, type: 2}
       propertyPath: m_RootOrder
-      value: 7
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 11430820, guid: 13387d4a0fa87470580a0c1a2371e7fc, type: 2}
       propertyPath: paused
@@ -3169,7 +3185,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 22465956, guid: be72b95b4383c4fb2b78f38ecde4de26, type: 2}
       propertyPath: m_RootOrder
-      value: 27
+      value: 26
       objectReference: {fileID: 0}
     - target: {fileID: 22465956, guid: be72b95b4383c4fb2b78f38ecde4de26, type: 2}
       propertyPath: m_AnchoredPosition.x
@@ -3225,7 +3241,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11464618, guid: be72b95b4383c4fb2b78f38ecde4de26, type: 2}
       propertyPath: scene
-      value: menu-scene
+      value: score-scene
       objectReference: {fileID: 0}
     - target: {fileID: 11464618, guid: be72b95b4383c4fb2b78f38ecde4de26, type: 2}
       propertyPath: fadeSpeedOut
