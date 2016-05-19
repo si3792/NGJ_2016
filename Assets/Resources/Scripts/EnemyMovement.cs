@@ -46,7 +46,7 @@ public class EnemyMovement : MonoBehaviour {
 		}
 
 		if (pl1 == null && pl2 == null)
-			target = GameObject.FindGameObjectWithTag ("the-ship");
+			target = GameObject.FindGameObjectWithTag ("the-ship"); // Replace with sth else
 
 		if (target.transform.position.x < transform.position.x) {
 			targetAngle = -1.0f;
