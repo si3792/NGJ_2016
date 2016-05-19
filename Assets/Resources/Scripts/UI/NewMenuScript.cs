@@ -27,4 +27,20 @@ public class NewMenuScript : MonoBehaviour {
 		Application.Quit ();
 	}
 
+
+	public void changeGameMode(int mode) {
+		if (mode >= 0 && mode < 3)
+			GlobalData.gameMode = mode;
+
+		// + and - Mode
+		if (mode == 10)
+			GlobalData.gameMode = Mathf.Min (GlobalData.gameMode + 1, 2);
+		else if (mode == -10) {
+			GlobalData.gameMode = Mathf.Max (GlobalData.gameMode - 1, 0);
+		}
+
+
+	}
+
+
 }

@@ -20,6 +20,8 @@ public class GlobalData : MonoBehaviour {
 	public static bool p1survived = false;
 	public static bool p2survived = false;
 
+	//GAME MODE
+	public static int gameMode = 0; // 0 - normal, 1 - hard, 2 - hof
 
 	//abilities
 
