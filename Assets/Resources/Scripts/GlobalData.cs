@@ -26,14 +26,14 @@ public class GlobalData : MonoBehaviour {
 	//abilities
 
 	// p1 amd p2 armor ability
-	public static bool p1armor = true;
-	public static bool p2armor = true;
+	public static bool p1armor = false;
+	public static bool p2armor = false;
 	public static float armorAmount = 50f;
 
 	// p1 amd p2 ability cd ability
-	public static bool p1cdAbility = true;
-	public static bool p2cdAbility = true;
-	public static float cdAbilityAmount = 4f;
+	public static bool p1cdAbility = false;
+	public static bool p2cdAbility = false;
+	public static float cdAbilityAmount = 1f;
 
 	//p2 knockback bonus ability
 	public static bool p2Knockback = true;
@@ -41,15 +41,15 @@ public class GlobalData : MonoBehaviour {
 	public static float p2OtherKnockbackAmount = 40f;
 
 	//p2 stronger walls ability
-	public static bool p2wallBonus = true;
+	public static bool p2wallBonus = false;
 	public static float p2wallBonusAmount = 100f;
 
 	// p1 healing mines ability
-	public static bool p1healMines = true;
+	public static bool p1healMines = false;
 	public static float p1healMultiplier = 0.01f;
 
 	// p1 shield ability
-	public static bool p1shield = true;
+	public static bool p1shield = false;
 
 	// pl2 mass increase ability
 	public static bool p2massAbility = true;
