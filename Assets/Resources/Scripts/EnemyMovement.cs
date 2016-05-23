@@ -9,6 +9,7 @@ public class EnemyMovement : MonoBehaviour {
 	float col_radius;
 	Rigidbody2D myRB;
 	Animator anim;
+	float slowAmount = 0.1f;
 	// Use this for initialization
 	void Start () {
 		enemies = new HashSet<EnemyRegister.EnemyReference> ();
@@ -19,18 +20,22 @@ public class EnemyMovement : MonoBehaviour {
 		anim = GetComponentInChildren<Animator> ();
 		target = pl1;
 		targetDist = float.MaxValue; 
+
+		InvokeRepeating ("SlowedUpdate", 0f, slowAmount);
 	}
 	float targetDist;
 	float targetAngle = 1.0f;
 	GameObject target;
 
-	void FixedUpdate()
-	{
+
+	void SlowedUpdate() {
+		// Doesnt calculate target every frame
+
 		if (target == null)
 			targetDist = float.MaxValue;
 		else
 			targetDist = Vector2.Distance (transform.position, target.transform.position);
-		
+
 		if (pl1 != null) {
 			if (targetDist > Vector2.Distance (transform.position, pl1.transform.position)) {	
 				target = pl1;
@@ -53,6 +58,7 @@ public class EnemyMovement : MonoBehaviour {
 		} else {
 			targetAngle = 1.0f;
 		}
+
 		if (targetDist > 1)
 		{
 			Vector2 totalPush = Vector2.zero;
@@ -62,7 +68,7 @@ public class EnemyMovement : MonoBehaviour {
 				if ( enemy == null ) {
 					continue;
 				}
- 				if (enemy.valid == false) {
+				if (enemy.valid == false) {
 					to_remove.Add (enemy);
 					continue;
 				}
@@ -92,8 +98,14 @@ public class EnemyMovement : MonoBehaviour {
 			//Normalize the vector so that we get a vector that points in a certain direction, which we van multiply by our desired speed
 			pull.Normalize();
 			//Set the ships new position;
-			myRB.AddForce( pull * speed * Time.fixedDeltaTime, ForceMode2D.Impulse );
+			myRB.AddForce( pull * speed * slowAmount, ForceMode2D.Impulse );
 		}
+	}
+
+	void FixedUpdate()
+	{
+
+
 
 
 	}
