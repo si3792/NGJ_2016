@@ -22,7 +22,7 @@ public class InstantiateCircles : MonoBehaviour {
 	}
 
 	void createCircle() {
-
+		/*
 		GameObject c;
 		c = (GameObject) Instantiate (circle, transform.position + new Vector3 (Random.Range (rangeminEmitter, rangemaxEmitter), -100, 0), transform.rotation);
 		c.transform.SetParent (transform);
@@ -31,7 +31,7 @@ public class InstantiateCircles : MonoBehaviour {
 		c.transform.SetParent (transform);
 
 		c = (GameObject) Instantiate (circle, transform.position + new Vector3 (Random.Range (rangeminEmitter, rangemaxEmitter), -100, 0), transform.rotation);
-		c.transform.SetParent (transform);
+		c.transform.SetParent (transform); */
 	}
 
 }

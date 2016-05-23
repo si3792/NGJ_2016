@@ -13,6 +13,7 @@ public class WaveSpawn : MonoBehaviour {
 	public int maxBugs = 50;
 	public static int globalWave = 0;
 	public static int bugCount = 0;
+	public int thisBugCount;
 	public GameObject Enemy1;
 	float timeToWave;
 	float timeToEmit;
@@ -33,6 +34,7 @@ public class WaveSpawn : MonoBehaviour {
 
 	void FixedUpdate()
 	{
+		thisBugCount = bugCount;
 		if (inWave) {
 			if (timeToEmit < 0f) {
 				emitWave ();

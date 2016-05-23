@@ -4,7 +4,7 @@ using UnityEngine.UI;
 
 // Circle script
 public class MoveUp : MonoBehaviour {
-	
+	/*
 	public float minspeed = 50f, maxspeed = 250f;
 	public enum CircleMode {Red, Green, Blue};
 	public CircleMode mode; 
@@ -34,5 +34,5 @@ public class MoveUp : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		GetComponent<RectTransform> ().Translate (new Vector2 (0, speed * Time.deltaTime));
-	}
+	}*/
 }
