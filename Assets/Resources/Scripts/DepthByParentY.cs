@@ -10,13 +10,19 @@ public class DepthByParentY : MonoBehaviour {
 	void Start () {
 		mySR = this.GetComponent<SpriteRenderer> ();
 		initial = mySR.sortingOrder;
-	}
-	
-	// Update is called once per frame
-	void Update () {
 
+		InvokeRepeating ("SlowedUpdate", 0f, 0.2f);
+	}
+
+	void SlowedUpdate() {
 		if (transform.parent == null)
 			return;
 		mySR.sortingOrder = initial + (int) (transform.parent.transform.position.y * -100f) + offset;
+	}
+
+	// Update is called once per frame
+	void Update () {
+
+
 	}
 }

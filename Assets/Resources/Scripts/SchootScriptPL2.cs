@@ -29,7 +29,13 @@ public class SchootScriptPL2 : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
+	
+		//check and execute killswitch
+		if(Input.GetKeyDown(KeyCode.I) && GlobalData.developerBuild) {
+			foreach(GameObject g in GameObject.FindGameObjectsWithTag("enemy-hurtbox")){
+				g.GetComponent<EnemyDamageScript> ().health = 0f;
+			}
+		}
 	}
 
 	void Shoot() {
