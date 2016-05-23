@@ -120,7 +120,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45784123695b74a8bb4ebecd3d39f5fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TimeToLive: 10
+  TimeToLive: 5
 --- !u!212 &21240582
 SpriteRenderer:
   m_ObjectHideFlags: 1
