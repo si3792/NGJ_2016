@@ -10,10 +10,10 @@ public class GlobalData : MonoBehaviour {
 	public static bool musicOn = false;
 	public static bool soundFXOn = true;
 
-	public static int P1kills = 0;
-	public static int P2kills = 0;
-	public static int P1nuggets = 0;
-	public static int P2nuggets = 0;
+	public static int P1kills = 133;
+	public static int P2kills = 540;
+	public static int P1nuggets = 130;
+	public static int P2nuggets = 760;
 	public static float P1nuggetCombo = 0;
 	public static float P2nuggetCombo = 0;
 
