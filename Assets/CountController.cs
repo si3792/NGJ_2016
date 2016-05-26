@@ -56,6 +56,14 @@ public class CountController : MonoBehaviour {
 			myAS.PlayOneShot (transitionFX);
 			myAS.volume = initialVolume;
 
+			if(GlobalData.P1nuggets > GlobalData.P2nuggets) {
+				P1nuggs.GetComponent<popText> ().popAmount = 3f;
+				P1nuggs.GetComponent<popText> ().Pop (); 
+			} else { 
+				P2nuggs.GetComponent<popText> ().popAmount = 3f;
+				P2nuggs.GetComponent<popText> ().Pop (); 
+			}
+
 		} else {
 			myAS.PlayOneShot (nuggetFX);
 		}
@@ -85,6 +93,14 @@ public class CountController : MonoBehaviour {
 
 		if (p1k == GlobalData.P1kills && p2k == GlobalData.P2kills) {
 			mode = 3;
+			myAS.PlayOneShot (transitionFX);
+			if(GlobalData.P1kills > GlobalData.P2kills) {
+				P1kills.GetComponent<popText> ().popAmount = 3f;
+				P1kills.GetComponent<popText> ().Pop (); 
+			} else { 
+				P2kills.GetComponent<popText> ().popAmount = 3f;
+				P2kills.GetComponent<popText> ().Pop (); 
+			}
 
 		} else {
 			myAS.PlayOneShot (killFX);
@@ -98,6 +114,13 @@ public class CountController : MonoBehaviour {
 
 	float getT() {
 		return progress / (progress + scaler);
+	}
+
+	void drop_final(){
+		myAS.pitch = 1f;
+		myAS.PlayOneShot (finalFX);
+		GetComponent<Animator> ().SetTrigger ("drop_final");
+
 	}
 
 	void Update () {
@@ -129,10 +152,8 @@ public class CountController : MonoBehaviour {
 		}
 
 		if(mode == 3) {
-			myAS.pitch = 1f;
-			myAS.PlayOneShot (finalFX);
-			GetComponent<Animator> ().SetTrigger ("drop_final");
 			mode = 4;
+			Invoke ("drop_final", 0.3f);
 		}
 
 
