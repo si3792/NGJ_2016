@@ -4,16 +4,18 @@ using System.Collections;
 
 public class CountController : MonoBehaviour {
 
-	public AudioClip nuggetFX, killFX, finalFX;
+	public AudioClip nuggetFX, killFX, finalFX, transitionFX;
 	public GameObject P1nuggs, P2nuggs;
 	public GameObject P1kills, P2kills;
 	public float startStep = 0.3f;
 	public float minStep = 0.1f;
 	public float scaler = 1f;
+	public float initialVolume, finalVolume;
 	float curStep;
 	public float startSpeed, maxSpeed;
 	public float startPitch, maxPitch;
-	public float plusCountMin, plusCountMax;
+	float plusCountMin, plusCountMax;
+	public float plusCountScaler = 60f;
 	float p1n = 0, p2n = 0;
 	float p1k = 0, p2k = 0;
 	bool doneFlag = false;
@@ -25,6 +27,9 @@ public class CountController : MonoBehaviour {
 	void Start () {
 		curStep = startStep;
 		myAS = GetComponent<AudioSource> ();
+
+		plusCountMin = Mathf.Max (GlobalData.P1nuggets, GlobalData.P2nuggets) / plusCountScaler;
+		plusCountMax = 3 + plusCountMin;
 	}
 
 	void AddNuggets() {
@@ -46,6 +51,10 @@ public class CountController : MonoBehaviour {
 		if (p1n == GlobalData.P1nuggets && p2n == GlobalData.P2nuggets) {
 			mode = 2;
 			progress = 1;
+			plusCountMin = Mathf.Max (GlobalData.P1kills, GlobalData.P2kills) / plusCountScaler;
+			plusCountMax = 3 + plusCountMin;
+			myAS.PlayOneShot (transitionFX);
+			myAS.volume = initialVolume;
 
 		} else {
 			myAS.PlayOneShot (nuggetFX);
@@ -101,6 +110,7 @@ public class CountController : MonoBehaviour {
 			P1nuggs.GetComponent<popText> ().popSpeed = Mathf.Lerp (startSpeed, maxSpeed, getT());
 			P2nuggs.GetComponent<popText> ().popSpeed = Mathf.Lerp (startSpeed, maxSpeed, getT());
 			myAS.pitch =  Mathf.Lerp (startPitch, maxPitch, getT());
+			myAS.volume =  Mathf.Lerp (initialVolume, finalVolume, getT());
 
 			progress++;
 		}

@@ -3595,20 +3595,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nuggetFX: {fileID: 8300000, guid: b897a04be828c48b8af717b856857deb, type: 3}
   killFX: {fileID: 8300000, guid: 128d751a301ec4a4689f6129805aa6dc, type: 3}
-  finalFX: {fileID: 8300000, guid: 563178bb36f024088a63367364291052, type: 3}
+  finalFX: {fileID: 8300000, guid: 2424d540b2739455d8dca28c6c7a6e65, type: 3}
+  transitionFX: {fileID: 8300000, guid: 8e0f543dc774546669c72d7800d5589e, type: 3}
   P1nuggs: {fileID: 401119912}
   P2nuggs: {fileID: 424331429}
   P1kills: {fileID: 327914808}
   P2kills: {fileID: 1533295874}
-  startStep: 0.3
+  startStep: 0.6
   minStep: 0.01
-  scaler: 20
-  startSpeed: 5
-  maxSpeed: 25
-  startPitch: 0.8
+  scaler: 7
+  initialVolume: 0.4
+  finalVolume: 0.8
+  startSpeed: 1
+  maxSpeed: 20
+  startPitch: 1
   maxPitch: 5
-  plusCountMin: 7
-  plusCountMax: 10
+  plusCountScaler: 22
 --- !u!82 &1824962570
 AudioSource:
   m_ObjectHideFlags: 0
