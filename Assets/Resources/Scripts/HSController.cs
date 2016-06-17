@@ -24,8 +24,10 @@ public class HSController : MonoBehaviour
 
 		string name = GameObject.FindGameObjectWithTag ("InputField").GetComponent<InputField> ().text;
 		int score = GlobalData.P1kills + GlobalData.P2kills + GlobalData.P1nuggets + GlobalData.P2nuggets;
+
+		if(name=="") name = "Anonymous";
 		StartCoroutine (PostScores (name, score));
-		Debug.Log (name + "----" + score);
+
 
 	}
 
