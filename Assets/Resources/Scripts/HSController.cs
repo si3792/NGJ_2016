@@ -12,11 +12,21 @@ public class HSController : MonoBehaviour
 	void Start()
 	{
 		StartCoroutine(GetScores());
+
+	}
+
+	void InvokeChangeScene() {
+		GameObject.FindGameObjectWithTag ("MenuController").GetComponent<NewMenuScript> ().ChangeScene ("menu-scene");
 	}
 
 
-	public void Post(string name, int score) {
+	public void PostSubmit() {
+
+		string name = GameObject.FindGameObjectWithTag ("InputField").GetComponent<InputField> ().text;
+		int score = GlobalData.P1kills + GlobalData.P2kills + GlobalData.P1nuggets + GlobalData.P2nuggets;
 		StartCoroutine (PostScores (name, score));
+		Debug.Log (name + "----" + score);
+
 	}
 
 	// remember to use StartCoroutine when calling this function!
@@ -36,6 +46,8 @@ public class HSController : MonoBehaviour
 		{
 			print("There was an error posting the high score: " + hs_post.error);
 		}
+
+		Invoke ("InvokeChangeScene", 1.5f);
 	}
 
 	// Get the scores from the MySQL DB to display in a GUIText.

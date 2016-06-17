@@ -42,6 +42,8 @@ TagManager:
   - LiftoffCanvas
   - Spawner
   - HSController
+  - MenuController
+  - InputField
   layers:
   - Default
   - TransparentFX

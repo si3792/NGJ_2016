@@ -15,7 +15,7 @@ public class displayHighscore : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-		if(hsController.GetComponent<HSController> ().displayHighscore [substring] != null)
+		if(hsController.GetComponent<HSController> ().displayHighscore.Length > substring)
 		GetComponent<Text> ().text = hsController.GetComponent<HSController> ().displayHighscore [substring];
 	}
 }
