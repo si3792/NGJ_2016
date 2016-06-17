@@ -47,7 +47,7 @@ public class HSController : MonoBehaviour
 			print("There was an error posting the high score: " + hs_post.error);
 		}
 
-		Invoke ("InvokeChangeScene", 1.5f);
+		Invoke ("InvokeChangeScene", 1f);
 	}
 
 	// Get the scores from the MySQL DB to display in a GUIText.
