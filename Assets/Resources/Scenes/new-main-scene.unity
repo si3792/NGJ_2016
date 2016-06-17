@@ -561,6 +561,10 @@ Prefab:
       propertyPath: m_TagString
       value: Spawner
       objectReference: {fileID: 0}
+    - target: {fileID: 11423852, guid: 032c0c01f6b90483ba2c3d750a7f0ee5, type: 2}
+      propertyPath: maxBugs
+      value: 75
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 032c0c01f6b90483ba2c3d750a7f0ee5, type: 2}
   m_IsPrefabParent: 0
@@ -2444,6 +2448,10 @@ Prefab:
     - target: {fileID: 102810, guid: 032c0c01f6b90483ba2c3d750a7f0ee5, type: 2}
       propertyPath: m_TagString
       value: Spawner
+      objectReference: {fileID: 0}
+    - target: {fileID: 11423852, guid: 032c0c01f6b90483ba2c3d750a7f0ee5, type: 2}
+      propertyPath: maxBugs
+      value: 75
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 032c0c01f6b90483ba2c3d750a7f0ee5, type: 2}

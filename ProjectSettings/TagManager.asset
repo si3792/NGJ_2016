@@ -41,6 +41,7 @@ TagManager:
   - blueHPShow
   - LiftoffCanvas
   - Spawner
+  - HSController
   layers:
   - Default
   - TransparentFX
