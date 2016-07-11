@@ -122,7 +122,7 @@ public class PlayerMovement : MonoBehaviour
 		} else  {
 
 			//shoot pl1
-			if(Input.GetKey(KeyCode.Return) || Input.GetAxis("RightTriggerP1") > 0) {
+			if( (Input.GetKey(KeyCode.Return) || Input.GetAxis("RightTriggerP1") > 0) && GlobalData.overheatLock == false ) {
 				myAnim.SetBool("Shoot", true);
 				Speed = P1ShootWalkSpeed;
 

@@ -7,20 +7,33 @@ public class SchootScriptPL1 : MonoBehaviour {
 	public GameObject bullet;
 	public float deviation = 1;
 	public AudioClip shootSound;
+	public float overheatStep = 1f, overheatCoolStep = 0.2f,  overheatClearLock = 10f;
+
+
 
 	void Start () {
 
 	}
 
-	// Update is called once per frame
+
 	void Update () {
+		GlobalData.overheatPercent = Mathf.Max (GlobalData.overheatPercent - overheatCoolStep * Time.deltaTime, 0f);
+
+		if (GlobalData.overheatPercent >= 100f)
+			GlobalData.overheatLock = true;
+
+		if (GlobalData.overheatPercent < overheatClearLock)
+			GlobalData.overheatLock = false;
+
 
 	}
 
 	void Shoot2() {
 
-		// Randomize sound
+		if(GlobalData.overheatLock)return;
+		GlobalData.overheatPercent += overheatStep;
 
+		// Randomize sound
 		if(GlobalData.soundFXOn) {
 		this.gameObject.GetComponent<AudioSource>().pitch = Random.Range(0.9f, 1.1f); 
 

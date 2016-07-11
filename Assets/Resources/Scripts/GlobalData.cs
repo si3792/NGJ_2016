@@ -23,6 +23,10 @@ public class GlobalData : MonoBehaviour {
 	//GAME MODE
 	public static int gameMode = 0; // 0 - normal, 1 - hard, 2 - hof
 
+	//p1 overheat 
+	public static bool overheatLock = true;
+	public static float overheatPercent = 0f;
+
 	//abilities
 
 	// p1 amd p2 armor ability
