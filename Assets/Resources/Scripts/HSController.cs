@@ -8,6 +8,7 @@ public class HSController : MonoBehaviour
 	public string addScoreURL = "http://error.user.jacobs-university.de/addscore.php?"; //be sure to add a ? to your url
 	public string highscoreURL = "http://error.user.jacobs-university.de/display.php";
 	public string[] displayHighscore;
+	private bool singleClickFlag = false;
 
 	void Start()
 	{
@@ -21,6 +22,11 @@ public class HSController : MonoBehaviour
 
 
 	public void PostSubmit() {
+
+		if (singleClickFlag)
+			return;
+
+		singleClickFlag = true;
 
 		string name = GameObject.FindGameObjectWithTag ("InputField").GetComponent<InputField> ().text;
 		int score = GlobalData.P1kills + GlobalData.P2kills + GlobalData.P1nuggets + GlobalData.P2nuggets;
