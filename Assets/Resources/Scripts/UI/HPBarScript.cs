@@ -18,9 +18,9 @@ public class HPBarScript : MonoBehaviour {
 
 	void Update () {
 		if (hpObj != null) {
-			this.gameObject.GetComponent<Image>().fillAmount = hpObj.health / hpObj.MaxHP;
+			this.gameObject.GetComponent<Image>().fillAmount = hpObj.Health / hpObj.MaxHP;
 
-			hpShow.GetComponent<Text>().text = Mathf.RoundToInt(hpObj.health).ToString()  + "/" + hpObj.MaxHP.ToString();
+			hpShow.GetComponent<Text>().text = Mathf.RoundToInt(hpObj.Health).ToString()  + "/" + hpObj.MaxHP.ToString();
 
 		} else {
 			this.gameObject.GetComponent<Image> ().fillAmount = 0; //.001f;

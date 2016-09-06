@@ -18,9 +18,14 @@ public class BulletKnockback : MonoBehaviour {
 
 				direction = go.transform.position - transform.position;
 				go.GetComponent<Rigidbody2D>(). AddForce( (strength + strengthBonus ) * direction * (1/Time.timeScale) * (1/distance), ForceMode2D.Impulse);
-				go.transform.Find ("hurtbox").GetComponent<EnemyDamageScript> ().health -= 50 / distance;
-				if (go.transform.Find ("hurtbox").GetComponent<EnemyDamageScript> ().health < 0)
-					go.transform.Find ("hurtbox").GetComponent<EnemyDamageScript> ().lastDMGPl1 = false;
+				IDamageable damageable = go.transform.Find ("hurtbox").GetComponent<EnemyDamageScript>();
+				if (damageable != null && damageable.Team == TeamSide.Enemies) {
+					damageable.Damage(50 / distance);
+					if (damageable.Health < 0) {
+						GlobalData.P2kills++;
+						damageable.Kill(true);
+					}
+				}
 			}
 
 		}

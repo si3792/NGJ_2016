@@ -1,10 +1,18 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class EnemyDamageScript : MonoBehaviour {
+public class EnemyDamageScript : MonoBehaviour, IDamageable {
 
-
-	public float health = 50;
+	public TeamSide Team
+	{
+		get;
+		private set;
+	}
+	public float Health
+	{
+		get;
+		private set;
+	}
 	public float biomassSpawnChance = 0.6f;
 	bool died = false;
 	public GameObject biomassDrop;
@@ -19,67 +27,50 @@ public class EnemyDamageScript : MonoBehaviour {
 	public bool lastDMGPl1 = true;
 
 	void Start () {
-	
+		this.Team = TeamSide.Enemies;
+		this.Health = 50f;
 	}
 
 	// For use from external sources
 	public void Damage(float dmg) {
-		health -= dmg;
+		Health -= dmg;
 	}
 
-	void OnTriggerEnter2D(Collider2D other) {
-		if(other.gameObject.tag  == "Bullet") {
-			health -= other.gameObject.GetComponent<BulletMovement> ().damage;
+	public void Kill(bool shouldDestroyObject) {
+		died = true;
 
-			if (other.gameObject.GetComponent<BulletMovement> ().damage == pl2BulletDamage) {
-				Instantiate (explosion, other.transform.position, Quaternion.Euler (Vector3.zero));
+		//chance to spawn biomass nugget
+		if(Random.value > biomassSpawnChance) {
+			Instantiate (biomassDrop, transform.position, Quaternion.Euler (Vector3.zero));
+		}
 
-				lastDMGPl1 = false;
-			} else
-				lastDMGPl1 = true;
-			Destroy (other.gameObject);
-		} else
-		if (other.gameObject.tag == "Explosion") {
-			
-				lastDMGPl1 = true;
-				//health = -1;
-			
+		//ps @Simo WTF is this?
+		Instantiate(psFx, transform.position, Quaternion.Euler(Vector3.zero));
+
+		if(GlobalData.soundFXOn) {
+			Instantiate (deathSoundObj);
+		}
+
+		if (shouldDestroyObject) {
+		    Destroy(gameObject.transform.parent.gameObject);
 		}
 	}
-	/*
-	void OnCollisionStay2D(Collision2D other) {
-		Debug.Log(other.gameObject.tag);
-		if (other.collider.gameObject.tag == "Explosion") {
-			health = -1;
+
+	// It's computationally expensive to keep this here because beetles collide all the time.
+	// It is the logical location of the damage controller though... 
+	void OnTriggerStay2D(Collider2D other) {
+		IDamageable damageable = other.gameObject.GetComponent<IDamageable>();
+		if (damageable != null && damageable.Team == TeamSide.Players) {
+		   damageable.Damage(3 * Time.deltaTime);
 		}
-	}*/
+	}
 
 	void Update() {
-		if (health <= 0 && died == false) {
-
-			// Register kill
-			if(lastDMGPl1) {
-				GlobalData.P1kills++;
-			} else {
-				GlobalData.P2kills++;
-			}
-
-			//PlayDeathSound();
-			//chance to spawn biomass nugget
-			if(Random.value > biomassSpawnChance) {
-				Instantiate (biomassDrop, transform.position, Quaternion.Euler (Vector3.zero));
-			}
-			//ps
-			Instantiate(psFx, transform.position, Quaternion.Euler(Vector3.zero));
-
-			if(GlobalData.soundFXOn)
-			Instantiate (deathSoundObj);
-
-			died = true;
-			Destroy (gameObject.transform.parent.gameObject);
-
+		if (Health <= 0 && died == false) {
+			this.Kill(true);
 		}
 	}
+
 	void OnDestroy()
 	{
 		WaveSpawn.bugCount--;

@@ -33,7 +33,7 @@ public class SchootScriptPL2 : MonoBehaviour {
 		//check and execute killswitch
 		if(Input.GetKeyDown(KeyCode.I) && GlobalData.developerBuild) {
 			foreach(GameObject g in GameObject.FindGameObjectsWithTag("enemy-hurtbox")){
-				g.GetComponent<EnemyDamageScript> ().health = 0f;
+				g.GetComponent<IDamageable>().Kill(true);
 			}
 		}
 	}
