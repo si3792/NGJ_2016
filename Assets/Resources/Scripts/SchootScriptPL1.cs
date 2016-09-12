@@ -40,7 +40,7 @@ public class SchootScriptPL1 : MonoBehaviour {
 		this.gameObject.GetComponent<AudioSource>().PlayOneShot(shootSound);
 		}
 
-		if (transform.parent.parent.gameObject.GetComponent<PlayerMovement>().GetFacingRight ()) {
+		if (transform.parent.parent.gameObject.GetComponent<PlayerMovement>().FacingRight) {
 			Instantiate (bullet, muzzleTip.position, Quaternion.Euler (new Vector3(0, 0, 180 + Random.Range(-deviation, deviation))));
 		} else {
 			Instantiate (bullet, muzzleTip.position, Quaternion.Euler (new Vector3(0, 0, 0 + Random.Range(-deviation, deviation))));

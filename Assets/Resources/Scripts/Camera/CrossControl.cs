@@ -43,14 +43,14 @@ public class CrossControl : MonoBehaviour
 			Vector3 pos = transform.position;
 			if (pl1 != null) {
 				pos = pl1.position;
-				if (pl1.GetComponent<PlayerMovement>().GetFacingRight()) {
+				if (pl1.GetComponent<PlayerMovement>().FacingRight) {
 					f *= -1;
 				}
 			}
 			pos.x += f * OffsetFromSinglePlayer;
 			transform.position = pos;
 		} else if (pl2 != null && curMode == modes.FollowPl2) {
-			if (pl2.GetComponent<PlayerMovement>().GetFacingRight()) {
+			if (pl2.GetComponent<PlayerMovement>().FacingRight) {
 				f *= -1;
 			}
 			Vector3 pos = pl2.position;

@@ -20,7 +20,7 @@ public class SimpleShoot : MonoBehaviour
 
 			nextFire = Time.timeSinceLevelLoad + FireRate;
 
-			if (gameObject.GetComponent<PlayerMovement> ().GetFacingRight ()) {
+			if (gameObject.GetComponent<PlayerMovement>().FacingRight) {
 				reff = (GameObject)Instantiate (bullet, muzzleTip.position, Quaternion.Euler (new Vector3(0, 0, 180 + Random.Range(-deviation, deviation))));
 			} else {
 				reff = (GameObject)Instantiate (bullet, muzzleTip.position, Quaternion.Euler (new Vector3(0, 0, 0 + Random.Range(-deviation, deviation))));

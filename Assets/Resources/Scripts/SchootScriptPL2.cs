@@ -49,7 +49,7 @@ public class SchootScriptPL2 : MonoBehaviour {
 
 		GameObject reff;
 
-		if (transform.parent.gameObject.GetComponent<PlayerMovement> ().GetFacingRight ()) {
+		if (transform.parent.gameObject.GetComponent<PlayerMovement>().FacingRight) {
 			Instantiate (bullet, muzzleTip.position, Quaternion.Euler (new Vector3(0, 0, 180 + Random.Range(-deviation, deviation))));
 			pl.GetComponent<Rigidbody2D> ().AddForce (new Vector2 (-selfKnockback, 0), ForceMode2D.Impulse);
 			reff = (GameObject) Instantiate (muzzleFlash, gun.transform.position, Quaternion.Euler (new Vector3(0, 0, 0)));

@@ -17,6 +17,7 @@ public class PlayerMovement : MonoBehaviour
 	public float curCooldownSpecial = 0.0f;
 	bool inKnockback = false;
 	public GameObject specialObject;
+	private PlayerController playerController;
 	//public bool pl2WalkToggle = true;
 	float knockbackReleaseThreshold = 0.4f;
 	bool player2ShootIntent = false;
@@ -36,7 +37,10 @@ public class PlayerMovement : MonoBehaviour
 
 
 	Rigidbody2D myRB;
-	bool facingRight = true;
+	public bool FacingRight
+	{
+		get; private set;
+	}
 
 	// keep track of drag
 	float startingDrag;
@@ -44,15 +48,15 @@ public class PlayerMovement : MonoBehaviour
 
 	void dash() {
 
-		var dir = new Vector2 ( (facingRight)? 1:-1  , 0);
+		var dir = new Vector2 ( (FacingRight)? 1:-1  , 0);
 		myRB.AddForce ( dir * 2500 * Time.deltaTime, ForceMode2D.Impulse);
 	}
 
 
 	void Start ()
 	{
-		
-
+		playerController = GetComponentInChildren<PlayerController>();
+		FacingRight = true;
 		if (GlobalData.PlayersSwitched) {
 			IsPlayerOne = !IsPlayerOne;
 		}
@@ -76,10 +80,6 @@ public class PlayerMovement : MonoBehaviour
 
 		Speed *= myRB.mass;
 			
-	}
-
-	public bool GetFacingRight() {
-		return facingRight;
 	}
 
 	void FixedUpdate ()
@@ -147,7 +147,8 @@ public class PlayerMovement : MonoBehaviour
 
 		//test knockback
 		if(Input.GetKeyDown(KeyCode.K) && GlobalData.developerBuild) {
-			knockback (40, Vector2.right);
+			Vector2 direction = FacingRight ? Vector2.right : Vector2.left;
+			knockback (40, direction);
 		}
 
 		//disable movement while knockbacked
@@ -181,9 +182,9 @@ public class PlayerMovement : MonoBehaviour
 
 
 		// flip character to face direction
-		if (mv.x > 0 && !facingRight) {
+		if (mv.x > 0 && !FacingRight) {
 			flip ();
-		} else if (mv.x < 0 && facingRight) {
+		} else if (mv.x < 0 && FacingRight) {
 			flip ();
 		}
 
@@ -237,7 +238,7 @@ public class PlayerMovement : MonoBehaviour
 
 	void flip ()
 	{
-		facingRight = !facingRight;
+		FacingRight = !FacingRight;
 		Vector3 scale = transform.localScale;
 		scale.x *= -1;
 		transform.localScale = scale;
@@ -246,8 +247,8 @@ public class PlayerMovement : MonoBehaviour
 
 
 	public void knockback(float strength, Vector2 direction) {
-
 		inKnockback = true;
+		playerController.AttemptShields();
 		myRB.drag = 10; // drag is changed during knockback
 		myRB.AddForce(strength * direction * (1/Time.timeScale), ForceMode2D.Impulse);
 	}
@@ -266,10 +267,12 @@ public class PlayerMovement : MonoBehaviour
 	{
 		Vector3 pos = transform.position;
 		if (!IsPlayerOne) {
-			if (facingRight)
+			if (FacingRight) {
 				pos.x += 0.7f;
-			else
+			}
+			else {
 				pos.x -= 0.7f;
+			}
 		}
 		GameObject.Instantiate (specialObject, pos, transform.rotation);
 	}

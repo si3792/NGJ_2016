@@ -17,6 +17,7 @@ public class PlayerController : MonoBehaviour, IDamageable {
 
 	public float MaxHP = 0f;
 	public bool invulnerable = false;
+	private ShieldScript shields = null;
 	GameObject MainCam, SecondCam;
 	CameraTellerScript cts;
 
@@ -28,18 +29,22 @@ public class PlayerController : MonoBehaviour, IDamageable {
 			this.Health = 120f;
 			SecondCam = GameObject.FindGameObjectWithTag("CameraP1");
 
-			if (GlobalData.p2armor == true)
+			if (GlobalData.p2armor == true) {
 				Health += GlobalData.armorAmount;
-
+			}
 		} else {
 			this.Health = 60f;
-			if (GlobalData.p1armor == true)
+			if (GlobalData.p1armor == true) {
 				Health += GlobalData.armorAmount;
-
+			}
 			SecondCam = GameObject.FindGameObjectWithTag("CameraP2");
-		}
-		cts = GameObject.FindGameObjectWithTag ("CameraTeller").GetComponent<CameraTellerScript>();
 
+			if(transform.parent.FindChild("pl1-shield") != null) {
+			  shields = transform.parent.FindChild("pl1-shield").GetComponent<ShieldScript>();
+			}
+		}
+
+		cts = GameObject.FindGameObjectWithTag ("CameraTeller").GetComponent<CameraTellerScript>();
 
 		if (MaxHP == 0) {
 			MaxHP = Health;
@@ -82,13 +87,15 @@ public class PlayerController : MonoBehaviour, IDamageable {
 		SecondCam.GetComponent<pulseCamera>().MakeMePulse(0.2f);
 	}
 
+	public void AttemptShields() {
+		if(shields != null) {
+			shields.attemptShields();
+		}
+	}
+
 	void OnTriggerEnter2D(Collider2D other) {
 		if(other.gameObject.tag == "BeetleHurt") {
 			//transform.parent.GetComponent<PlayerMovement> ().knockback (60, new Vector2 (transform.position.x - other.gameObject.transform.position.x, 0f));
-		
-			if(transform.parent.FindChild("pl1-shield") != null) {
-				transform.parent.FindChild ("pl1-shield").GetComponent<ShieldScript> ().attemptShields ();
-			}
 		}
 	}
 }
