@@ -6,4 +6,4 @@ You and your partner have had problems with your spaceship and have landed on an
 ![A screenshot of Liftoff](screenshot.png)
 
 Since the hackathon, we have continued to work on the game.
-Beta builds for Windows, Mac OS, and Linux are available at [simoiliev.me](http://simoiliev.me/).
+Beta builds for [Windows](https://drive.google.com/file/d/0B5eh7lJo7lMSZXdhMWR2N1padGs/edit), [Mac OS](), and [Linux](https://drive.google.com/file/d/0B5eh7lJo7lMSV0lwLXBBMWs5VE0/view) are available at [simoiliev.me](http://simoiliev.me/).
