@@ -92,6 +92,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Speed: 20
   damage: 50
+  OwnerTag: Pl1
+  SpecialEffect: {fileID: 0}
 --- !u!212 &21289542
 SpriteRenderer:
   m_ObjectHideFlags: 1

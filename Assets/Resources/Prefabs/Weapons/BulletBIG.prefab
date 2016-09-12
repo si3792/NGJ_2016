@@ -96,6 +96,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Speed: 10
   damage: 100
+  OwnerTag: Pl2
+  SpecialEffect: {fileID: 189352, guid: 5c16deb429f224f60b86a06058006649, type: 2}
 --- !u!114 &11444538
 MonoBehaviour:
   m_ObjectHideFlags: 1

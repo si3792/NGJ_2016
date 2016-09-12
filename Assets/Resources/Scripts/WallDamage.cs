@@ -1,30 +1,48 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class WallDamage : MonoBehaviour {
+public class WallDamage : MonoBehaviour, IDamageable {
 
-	public float health = 100.0f;
+	public float Health
+	{
+		get;
+		private set;
+	}
+
+	public TeamSide Team
+	{
+		get;
+		private set;
+	}
+
 	public GameObject boom;
 	// Use this for initialization
 	void Start () {
+		Team = TeamSide.Players;
+		Health = 100f;
 		if(GlobalData.p2wallBonus) {
-			health += GlobalData.p2wallBonusAmount;
+			Health += GlobalData.p2wallBonusAmount;
 		}
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		if(health <= 0.0f) {
-			Instantiate (boom, transform.position, Quaternion.Euler (Vector3.zero));
-			Instantiate (boom, transform.position, Quaternion.Euler (Vector3.zero));
-			Destroy (transform.parent.gameObject);
+		if(Health <= 0.0f) {
+			this.Kill(true);
 		}
 	}
 
-	void OnTriggerStay2D(Collider2D other) {
-		if(other.gameObject.tag == "BeetleHurt") {
-			//transform.parent.GetComponent<PlayerMovement> ().knockback (60, new Vector2 (transform.position.x - other.gameObject.transform.position.x, 0f));
-			health -= 10.0f * Time.fixedDeltaTime;
+	public void Damage(float damageReceived)
+	{
+		// Walls die three times as fast as players. (shold they?)
+		Health -= 3.33f * damageReceived;
+	}
+
+	public void Kill(bool shouldDestroyObject) {
+		Instantiate (boom, transform.position, Quaternion.Euler (Vector3.zero));
+		Instantiate (boom, transform.position, Quaternion.Euler (Vector3.zero));
+		if (shouldDestroyObject) {
+			Destroy (transform.parent.gameObject);
 		}
 	}
 }
