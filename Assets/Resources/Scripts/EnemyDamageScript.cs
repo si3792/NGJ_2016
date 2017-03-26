@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class EnemyDamageScript : MonoBehaviour, IDamageable {
 
@@ -13,22 +14,35 @@ public class EnemyDamageScript : MonoBehaviour, IDamageable {
 		get;
 		private set;
 	}
+
 	public float biomassSpawnChance = 0.6f;
+	public float dps = 3.0f;
+	// The time between two consecutive damage operations in seconds.
+	// Higher values mean better performance, lower mean smoother damaging.
+	public float damageCheckInterval = 0.1f;
+	// The time before bugs are allowed to deal damage in seconds.
+	public float initialDamageWait = 2f;
+	public float HP = 50f;
 	bool died = false;
 	public GameObject biomassDrop;
 	public GameObject psFx;
 	public float pl2BulletDamage;
 	public GameObject explosion;
-
 	public AudioClip death1;
 	public AudioClip death2;
 	public GameObject soundPlayer;
 	public GameObject deathSoundObj;
 	public bool lastDMGPl1 = true;
 
+	private Dictionary<int, IDamageable> collidingEnemies = new Dictionary<int, IDamageable>();
+
 	void Start () {
 		this.Team = TeamSide.Enemies;
-		this.Health = 50f;
+		this.Health = HP;
+		// Add 25% random jitter to avoid bugs synchronizing their attacks.
+		InvokeRepeating("DamageAllCollidingEnemies",
+			initialDamageWait + (Random.value * initialDamageWait / 4),
+			damageCheckInterval + (Random.value * damageCheckInterval / 4));
 	}
 
 	// For use from external sources
@@ -48,7 +62,7 @@ public class EnemyDamageScript : MonoBehaviour, IDamageable {
 		Instantiate(psFx, transform.position, Quaternion.Euler(Vector3.zero));
 
 		if(GlobalData.soundFXOn) {
-			Instantiate (deathSoundObj);
+			Instantiate(deathSoundObj);
 		}
 
 		if (shouldDestroyObject) {
@@ -56,12 +70,23 @@ public class EnemyDamageScript : MonoBehaviour, IDamageable {
 		}
 	}
 
-	// It's computationally expensive to keep this here because beetles collide all the time.
-	// It is the logical location of the damage controller though... 
-	void OnTriggerStay2D(Collider2D other) {
+	void OnTriggerEnter2D(Collider2D other) {
 		IDamageable damageable = other.gameObject.GetComponent<IDamageable>();
 		if (damageable != null && damageable.Team == TeamSide.Players) {
-		   damageable.Damage(3 * Time.deltaTime);
+			collidingEnemies.Add(damageable.GetHashCode(), damageable);
+		}
+	}
+
+	void OnTriggerExit2D(Collider2D other) {
+		IDamageable damageable = other.gameObject.GetComponent<IDamageable>();
+		if (damageable != null && damageable.Team == TeamSide.Players) {
+			collidingEnemies.Remove(damageable.GetHashCode());
+		}
+	}
+
+	void DamageAllCollidingEnemies() {
+		foreach (IDamageable enemy in collidingEnemies.Values) {
+			enemy.Damage(dps * damageCheckInterval);
 		}
 	}
 
