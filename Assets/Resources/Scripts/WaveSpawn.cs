@@ -37,17 +37,19 @@ public class WaveSpawn : MonoBehaviour {
 		thisBugCount = bugCount;
 		if (inWave) {
 			if (timeToEmit < 0f) {
-				emitWave ();
-				timeToEmit = Random.Range (spawnTimeMean * uniformPercent, spawnTimeMean * (1 + uniformPercent));
+				emitWave();
+				timeToEmit = Random.Range(
+                    spawnTimeMean * uniformPercent, spawnTimeMean * (1 + uniformPercent));
 			}
 			if (timeToWait < 0f) {
 				inWave = false;
 				waveMeanStart *= waveGrowth;
 				Enemy1SpawnMeanStart *= Enemy1SpawnMeanExpGrowth;
 				Enemy1SpawnMeanStart += Enemy1SpawnMeanLinearGrowth;
-				if (Random.Range (0.0f, 1.0f) < 0.3)
-					globalWave++;
-				timeToWave = restMean * Random.Range (uniformPercent, 1f + uniformPercent);
+				if (Random.Range (0.0f, 1.0f) < 0.3) {
+                    globalWave++;
+                }
+                timeToWave = restMean * Random.Range(uniformPercent, 1f + uniformPercent);
 			}
 			timeToWait -= Time.deltaTime;
 			timeToEmit -= Time.deltaTime;
@@ -62,10 +64,15 @@ public class WaveSpawn : MonoBehaviour {
 	}
 	void emitWave()
 	{
-		int Enemy1Cnt = Mathf.RoundToInt (Enemy1SpawnMeanStart * Random.Range (uniformPercent, 1f + uniformPercent));
+		int Enemy1Cnt = Mathf.RoundToInt(
+            Enemy1SpawnMeanStart * Random.Range(uniformPercent, 1f + uniformPercent));
 		for (int i = 0; i < Enemy1Cnt; i++) {
 			if (bugCount < maxBugs) {
-				GameObject.Instantiate (Enemy1, transform.position + new Vector3 (Random.Range (-1f, 1f), Random.Range (-1f, 1f), 0), transform.rotation);
+                var offset = new Vector3(Random.Range(-1f, 1f), Random.Range(-1f, 1f), 0);
+                Instantiate(
+                    Enemy1,
+                    transform.position + offset, 
+                    transform.rotation);
 				bugCount++;
 			}
 		}
