@@ -36,7 +36,7 @@ public class MineController : MonoBehaviour {
 
 					//healing mines ability
 					if (GlobalData.p1healMines) {
-						GameObject hbox =  GameObject.FindGameObjectWithTag ("Pl1").transform.FindChild ("hurtbox").gameObject;
+						GameObject hbox =  GameObject.FindGameObjectWithTag ("Pl1").transform.Find ("hurtbox").gameObject;
 						PlayerController playerController = hbox.GetComponent<PlayerController>();
 						playerController.Heal(damage * GlobalData.p1healMultiplier);
 					}

@@ -30,7 +30,7 @@ public class Spaceship : MonoBehaviour {
 		anim.SetBool ("PlayerIn", true);
 		liftoff_flag = true;
 
-		GameObject.FindGameObjectWithTag ("LiftoffCanvas").transform.FindChild ("holder").gameObject.GetComponent<Animator> ().SetTrigger ("startLiftoff");
+		GameObject.FindGameObjectWithTag ("LiftoffCanvas").transform.Find ("holder").gameObject.GetComponent<Animator> ().SetTrigger ("startLiftoff");
 	}
 
 	public void startEngines() {

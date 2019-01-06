@@ -39,8 +39,8 @@ public class PlayerController : MonoBehaviour, IDamageable {
 			}
 			SecondCam = GameObject.FindGameObjectWithTag("CameraP2");
 
-			if(transform.parent.FindChild("pl1-shield") != null) {
-			  shields = transform.parent.FindChild("pl1-shield").GetComponent<ShieldScript>();
+			if(transform.parent.Find("pl1-shield") != null) {
+			  shields = transform.parent.Find("pl1-shield").GetComponent<ShieldScript>();
 			}
 		}
 

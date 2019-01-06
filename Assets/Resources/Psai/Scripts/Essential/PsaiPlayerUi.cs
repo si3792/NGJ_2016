@@ -64,8 +64,8 @@ public class PsaiPlayerUi : MonoBehaviour
             this.goButton = button.gameObject;
             this.themeNameText = button.GetComponentsInChildren<Text>(true)[0];
             this.intensitySlider = this.goTriggerItemRoot.GetComponentsInChildren<Slider>(true)[0];
-            this.indicatorImage = this.goTriggerItemRoot.transform.FindChild("IndicatorPanel").GetComponentsInChildren<Image>(true)[0];
-            this.textIntensityValue = this.goTriggerItemRoot.transform.FindChild("TextIntensityValue").GetComponent<Text>();
+            this.indicatorImage = this.goTriggerItemRoot.transform.Find("IndicatorPanel").GetComponentsInChildren<Image>(true)[0];
+            this.textIntensityValue = this.goTriggerItemRoot.transform.Find("TextIntensityValue").GetComponent<Text>();
         }
     }
 
@@ -354,48 +354,48 @@ public class PsaiPlayerUi : MonoBehaviour
 
     void Awake()
     {        
-        _intensitySection = this.gameObject.transform.FindChild("IntensitySectionCanvas/IntensitySection").gameObject;
-        _intensityIndicatorSlidersParent = _intensitySection.transform.FindChild("IntensityBars").gameObject;
-        _dynamicIntensitySlider = _intensityIndicatorSlidersParent.transform.FindChild("DynamicIntensity").GetComponent<Slider>();
-        _segmentIntensitySlider = _intensityIndicatorSlidersParent.transform.FindChild("SegmentIntensity").GetComponent<Slider>();
-        _dynamicIntensityBarFillImage = _dynamicIntensitySlider.transform.FindChild("Fill Area/Fill").GetComponent<Image>();
-        _dynamicIntensityValueText = _intensityIndicatorSlidersParent.transform.FindChild("DynamicIntensityValue").GetComponent<Text>();
-        _segmentIntensityValueText = _intensityIndicatorSlidersParent.transform.FindChild("SegmentIntensityValue").GetComponent<Text>();
-        _segmentIntensityBarFillImage = _segmentIntensitySlider.transform.FindChild("Fill Area/Fill").GetComponent<Image>();
+        _intensitySection = this.gameObject.transform.Find("IntensitySectionCanvas/IntensitySection").gameObject;
+        _intensityIndicatorSlidersParent = _intensitySection.transform.Find("IntensityBars").gameObject;
+        _dynamicIntensitySlider = _intensityIndicatorSlidersParent.transform.Find("DynamicIntensity").GetComponent<Slider>();
+        _segmentIntensitySlider = _intensityIndicatorSlidersParent.transform.Find("SegmentIntensity").GetComponent<Slider>();
+        _dynamicIntensityBarFillImage = _dynamicIntensitySlider.transform.Find("Fill Area/Fill").GetComponent<Image>();
+        _dynamicIntensityValueText = _intensityIndicatorSlidersParent.transform.Find("DynamicIntensityValue").GetComponent<Text>();
+        _segmentIntensityValueText = _intensityIndicatorSlidersParent.transform.Find("SegmentIntensityValue").GetComponent<Text>();
+        _segmentIntensityBarFillImage = _segmentIntensitySlider.transform.Find("Fill Area/Fill").GetComponent<Image>();
 
-        _intensityControlsParent = _intensityIndicatorSlidersParent.transform.FindChild("IntensityControls").gameObject;
-        _buttonHoldIntensity = _intensityControlsParent.transform.FindChild("ButtonHold").GetComponent<Button>();
+        _intensityControlsParent = _intensityIndicatorSlidersParent.transform.Find("IntensityControls").gameObject;
+        _buttonHoldIntensity = _intensityControlsParent.transform.Find("ButtonHold").GetComponent<Button>();
         _buttonColorHoldNormal = _buttonHoldIntensity.colors.normalColor;
         _buttonColorHoldHighlighted = _buttonHoldIntensity.colors.highlightedColor;
 
-        _themesTriggerCanvas = this.gameObject.transform.FindChild("ThemeTriggerCanvas").gameObject;
-        GameObject themesTriggerSection = _themesTriggerCanvas.transform.FindChild("ThemeTriggerSection").gameObject;
-        _themesTriggerSectionScrollView = themesTriggerSection.transform.FindChild("ScrollView").gameObject;
-        _errorTextWindow = _themesTriggerSectionScrollView.transform.FindChild("ErrorText").gameObject.GetComponent<Text>();
-        _themesTriggerSectionScrollViewContent = _themesTriggerSectionScrollView.transform.FindChild("Content").gameObject;
-        _themeTriggerPanelItemBlueprint = themesTriggerSection.transform.FindChild("ThemeTriggerPanelItemBlueprint").gameObject;
+        _themesTriggerCanvas = this.gameObject.transform.Find("ThemeTriggerCanvas").gameObject;
+        GameObject themesTriggerSection = _themesTriggerCanvas.transform.Find("ThemeTriggerSection").gameObject;
+        _themesTriggerSectionScrollView = themesTriggerSection.transform.Find("ScrollView").gameObject;
+        _errorTextWindow = _themesTriggerSectionScrollView.transform.Find("ErrorText").gameObject.GetComponent<Text>();
+        _themesTriggerSectionScrollViewContent = _themesTriggerSectionScrollView.transform.Find("Content").gameObject;
+        _themeTriggerPanelItemBlueprint = themesTriggerSection.transform.Find("ThemeTriggerPanelItemBlueprint").gameObject;
         _themeTriggerPanelItemHeight = (int)((RectTransform)(_themeTriggerPanelItemBlueprint.transform)).rect.height;
         _themeTriggerPanelItemBlueprint.SetActive(false);
-        _themeTypeLabelBlueprint = themesTriggerSection.transform.FindChild("ThemeTypeLabelBlueprint").gameObject;
+        _themeTypeLabelBlueprint = themesTriggerSection.transform.Find("ThemeTypeLabelBlueprint").gameObject;
         _themeTypeLabelBlueprint.SetActive(false);
 
-        Transform toggleTooltipGo = this.gameObject.transform.FindChild("TooltipsCanvas");
+        Transform toggleTooltipGo = this.gameObject.transform.Find("TooltipsCanvas");
         if (toggleTooltipGo != null)
         {
-            _toggleTooltip = _themesTriggerCanvas.transform.FindChild("ToggleTooltips").GetComponentInChildren<Toggle>();
+            _toggleTooltip = _themesTriggerCanvas.transform.Find("ToggleTooltips").GetComponentInChildren<Toggle>();
             psai.TooltipView.Instance.TurnedOn = _toggleTooltip.isOn;
         }
 
 
         //_buttonHoldIntensity.interactable = false;        
-        _engineControlSection = this.gameObject.transform.FindChild("EngineControlsCanvas/EngineControlSection").gameObject;
+        _engineControlSection = this.gameObject.transform.Find("EngineControlsCanvas/EngineControlSection").gameObject;
 
         {   // Stop Music
-            _stopMusicPanel.panelObject = _engineControlSection.transform.FindChild("StopMusic").gameObject;
+            _stopMusicPanel.panelObject = _engineControlSection.transform.Find("StopMusic").gameObject;
             _stopMusicPanel.bgImage = _stopMusicPanel.panelObject.GetComponent<Image>();
-            Text labelSection = _stopMusicPanel.panelObject.transform.FindChild("Text").GetComponent<Text>();
-            _buttonStopMusicImmediately = _engineControlSection.transform.FindChild("StopMusic/ButtonImmediately").gameObject;
-            _buttonStopMusicViaEndSegment = _engineControlSection.transform.FindChild("StopMusic/ButtonEndSegment").gameObject;
+            Text labelSection = _stopMusicPanel.panelObject.transform.Find("Text").GetComponent<Text>();
+            _buttonStopMusicImmediately = _engineControlSection.transform.Find("StopMusic/ButtonImmediately").gameObject;
+            _buttonStopMusicViaEndSegment = _engineControlSection.transform.Find("StopMusic/ButtonEndSegment").gameObject;
             Button buttonStopMusicByEndSegment = _buttonStopMusicViaEndSegment.GetComponentsInChildren<Button>(true)[0];
             Button buttonStopMusicImmediately = _buttonStopMusicImmediately.GetComponentsInChildren<Button>(true)[0];
             _buttonBgImageStopMusicByEndSegment = buttonStopMusicByEndSegment.GetComponent<Image>();
@@ -422,13 +422,13 @@ public class PsaiPlayerUi : MonoBehaviour
 
 
         {   // Return To Basic Mood
-            _returnToBasicMoodPanel.panelObject = _engineControlSection.transform.FindChild("ReturnToBasicMood").gameObject;
+            _returnToBasicMoodPanel.panelObject = _engineControlSection.transform.Find("ReturnToBasicMood").gameObject;
             _returnToBasicMoodPanel.bgImage = _returnToBasicMoodPanel.panelObject.GetComponent<Image>();            
-            Text labelSection = _returnToBasicMoodPanel.panelObject.transform.FindChild("Text").GetComponent<Text>();
+            Text labelSection = _returnToBasicMoodPanel.panelObject.transform.Find("Text").GetComponent<Text>();
             _returnToBasicMoodPanel.labelTexts.Add(labelSection);
 
-            Button buttonReturnToLastBasicMoodByEndSegment = _returnToBasicMoodPanel.panelObject.transform.FindChild("ButtonEndSegment").GetComponentsInChildren<Button>(true)[0];
-            Button buttonReturnToLastBasicMoodImmediately = _returnToBasicMoodPanel.panelObject.transform.FindChild("ButtonImmediately").GetComponentsInChildren<Button>(true)[0];
+            Button buttonReturnToLastBasicMoodByEndSegment = _returnToBasicMoodPanel.panelObject.transform.Find("ButtonEndSegment").GetComponentsInChildren<Button>(true)[0];
+            Button buttonReturnToLastBasicMoodImmediately = _returnToBasicMoodPanel.panelObject.transform.Find("ButtonImmediately").GetComponentsInChildren<Button>(true)[0];
             _returnToBasicMoodPanel.selectables.Add(buttonReturnToLastBasicMoodByEndSegment);
             _returnToBasicMoodPanel.selectables.Add(buttonReturnToLastBasicMoodImmediately);
             
@@ -446,10 +446,10 @@ public class PsaiPlayerUi : MonoBehaviour
         }
 
         {   // Pause
-            _pausePanel.panelObject = _engineControlSection.transform.FindChild("Pause").gameObject;
+            _pausePanel.panelObject = _engineControlSection.transform.Find("Pause").gameObject;
             _pausePanel.bgImage = _pausePanel.panelObject.GetComponent<Image>();
 
-            _buttonPause = _pausePanel.panelObject.transform.FindChild("ButtonPause").GetComponentsInChildren<Button>(true)[0];
+            _buttonPause = _pausePanel.panelObject.transform.Find("ButtonPause").GetComponentsInChildren<Button>(true)[0];
             _pausePanel.selectables.Add(_buttonPause);
             Image bgImageButtonPause = _buttonPause.GetComponent<Image>();
             _pausePanel.buttonBgImages.Add(bgImageButtonPause);
@@ -460,59 +460,59 @@ public class PsaiPlayerUi : MonoBehaviour
         }
 
 
-        _menuModePanel = _engineControlSection.transform.FindChild("MenuMode").gameObject;
-        _menuModePanelText = _menuModePanel.transform.FindChild("ThemeText").GetComponentInChildren<Text>();
-        _buttonMenuModeEnter = _engineControlSection.transform.FindChild("MenuMode/ButtonEnter").GetComponent<Button>();
+        _menuModePanel = _engineControlSection.transform.Find("MenuMode").gameObject;
+        _menuModePanelText = _menuModePanel.transform.Find("ThemeText").GetComponentInChildren<Text>();
+        _buttonMenuModeEnter = _engineControlSection.transform.Find("MenuMode/ButtonEnter").GetComponent<Button>();
         _buttonMenuModeEnterText = _buttonMenuModeEnter.transform.GetComponentsInChildren<Text>()[0];
-        _buttonMenuModeConfigure = _engineControlSection.transform.FindChild("MenuMode/ButtonConfigure").GetComponent<Button>();        
-        _cutSceneModePanel = _engineControlSection.transform.FindChild("CutSceneMode").gameObject;
-        _cutScenePanelText = _cutSceneModePanel.transform.FindChild("ThemeText").GetComponentInChildren<Text>();
-        _buttonCutSceneModeEnter = _engineControlSection.transform.FindChild("CutSceneMode/ButtonEnter").GetComponent<Button>();
+        _buttonMenuModeConfigure = _engineControlSection.transform.Find("MenuMode/ButtonConfigure").GetComponent<Button>();        
+        _cutSceneModePanel = _engineControlSection.transform.Find("CutSceneMode").gameObject;
+        _cutScenePanelText = _cutSceneModePanel.transform.Find("ThemeText").GetComponentInChildren<Text>();
+        _buttonCutSceneModeEnter = _engineControlSection.transform.Find("CutSceneMode/ButtonEnter").GetComponent<Button>();
         _buttonCutSceneModeEnterText = _buttonCutSceneModeEnter.transform.GetComponentsInChildren<Text>()[0];
-        _buttonCutSceneModeConfigure = _engineControlSection.transform.FindChild("CutSceneMode/ButtonConfigure").GetComponent<Button>();
+        _buttonCutSceneModeConfigure = _engineControlSection.transform.Find("CutSceneMode/ButtonConfigure").GetComponent<Button>();
         _buttonCutSceneModeConfigureText = _buttonCutSceneModeConfigure.transform.GetComponentsInChildren<Text>()[0];
 
-        _infoSection = gameObject.transform.FindChild("InfoSectionCanvas/InfoSection").gameObject;
-         Transform toggleGroupInfoSection = _infoSection.transform.FindChild("ToggleGroup");
-        _toggleInfoSectionOff = toggleGroupInfoSection.FindChild("ToggleHideInfoSection").GetComponent<Toggle>();
-        _toggleInfoSectionDescription = toggleGroupInfoSection.FindChild("ToggleDescription").GetComponent<Toggle>();
-        _toggleInfoSectionEntity = toggleGroupInfoSection.FindChild("ToggleEntityView").GetComponent<Toggle>();
-        _toggleInfoSectionList = toggleGroupInfoSection.FindChild("ToggleListView").GetComponent<Toggle>();
+        _infoSection = gameObject.transform.Find("InfoSectionCanvas/InfoSection").gameObject;
+         Transform toggleGroupInfoSection = _infoSection.transform.Find("ToggleGroup");
+        _toggleInfoSectionOff = toggleGroupInfoSection.Find("ToggleHideInfoSection").GetComponent<Toggle>();
+        _toggleInfoSectionDescription = toggleGroupInfoSection.Find("ToggleDescription").GetComponent<Toggle>();
+        _toggleInfoSectionEntity = toggleGroupInfoSection.Find("ToggleEntityView").GetComponent<Toggle>();
+        _toggleInfoSectionList = toggleGroupInfoSection.Find("ToggleListView").GetComponent<Toggle>();
 
-        _toggleBasicControls = _engineControlSection.transform.FindChild("ToggleGroup/ToggleBasic").GetComponentInChildren<Toggle>();
+        _toggleBasicControls = _engineControlSection.transform.Find("ToggleGroup/ToggleBasic").GetComponentInChildren<Toggle>();
 
-        _currentThemeSection = _infoSection.transform.FindChild("CurrentThemeSection").gameObject;
-        _currentThemeNameValue = _currentThemeSection.transform.FindChild("ValueName").GetComponent<Text>();
-        _currentThemeIdValue = _currentThemeSection.transform.FindChild("ValueId").GetComponent<Text>();
-        _currentThemeTypeValue = _currentThemeSection.transform.FindChild("ValueType").GetComponent<Text>();
-        _psaiStateValue = _currentThemeSection.transform.FindChild("ValuePsaiState").GetComponent<Text>();
+        _currentThemeSection = _infoSection.transform.Find("CurrentThemeSection").gameObject;
+        _currentThemeNameValue = _currentThemeSection.transform.Find("ValueName").GetComponent<Text>();
+        _currentThemeIdValue = _currentThemeSection.transform.Find("ValueId").GetComponent<Text>();
+        _currentThemeTypeValue = _currentThemeSection.transform.Find("ValueType").GetComponent<Text>();
+        _psaiStateValue = _currentThemeSection.transform.Find("ValuePsaiState").GetComponent<Text>();
 
-        _currentSegmentSection = _infoSection.transform.FindChild("CurrentSegmentSection").gameObject;
-        _currentSegmentNameValue = _currentSegmentSection.transform.FindChild("ValueName").GetComponent<Text>();
-        _currentSegmentIdValue = _currentSegmentSection.transform.FindChild("ValueId").GetComponent<Text>();
-        _currentSegmentIntensityValue = _currentSegmentSection.transform.FindChild("ValueIntensity").GetComponent<Text>();
-        _currentSegmentPlaycountValue = _currentSegmentSection.transform.FindChild("ValuePlaycount").GetComponent<Text>();
-        _currentSegmentSuitabilitesValue = _currentSegmentSection.transform.FindChild("ValueSuitabilities").GetComponent<Text>();
-        _currentSegmentRemainingMsValue = _currentSegmentSection.transform.FindChild("ValueRemainingMs").GetComponent<Text>();
+        _currentSegmentSection = _infoSection.transform.Find("CurrentSegmentSection").gameObject;
+        _currentSegmentNameValue = _currentSegmentSection.transform.Find("ValueName").GetComponent<Text>();
+        _currentSegmentIdValue = _currentSegmentSection.transform.Find("ValueId").GetComponent<Text>();
+        _currentSegmentIntensityValue = _currentSegmentSection.transform.Find("ValueIntensity").GetComponent<Text>();
+        _currentSegmentPlaycountValue = _currentSegmentSection.transform.Find("ValuePlaycount").GetComponent<Text>();
+        _currentSegmentSuitabilitesValue = _currentSegmentSection.transform.Find("ValueSuitabilities").GetComponent<Text>();
+        _currentSegmentRemainingMsValue = _currentSegmentSection.transform.Find("ValueRemainingMs").GetComponent<Text>();
 
         _buttonSpacing = 10;
 
-        _themeListView = _infoSection.transform.FindChild("ThemeListView").gameObject;
-        _themeListScrollView = _themeListView.transform.FindChild("ThemeListScrollView").gameObject;
-        _themeListScrollViewContent = _themeListScrollView.transform.FindChild("Content").gameObject;
-        _themeListViewEntryGameObject = _themeListScrollViewContent.transform.FindChild("ListViewEntry").gameObject;
-        Text themeListViewHeadlineName = _themeListViewEntryGameObject.transform.FindChild("Name").GetComponent<Text>();
+        _themeListView = _infoSection.transform.Find("ThemeListView").gameObject;
+        _themeListScrollView = _themeListView.transform.Find("ThemeListScrollView").gameObject;
+        _themeListScrollViewContent = _themeListScrollView.transform.Find("Content").gameObject;
+        _themeListViewEntryGameObject = _themeListScrollViewContent.transform.Find("ListViewEntry").gameObject;
+        Text themeListViewHeadlineName = _themeListViewEntryGameObject.transform.Find("Name").GetComponent<Text>();
         _lineHeightListView = themeListViewHeadlineName.font.lineHeight;
 
-        _segmentListView = _infoSection.transform.FindChild("SegmentListView").gameObject;
-        _segmentListScrollView = _segmentListView.transform.FindChild("SegmentListScrollView").gameObject;
-        _segmentListScrollViewContent = _segmentListScrollView.transform.FindChild("Content").gameObject;
-        _segmentListViewEntryGameObject = _segmentListScrollViewContent.transform.FindChild("ListViewEntry").gameObject;
-        _soundtrackDescriptionPanel = _infoSection.transform.FindChild("SoundtrackDescriptionPanel").gameObject;
+        _segmentListView = _infoSection.transform.Find("SegmentListView").gameObject;
+        _segmentListScrollView = _segmentListView.transform.Find("SegmentListScrollView").gameObject;
+        _segmentListScrollViewContent = _segmentListScrollView.transform.Find("Content").gameObject;
+        _segmentListViewEntryGameObject = _segmentListScrollViewContent.transform.Find("ListViewEntry").gameObject;
+        _soundtrackDescriptionPanel = _infoSection.transform.Find("SoundtrackDescriptionPanel").gameObject;
         _soundtrackImage = _soundtrackDescriptionPanel.transform.GetComponentInChildren<Image>();
-        Transform descriptionScrollviewContent = _soundtrackDescriptionPanel.transform.FindChild("ScrollView/Content");
-        _soundtrackHeadlineText = descriptionScrollviewContent.transform.FindChild("TextPanel/Headline").GetComponentInChildren<Text>();
-        _soundtrackDescriptionText = descriptionScrollviewContent.transform.FindChild("TextPanel/Description").GetComponentInChildren<Text>();
+        Transform descriptionScrollviewContent = _soundtrackDescriptionPanel.transform.Find("ScrollView/Content");
+        _soundtrackHeadlineText = descriptionScrollviewContent.transform.Find("TextPanel/Headline").GetComponentInChildren<Text>();
+        _soundtrackDescriptionText = descriptionScrollviewContent.transform.Find("TextPanel/Description").GetComponentInChildren<Text>();
 
         UpdateActiveStatesOfAllPanels();
     }
