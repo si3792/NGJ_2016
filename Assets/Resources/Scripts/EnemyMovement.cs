@@ -13,15 +13,15 @@ public class EnemyMovement : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		enemies = new HashSet<EnemyRegister.EnemyReference> ();
-		pl1 = GameObject.FindGameObjectWithTag ("Pl1");
-		pl2 = GameObject.FindGameObjectWithTag ("Pl2");
-		col_radius = GetComponent<CircleCollider2D> ().radius;
-		myRB = GetComponent<Rigidbody2D> ();
-		anim = GetComponentInChildren<Animator> ();
+		pl1 = GameObject.FindGameObjectWithTag("Pl1");
+		pl2 = GameObject.FindGameObjectWithTag("Pl2");
+		col_radius = GetComponent<CircleCollider2D>().radius;
+		myRB = GetComponent<Rigidbody2D>();
+		anim = GetComponentInChildren<Animator>();
 		target = pl1;
 		targetDist = float.MaxValue; 
 
-		InvokeRepeating ("SlowedUpdate", 0f, slowAmount);
+		InvokeRepeating("SlowedUpdate", 0f, slowAmount);
 	}
 	float targetDist;
 	float targetAngle = 1.0f;
@@ -30,28 +30,26 @@ public class EnemyMovement : MonoBehaviour {
 
 	void SlowedUpdate() {
 		// Doesnt calculate target every frame
-
 		if (target == null)
 			targetDist = float.MaxValue;
 		else
-			targetDist = Vector2.Distance (transform.position, target.transform.position);
+			targetDist = Vector2.Distance(transform.position, target.transform.position);
 
 		if (pl1 != null) {
-			if (targetDist > Vector2.Distance (transform.position, pl1.transform.position)) {	
+			if (targetDist > Vector2.Distance(transform.position, pl1.transform.position)) {	
 				target = pl1;
-				targetDist = Vector2.Distance (transform.position, pl1.transform.position);
+				targetDist = Vector2.Distance(transform.position, pl1.transform.position);
 			}
 		}
-		if( pl2 != null )
-		{
-			if (Vector2.Distance (transform.position, pl2.transform.position) < targetDist) {
+		if (pl2 != null) {
+			if (Vector2.Distance(transform.position, pl2.transform.position) < targetDist) {
 				target = pl2;
 				targetDist = Vector2.Distance (transform.position, pl2.transform.position);
 			}
 		}
 
 		if (pl1 == null && pl2 == null)
-			target = GameObject.FindGameObjectWithTag ("the-ship"); // Replace with sth else
+			target = GameObject.FindGameObjectWithTag("the-ship"); // Replace with sth else
 
 		if (target.transform.position.x < transform.position.x) {
 			targetAngle = -1.0f;
@@ -116,7 +114,8 @@ public class EnemyMovement : MonoBehaviour {
 	}
 	// Update is called once per frame
 	void Update () {
-		transform.localScale = new Vector3( targetAngle, transform.localScale.y, transform.localScale.z );
-		anim.SetFloat ("playerDist", targetDist);
+		transform.localScale = 
+            new Vector3(targetAngle, transform.localScale.y, transform.localScale.z);
+		anim.SetFloat("playerDist", targetDist);
 	}
 }
